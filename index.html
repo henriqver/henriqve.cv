@@ -58,7 +58,7 @@
   .hero-meta { margin-top: 40px; display: flex; gap: 60px; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
 
   /* Grid de Trabalhos */
-  .work-grid { padding: 0 5% 100px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
+  .work-grid { padding: 0 5% 100px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; }
   .work-item { position: relative; cursor: pointer; overflow: hidden; text-decoration: none; color: inherit; display: block; }
   .work-placeholder {
     aspect-ratio: 4/5;
@@ -109,7 +109,8 @@
   .footer-socials svg { width: 18px; height: 18px; }
 
   @media (max-width: 768px) {
-    .work-grid, .about-section { grid-template-columns: 1fr; }
+    .work-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+    .about-section { grid-template-columns: 1fr; }
     .hero-title { font-size: 4rem; }
     .hero-meta { flex-direction: column; gap: 20px; }
     .nav-links { display: none; }
