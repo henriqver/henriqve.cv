@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Henrique R — Portfolio</title>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -25,227 +28,185 @@
     color: var(--text);
     font-family: var(--mono);
     font-size: 13px;
-    line-height: 1.6;
-    overflow-x: hidden;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
   }
-
-  /* NAV */
+  
+  /* Navbar */
   nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 1.5rem 3rem;
-    border-bottom: 1px solid var(--border);
-    backdrop-filter: blur(12px);
-    background: rgba(10,10,10,0.88);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 25px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    mix-blend-mode: difference;
+    z-index: 100;
   }
-  .nav-logo { font-family: var(--serif); font-size: 1.15rem; font-weight: 300; letter-spacing: 0.1em; color: var(--accent2); }
-  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-  .nav-links a { color: var(--muted); text-decoration: none; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; transition: color 0.3s; }
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--text);
+    text-decoration: none;
+  }
+  .nav-links {
+    display: flex;
+    gap: 40px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .nav-links a {
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
   .nav-links a:hover { color: var(--accent); }
 
-  /* HERO */
+  /* Hero */
   .hero {
-    min-height: 100vh;
-    display: flex; flex-direction: column; justify-content: flex-end;
-    padding: 0 3rem 5rem;
-    position: relative; overflow: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 5%;
+    position: relative;
   }
-  .hero-bg {
-    position: absolute; inset: 0;
-    background: radial-gradient(ellipse 65% 55% at 72% 38%, rgba(200,169,110,0.07) 0%, transparent 70%),
-                radial-gradient(ellipse 40% 50% at 18% 80%, rgba(200,169,110,0.04) 0%, transparent 60%);
+  .hero-title {
+    font-family: var(--serif);
+    font-size: clamp(3rem, 10vw, 8rem);
+    line-height: 0.9;
+    font-weight: 300;
+    letter-spacing: -2px;
   }
-  .hero-grid {
-    position: absolute; inset: 0;
-    background-image: linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
-    background-size: 64px 64px;
-    mask-image: linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%);
+  .hero-title em { font-style: italic; color: var(--accent); }
+  .hero-meta {
+    margin-top: 40px;
+    display: flex;
+    gap: 60px;
+    color: var(--muted);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
   }
-  .hero-eyebrow { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem; }
-  .hero-eyebrow::before { content: ''; display: block; width: 40px; height: 1px; background: var(--accent); }
-  .hero-title { font-family: var(--serif); font-size: clamp(4rem, 9vw, 8rem); font-weight: 300; line-height: 0.93; letter-spacing: -0.01em; margin-bottom: 2.5rem; }
-  .hero-title em { font-style: italic; color: var(--accent2); }
-  .hero-bottom { display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem; }
-  .hero-desc { max-width: 400px; color: var(--muted); line-height: 1.9; font-size: 12px; }
-  .hero-scroll { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; color: var(--dim); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; }
-  .scroll-line { width: 1px; height: 50px; background: linear-gradient(to bottom, var(--dim), transparent); animation: scrollPulse 2s ease-in-out infinite; }
-  @keyframes scrollPulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
-  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-  .fu { animation: fadeUp 0.9s cubic-bezier(0.25,0.46,0.45,0.94) both; }
-  .fu1 { animation-delay: 0.1s; } .fu2 { animation-delay: 0.28s; } .fu3 { animation-delay: 0.46s; }
 
-  /* WORKS */
-  .section { padding: 5rem 3rem; }
-  .section-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 2.5rem; border-bottom: 1px solid var(--border); padding-bottom: 1.2rem; }
-  .section-title { font-family: var(--serif); font-size: 2rem; font-weight: 300; letter-spacing: 0.02em; }
-  .section-num { font-size: 11px; color: var(--dim); letter-spacing: 0.15em; }
-
-  .works-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5px; }
-  .work-item { position: relative; aspect-ratio: 3/4; overflow: hidden; background: var(--surface); cursor: pointer; }
-  .work-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-style: italic; color: var(--dim); font-size: 0.9rem; transition: transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94); position: relative; }
-
-  .work-item:nth-child(1)  .work-placeholder { background: linear-gradient(145deg, #111 0%, #1a1510 100%); }
-  .work-item:nth-child(2)  .work-placeholder { background: linear-gradient(145deg, #0f0f0f 0%, #141419 100%); }
-  .work-item:nth-child(3)  .work-placeholder { background: linear-gradient(145deg, #111 0%, #161211 100%); }
-  .work-item:nth-child(4)  .work-placeholder { background: linear-gradient(225deg, #0f0f0f 0%, #111511 100%); }
-  .work-item:nth-child(5)  .work-placeholder { background: linear-gradient(145deg, #111 0%, #151015 100%); }
-  .work-item:nth-child(6)  .work-placeholder { background: linear-gradient(145deg, #0f0f0f 0%, #141410 100%); }
-  .work-item:nth-child(7)  .work-placeholder { background: linear-gradient(225deg, #111 0%, #121511 100%); }
-  .work-item:nth-child(8)  .work-placeholder { background: linear-gradient(145deg, #0f0f0f 0%, #15110f 100%); }
-  .work-item:nth-child(9)  .work-placeholder { background: linear-gradient(145deg, #111 0%, #1a1510 100%); }
-  .work-item:nth-child(10) .work-placeholder { background: linear-gradient(225deg, #0f0f0f 0%, #141419 100%); }
-  .work-item:nth-child(11) .work-placeholder { background: linear-gradient(145deg, #111 0%, #161211 100%); }
-  .work-item:nth-child(12) .work-placeholder { background: linear-gradient(145deg, #0f0f0f 0%, #111511 100%); }
-  .work-item:nth-child(13) .work-placeholder { background: linear-gradient(225deg, #111 0%, #151015 100%); }
-  .work-item:nth-child(14) .work-placeholder { background: linear-gradient(145deg, #0f0f0f 0%, #141410 100%); }
-  .work-item:nth-child(15) .work-placeholder { background: linear-gradient(145deg, #111 0%, #121511 100%); }
-  .work-item:nth-child(16) .work-placeholder { background: linear-gradient(225deg, #0f0f0f 0%, #15110f 100%); }
-  .work-item:nth-child(17) .work-placeholder { background: linear-gradient(145deg, #111 0%, #1a1510 100%); }
-  .work-item:nth-child(18) .work-placeholder { background: linear-gradient(225deg, #0f0f0f 0%, #141419 100%); }
-  .work-item:nth-child(19) .work-placeholder { background: linear-gradient(145deg, #111 0%, #161211 100%); }
-  .work-item:nth-child(20) .work-placeholder { background: linear-gradient(145deg, #0f0f0f 0%, #111511 100%); }
-
-  .geo { position: absolute; inset: 0; opacity: 0.13; }
-  .work-overlay { position: absolute; inset: 0; background: rgba(10,10,10,0.72); display: flex; flex-direction: column; justify-content: flex-end; padding: 1.2rem; opacity: 0; transition: opacity 0.4s; }
-  .work-item:hover .work-overlay { opacity: 1; }
-  .work-item:hover .work-placeholder { transform: scale(1.04); }
-  .work-tag { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.3rem; }
-  .work-name { font-family: var(--serif); font-size: 1.05rem; font-weight: 300; }
-
-  /* ABOUT */
-  .about-section {
-    padding: 5rem 3rem;
+  /* Grid de Trabalhos */
+  .work-grid {
+    padding: 0 5% 100px;
     display: grid;
-    grid-template-columns: 1fr 280px;
-    gap: 5rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+  .work-item {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  .work-placeholder {
+    aspect-ratio: 4/5;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    display: flex;
     align-items: center;
+    justify-content: center;
+    color: var(--dim);
+    transition: border-color 0.4s;
+  }
+  .work-item:hover .work-placeholder { border-color: var(--accent); }
+  .work-overlay {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .work-name { font-family: var(--serif); font-size: 1.8rem; line-height: 1; }
+  .work-tag { color: var(--accent); font-size: 10px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+
+  /* Sobre */
+  .about-section {
+    padding: 150px 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
     border-top: 1px solid var(--border);
   }
-  .about-label { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; }
-  .about-title { font-family: var(--serif); font-size: 2.6rem; font-weight: 300; line-height: 1.15; margin-bottom: 2rem; }
-  .about-title em { font-style: italic; color: var(--accent2); }
-  .about-body { color: var(--muted); line-height: 2; font-size: 12px; }
-  .about-visual { position: relative; }
-  .about-frame { aspect-ratio: 3/4; background: var(--surface); border: 1px solid var(--border2); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
-  .about-frame-inner { width: 75%; height: 75%; border: 1px solid var(--border2); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-style: italic; color: var(--dim); font-size: 0.85rem; text-align: center; padding: 1rem; }
-  .frame-accent { position: absolute; bottom: -1px; right: -1px; width: 40%; height: 40%; border-top: 1px solid var(--accent); border-left: 1px solid var(--accent); opacity: 0.5; }
-  .frame-accent2 { position: absolute; top: -1px; left: -1px; width: 40%; height: 40%; border-bottom: 1px solid var(--border2); border-right: 1px solid var(--border2); }
+  .about-label { color: var(--accent); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px; }
+  .about-title { font-family: var(--serif); font-size: 4rem; line-height: 1; font-weight: 300; margin-bottom: 40px; }
+  .about-body { color: var(--muted); font-size: 1.2rem; line-height: 1.6; max-width: 500px; }
+  
+  .about-visual { display: flex; justify-content: center; align-items: center; }
+  .about-frame {
+    width: 300px;
+    height: 400px;
+    border: 1px solid var(--border2);
+    position: relative;
+    padding: 15px;
+  }
+  .about-frame-inner {
+    width: 100%;
+    height: 100%;
+    background: var(--surface);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--dim);
+  }
 
-  /* FOOTER */
-  footer { border-top: 1px solid var(--border); padding: 3.5rem 3rem; }
+  /* Footer */
+  footer {
+    padding: 80px 5%;
+    border-top: 1px solid var(--border);
+  }
   .footer-top { display: flex; justify-content: space-between; align-items: flex-start; }
-  .footer-logo { font-family: var(--serif); font-size: 1.5rem; font-weight: 300; color: var(--accent2); margin-bottom: 0.6rem; }
-  .footer-tagline { font-size: 11px; color: var(--dim); letter-spacing: 0.1em; }
-  .footer-col-title { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--dim); margin-bottom: 1rem; }
-  .footer-col a { display: block; font-size: 12px; color: var(--muted); text-decoration: none; line-height: 2.2; transition: color 0.3s; }
-  .footer-col a:hover { color: var(--accent); }
+  .footer-logo { font-family: var(--serif); font-size: 2.5rem; font-style: italic; color: var(--accent); }
+  .footer-col { display: flex; flex-direction: column; gap: 10px; }
+  .footer-col-title { color: var(--muted); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
+  .footer-col a { color: var(--text); text-decoration: none; font-size: 1.1rem; }
 
-  /* MOBILE */
   @media (max-width: 768px) {
-    nav { padding: 1.2rem 1.5rem; }
-    .nav-links { gap: 1.5rem; }
-    .hero { padding: 0 1.5rem 4rem; }
-    .hero-title { font-size: clamp(3rem, 12vw, 5rem); }
-    .hero-desc { max-width: 100%; }
-    .hero-scroll { display: none; }
-    .section { padding: 4rem 1.5rem; }
-    .works-grid { grid-template-columns: repeat(2, 1fr); }
-    .about-section { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 1.5rem; }
-    .about-visual { max-width: 220px; }
-    footer { padding: 3rem 1.5rem; }
-    .footer-top { flex-direction: column; gap: 2.5rem; }
+    .work-grid, .about-section { grid-template-columns: 1fr; }
+    .hero-meta { flex-direction: column; gap: 20px; }
   }
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="nav-logo">Henrique R</div>
-  <ul class="nav-links">
-    <li><a href="#about">Sobre Mim</a></li>
-    <li><a href="#footer">Contato</a></li>
-  </ul>
+  <a href="#" class="nav-logo">Henrique R</a>
+  <div class="nav-links">
+    <a href="#work">Projetos</a>
+    <a href="portfolio_sobre_v3.html">Sobre</a>
+    <a href="portfolio_contato_v3.html">Contato</a>
+  </div>
 </nav>
 
-<section class="hero" id="home">
-  <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
-  <div class="hero-eyebrow fu fu1">Design Gráfico — Portfólio</div>
-  <h1 class="hero-title fu fu2">Forma que<br><em>comunica.</em><br>Arte que<br>permanece.</h1>
-  <div class="hero-bottom fu fu3">
-    <p class="hero-desc">Design gráfico com intenção. Cada projeto nasce de uma ideia precisa e evolui até encontrar sua forma mais essencial — nem mais, nem menos.</p>
-    <div class="hero-scroll"><div class="scroll-line"></div>scroll</div>
+<section class="hero">
+  <h1 class="hero-title">Multidisciplinary<br><em>Graphic</em> Designer</h1>
+  <div class="hero-meta">
+    <div>Basado em São Paulo</div>
+    <div>Disponível para Projetos 2026</div>
+    <div>Especialista em Visual Identity</div>
   </div>
 </section>
 
-<section class="section" id="works">
-  <div class="section-header">
-    <h2 class="section-title">Trabalhos Selecionados</h2>
-    <span class="section-num">01</span>
-  </div>
-  <div class="works-grid">
-
-    <div class="work-item"><div class="work-placeholder"><svg class="geo" viewBox="0 0 300 400" fill="none"><circle cx="150" cy="200" r="120" stroke="#c8a96e" stroke-width="0.6"/><circle cx="150" cy="200" r="75" stroke="#c8a96e" stroke-width="0.4"/><line x1="0" y1="200" x2="300" y2="200" stroke="#c8a96e" stroke-width="0.4"/><line x1="150" y1="0" x2="150" y2="400" stroke="#c8a96e" stroke-width="0.4"/></svg>Projeto 01</div><div class="work-overlay"><div class="work-tag">Identidade Visual</div><div class="work-name">Projeto 01 — 2024</div></div></div>
-
-    <div class="work-item"><div class="work-placeholder"><svg class="geo" viewBox="0 0 300 400" fill="none"><rect x="40" y="60" width="220" height="280" stroke="#c8a96e" stroke-width="0.6"/><rect x="70" y="100" width="160" height="200" stroke="#c8a96e" stroke-width="0.4"/><line x1="40" y1="60" x2="260" y2="340" stroke="#c8a96e" stroke-width="0.4"/><line x1="260" y1="60" x2="40" y2="340" stroke="#c8a96e" stroke-width="0.4"/></svg>Projeto 02</div><div class="work-overlay"><div class="work-tag">Branding</div><div class="work-name">Projeto 02 — 2024</div></div></div>
-
-    <div class="work-item"><div class="work-placeholder"><svg class="geo" viewBox="0 0 300 400" fill="none"><polygon points="150,40 280,360 20,360" stroke="#c8a96e" stroke-width="0.6" fill="none"/><polygon points="150,100 240,330 60,330" stroke="#c8a96e" stroke-width="0.4" fill="none"/><polygon points="150,160 200,300 100,300" stroke="#c8a96e" stroke-width="0.4" fill="none"/></svg>Projeto 03</div><div class="work-overlay"><div class="work-tag">Editorial</div><div class="work-name">Projeto 03 — 2024</div></div></div>
-
-    <div class="work-item"><div class="work-placeholder"><svg class="geo" viewBox="0 0 300 400" fill="none"><rect x="40" y="60" width="100" height="280" stroke="#c8a96e" stroke-width="0.6"/><rect x="160" y="60" width="100" height="280" stroke="#c8a96e" stroke-width="0.6"/><rect x="90" y="130" width="120" height="140" stroke="#c8a96e" stroke-width="0.4"/></svg>Projeto 04</div><div class="work-overlay"><div class="work-tag">Embalagem</div><div class="work-name">Projeto 04 — 2024</div></div></div>
-
-    <div class="work-item"><div class="work-placeholder"><svg class="geo" viewBox="0 0 300 400" fill="none"><line x1="0" y1="80" x2="300" y2="80" stroke="#c8a96e" stroke-width="0.6"/><line x1="0" y1="160" x2="300" y2="160" stroke="#c8a96e" stroke-width="0.4"/><line x1="0" y1="240" x2="300" y2="240" stroke="#c8a96e" stroke-width="0.4"/><line x1="0" y1="320" x2="300" y2="320" stroke="#c8a96e" stroke-width="0.6"/><line x1="80" y1="0" x2="80" y2="400" stroke="#c8a96e" stroke-width="0.4"/><line x1="220" y1="0" x2="220" y2="400" stroke="#c8a96e" stroke-width="0.4"/></svg>Projeto 05</div><div class="work-overlay"><div class="work-tag">Tipografia</div><div class="work-name">Projeto 05 — 2023</div></div></div>
-
-    <div class="work-item"><div class="work-placeholder"><svg class="geo" viewBox="0 0 300 400" fill="none"><circle cx="150" cy="200" r="130" stroke="#c8a96e" stroke-width="0.6"/><circle cx="150" cy="200" r="90" stroke="#c8a96e" stroke-width="0.3"/><circle cx="150" cy="200" r="50" stroke="#c8a96e" stroke-width="0.3"/><circle cx="150" cy="200" r="15" fill="#c8a96e" opacity="0.25"/></svg>Projeto 06</div><div class="work-overlay"><div class="work-tag">Cartaz</div><div class="work-name">Projeto 06 — 2023</div></div></div>
-
-    <div class="work-item"><div class="work-placeholder"><svg class="geo" viewBox="0 0 300 400" fill="none"><path d="M20 380 L150 20 L280 380 Z" stroke="#c8a96e" stroke-width="0.6" fill="none"/><path d="M60 300 L150 80 L240 300 Z" stroke="#c8a96e" stroke-width="0.4" fill="none"/><line x1="20" y1="380" x2="280" y2="380" stroke="#c8a96e" stroke-width="0.4"/></svg>Projeto 07</div><div class="work-overlay"><div class="work-tag">Ilustração</div><div class="work-name">Projeto 07 — 2023</div></div></div>
-
-    <div class="work-item"><div class="work-placeholder"><svg class="geo" viewBox="0 0 300 400" fill="none"><rect x="30" y="30" width="240" height="340" stroke="#c8a96e" stroke-width="0.6"/><rect x="55" y="55" width="190" height="290" stroke="#c8a96e" stroke-width="0.3"/><circle cx="150" cy="200" r="70" stroke="#c8a96e" stroke-width="0.4"/><circle cx="150" cy="200" r="20" fill="#c8a96e" opacity="0.2"/></svg>Projeto 08</div><div class="work-overlay"><div class="work-tag">Branding</div><div class="work-name">Projeto 08 — 2023</div></div></div>
-
-    <div class="work-item"><div class="work-placeholder"><svg class="geo" viewBox="0 0 300 400" fill="none"><ellipse cx="150" cy="200" rx="130" ry="80" stroke="#c8a96e" stroke-width="0.6"/><ellipse cx="150" cy="200" rx="90" ry="55" stroke="#c8a96e" stroke-width="0.4"/><line x1="150" y1="0" x2="150" y2="400" stroke="#c8a96e" stroke-width="0.4"/></svg>Projeto 09</div><div class="work-overlay"><div class="work-tag">Identidade Visual</div><div class="work-name">Projeto 09 — 2023</div></div></div>
-
-    <div class="work-item"><div class="work-placeholder"><svg class="geo" viewBox="0 0 300 400" fill="none"><polygon points="150,30 270,110 230,250 70,250 30,110" stroke="#c8a96e" stroke-width="0.6" fill="none"/><polygon points="150,90 220,140 195,220 105,220 80,140" stroke="#c8a96e" stroke-width="0.4" fill="none"/></svg>Projeto 10</div><div class="work-overlay"><div class="work-tag">Editorial</div><div class="work-name">Projeto 10 — 2023</div></div></div>
-
-    <div class="work-item"><div class="work-placeholder"><svg class="geo" viewBox="0 0 300 400" fill="none"><line x1="0" y1="0" x2="300" y2="400" stroke="#c8a96e" stroke-width="0.6"/><line x1="300" y1="0" x2="0" y2="400" stroke="#c8a96e" stroke-width="0.6"/><circle cx="150" cy="200" r="100" stroke="#c8a96e" stroke-width="0.4"/><circle cx="150" cy="200" r="50" stroke="#c8a96e" stroke-width="0.3"/></svg>Projeto 11</div><div class="work-overlay"><div class="work-tag">Cartaz</div><div class="work-name">Projeto 11 — 2022</div></div></div>
-
-    <div class="work-item"><div class="work-placeholder"><svg class="geo" viewBox="0 0 300 400" fill="none"><rect x="20" y="20" width="120" height="180" stroke="#c8a96e" stroke-width="0.6"/><rect x="160" y="100" width="120" height="180" stroke="#c8a96e" stroke-width="0.6"/><rect x="80" y="200" width="120" height="180" stroke="#c8a96e" stroke-width="0.4"/></svg>Projeto 12</div><div class="work-overlay"><div class="work-tag">Embalagem</div><div class="work-name">Projeto 12 — 2022</div></div></div>
-
-    <div class="work-item"><div class="work-placeholder"><svg class="geo" viewBox="0 0 300 400" fill="none"><path d="M150 30 Q270 200 150 370 Q30 200 150 30Z" stroke="#c8a96e" stroke-width="0.6" fill="none"/><path d="M150 80 Q240 200 150 320 Q60 200 150 80Z" stroke="#c8a96e" stroke-width="0.4" fill="none"/></svg>Projeto 13</div><div class="work-overlay"><div class="work-tag">Branding</div><div class="work-name">Projeto 13 — 2022</div></div></div>
-
-    <div class="work-item"><div class="work-placeholder"><svg class="geo" viewBox="0 0 300 400" fill="none"><line x1="0" y1="133" x2="300" y2="133" stroke="#c8a96e" stroke-width="0.6"/><line x1="0" y1="267" x2="300" y2="267" stroke="#c8a96e" stroke-width="0.6"/><line x1="100" y1="0" x2="100" y2="400" stroke="#c8a96e" stroke-width="0.6"/><line x1="200" y1="0" x2="200" y2="400" stroke="#c8a96e" stroke-width="0.6"/></svg>Projeto 14</div><div class="work-overlay"><div class="work-tag">Tipografia</div><div class="work-name">Projeto 14 — 2022</div></div></div>
-
-    <div class="work-item"><div class="work-placeholder"><svg class="geo" viewBox="0 0 300 400" fill="none"><circle cx="100" cy="150" r="80" stroke="#c8a96e" stroke-width="0.6"/><circle cx="200" cy="250" r="80" stroke="#c8a96e" stroke-width="0.6"/><circle cx="150" cy="200" r="40" stroke="#c8a96e" stroke-width="0.4"/></svg>Projeto 15</div><div class="work-overlay"><div class="work-tag">Ilustração</div><div class="work-name">Projeto 15 — 2022</div></div></div>
-
-    <div class="work-item"><div class="work-placeholder"><svg class="geo" viewBox="0 0 300 400" fill="none"><polygon points="30,370 150,30 270,370" stroke="#c8a96e" stroke-width="0.6" fill="none"/><polygon points="30,30 150,370 270,30" stroke="#c8a96e" stroke-width="0.4" fill="none"/></svg>Projeto 16</div><div class="work-overlay"><div class="work-tag">Identidade Visual</div><div class="work-name">Projeto 16 — 2022</div></div></div>
-
-    <div class="work-item"><div class="work-placeholder"><svg class="geo" viewBox="0 0 300 400" fill="none"><rect x="50" y="50" width="200" height="300" stroke="#c8a96e" stroke-width="0.6"/><line x1="50" y1="183" x2="250" y2="183" stroke="#c8a96e" stroke-width="0.4"/><line x1="50" y1="217" x2="250" y2="217" stroke="#c8a96e" stroke-width="0.3"/><circle cx="150" cy="200" r="25" stroke="#c8a96e" stroke-width="0.4"/></svg>Projeto 17</div><div class="work-overlay"><div class="work-tag">Editorial</div><div class="work-name">Projeto 17 — 2021</div></div></div>
-
-    <div class="work-item"><div class="work-placeholder"><svg class="geo" viewBox="0 0 300 400" fill="none"><path d="M30 200 Q150 30 270 200 Q150 370 30 200Z" stroke="#c8a96e" stroke-width="0.6" fill="none"/><path d="M80 200 Q150 90 220 200 Q150 310 80 200Z" stroke="#c8a96e" stroke-width="0.4" fill="none"/></svg>Projeto 18</div><div class="work-overlay"><div class="work-tag">Cartaz</div><div class="work-name">Projeto 18 — 2021</div></div></div>
-
-    <div class="work-item"><div class="work-placeholder"><svg class="geo" viewBox="0 0 300 400" fill="none"><rect x="20" y="20" width="260" height="360" stroke="#c8a96e" stroke-width="0.6"/><rect x="50" y="50" width="200" height="300" stroke="#c8a96e" stroke-width="0.3"/><rect x="110" y="160" width="80" height="80" stroke="#c8a96e" stroke-width="0.4"/><circle cx="150" cy="200" r="20" fill="#c8a96e" opacity="0.2"/></svg>Projeto 19</div><div class="work-overlay"><div class="work-tag">Branding</div><div class="work-name">Projeto 19 — 2021</div></div></div>
-
-    <div class="work-item"><div class="work-placeholder"><svg class="geo" viewBox="0 0 300 400" fill="none"><circle cx="150" cy="200" r="140" stroke="#c8a96e" stroke-width="0.6"/><circle cx="150" cy="200" r="100" stroke="#c8a96e" stroke-width="0.4"/><circle cx="150" cy="200" r="60" stroke="#c8a96e" stroke-width="0.3"/><circle cx="150" cy="200" r="20" stroke="#c8a96e" stroke-width="0.3"/><line x1="10" y1="200" x2="290" y2="200" stroke="#c8a96e" stroke-width="0.3"/><line x1="150" y1="60" x2="150" y2="340" stroke="#c8a96e" stroke-width="0.3"/></svg>Projeto 20</div><div class="work-overlay"><div class="work-tag">Identidade Visual</div><div class="work-name">Projeto 20 — 2021</div></div></div>
-
-  </div>
-</section>
-
-<section class="about-section" id="about">
-  <div>
-    <p class="about-label">Sobre Mim</p>
-    <h2 class="about-title">Design como<br><em>linguagem</em><br>essencial.</h2>
-    <p class="about-body">
-      Sou designer gráfico com foco em identidade visual, tipografia e comunicação com propósito. Cada projeto é uma oportunidade de encontrar a forma mais precisa para uma ideia — nem mais, nem menos.
-      <br><br>
-      Trabalho com marcas e estúdios que valorizam o pensamento criterioso e a execução impecável.
-    </p>
-  </div>
-  <div class="about-visual">
-    <div class="about-frame">
-      <div class="about-frame-inner">Sua foto aqui</div>
-      <div class="frame-accent"></div>
-      <div class="frame-accent2"></div>
+<section class="work-grid" id="work">
+  <a href="projeto.html?id=marilia-ac" style="text-decoration: none; color: inherit;">
+    <div class="work-item">
+      <div class="work-placeholder">
+        <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      </div>
+      <div class="work-overlay">
+        <div>
+            <div class="work-tag">Sports Design</div>
+            <div class="work-name">Marília AC — Matchday</div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </a>
+
+  </section>
 
 <footer id="footer">
   <div class="footer-top">
@@ -255,12 +216,23 @@
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Contato</div>
-      <a href="mailto:contato@henriquer.com">contato@henriquer.com</a>
-      <a href="tel:+5511999999999">+55 11 99999-9999</a>
+      <a href="mailto:henriqver@gmail.com">henriqver@gmail.com</a>
       <a href="https://instagram.com/henriquer" target="_blank">@henriquer</a>
     </div>
   </div>
 </footer>
+
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
 
 </body>
 </html>
