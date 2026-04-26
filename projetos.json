@@ -1,0 +1,71 @@
+{
+  "lista": [
+    {
+      "id": "marilia-ac",
+      "titulo": "Marília AC — Matchday",
+      "ano": "2026",
+      "categoria": "Sports Design",
+      "cliente": "Marília AC",
+      "papel": "Direção de Arte",
+      "descricao": "Criação de key visuals épicos e hiper-realistas com iluminação volumétrica e sombras dramáticas para a comunicação de dias de jogo. Um trabalho intenso de composição de imagem para elevar a perceção do clube.",
+      "imagens": [
+        "https://images.unsplash.com/photo-1574629810360-7efbb1925536?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1518605368461-1ee125225f2b?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1508344928928-7165b67de128?auto=format&fit=crop&w=800&q=80"
+      ]
+    },
+    {
+      "id": "briosa-concept",
+      "titulo": "Portuguesa Santista",
+      "ano": "2025",
+      "categoria": "Identidade Visual",
+      "cliente": "Portuguesa Santista",
+      "papel": "Design Gráfico & Tipografia",
+      "descricao": "Conceito de uniforme e estudo de patrocínios, mantendo a precisão histórica do escudo branco com a cruz vermelha. O projeto foca em limpar a poluição visual, trazendo um grid rígido para a aplicação das marcas parceiras.",
+      "imagens": [
+        "https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=600&q=80"
+      ]
+    },
+    {
+      "id": "editorial-vogue",
+      "titulo": "Editorial Avant-Garde",
+      "ano": "2024",
+      "categoria": "Editorial",
+      "cliente": "Revista Independente",
+      "papel": "Layout & Grid",
+      "descricao": "Diagramação e escolha tipográfica para um editorial de moda independente. Foco na tensão entre espaços em branco (negative space) e fotografias de grande escala.",
+      "imagens": [
+        "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1604076913837-52ab5629fba9?auto=format&fit=crop&w=800&q=80"
+      ]
+    },
+    {
+      "id": "marca-tech",
+      "titulo": "Fintech Nexus",
+      "ano": "2024",
+      "categoria": "Branding",
+      "cliente": "Nexus Tech",
+      "papel": "Estratégia e Design",
+      "descricao": "Identidade visual para uma nova startup financeira. O desafio foi fugir do azul tradicional de bancos e criar algo enérgico, digital e acessível.",
+      "imagens": [
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80"
+      ]
+    },
+    {
+      "id": "festival-jazz",
+      "titulo": "Sons Urbanos Festival",
+      "ano": "2023",
+      "categoria": "Pôster",
+      "cliente": "Câmara Municipal de SP",
+      "papel": "Ilustração e Tipografia",
+      "descricao": "Série de cartazes experimentais para o festival de jazz. O design reage visualmente ao ritmo da música através de formas geométricas distorcidas.",
+      "imagens": [
+        "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80"
+      ]
+    }
+  ]
+}
