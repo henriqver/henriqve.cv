@@ -66,6 +66,15 @@
       "imagens": [
         "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80"
       ]
+    },
+    {
+      "id": "projeto-01",
+      "titulo": "Trono Rei Pelé",
+      "ano": "2024",
+      "cliente": "FPF | Paulistão 2024",
+      "imagens": [
+        "assets/images/projetos/trono-rei-pelé-0-.png"
+      ]
     }
   ]
 }
