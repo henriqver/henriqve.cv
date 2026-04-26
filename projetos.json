@@ -1,13 +1,14 @@
 {
   "lista": [
     {
-      "id": "projeto-01",
+      "id": "trono-pele",
       "titulo": "Trono Rei Pelé",
       "ano": "2024",
       "cliente": "FPF | Paulistão 2024",
       "imagens": [
         "assets/images/projetos/trono-rei-pelé-0-.png",
-        "assets/images/projetos/trono-rei-pelé-00-.png"
+        "assets/images/projetos/trono-rei-pelé-00-.png",
+        "assets/images/projetos/trono-rei-pelé-1-.jpg"
       ],
       "categoria": "Design",
       "papel": "Direção de Arte",
