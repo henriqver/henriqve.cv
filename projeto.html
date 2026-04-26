@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projeto — Henrique R</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #0a0a0a; --surface: #111111; --surface2: #161616;
+    --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.14);
+    --accent: #c8a96e; --accent2: #e8d5b0;
+    --text: #f0ede8; --muted: #888880; --dim: #444440;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --mono: 'Space Mono', monospace;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: var(--mono); font-size: 13px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; transition: color 0.3s; }
+  a:hover { color: var(--accent); }
+  
+  /* Navbar com fundo sólido */
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
+  }
+  .nav-logo { font-family: var(--serif); font-size: 1.4rem; font-style: italic; color: var(--text); text-decoration: none; }
+  .nav-links { display: flex; gap: 40px; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+
+  /* Projeto Estrutura */
+  .tag { display: inline-block; padding: 4px 10px; border: 1px solid var(--accent); color: var(--accent); border-radius: 20px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; margin-right: 15px;}
+  .year { color: var(--muted); font-size: 0.9rem; }
+  
+  /* Ferramentas de IA */
+  .ai-btn { background: transparent; border: 1px solid var(--accent); color: var(--accent); padding: 8px 16px; border-radius: 20px; font-family: var(--mono); font-size: 0.75rem; cursor: pointer; transition: all 0.3s; text-transform: uppercase; letter-spacing: 1px; margin-right: 10px; margin-bottom: 10px; }
+  .ai-btn:hover { background: var(--accent); color: var(--bg); }
+  #ai-response strong { color: var(--accent); font-family: var(--serif); font-size: 1.2rem; }
+
+  /* Outros Projetos Grid */
+  .other-item { aspect-ratio: 3/4; overflow: hidden; background: var(--surface); border-radius: 4px; margin-bottom: 20px; border: 1px solid var(--border2); position: relative; }
+  .other-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+  .other-card:hover .other-item img { transform: scale(1.05); }
+
+  /* Footer Minimalista */
+  footer { padding: 60px 5%; border-top: 1px solid var(--border); display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 20px; }
+  .footer-brand { color: var(--accent); font-family: var(--serif); font-size: 1.5rem; font-style: italic; letter-spacing: 0; }
+  .footer-socials { display: flex; gap: 25px; }
+  .footer-socials a { color: var(--muted); transition: color 0.3s, transform 0.3s; display: flex; align-items: center; justify-content: center; }
+  .footer-socials a:hover { color: var(--accent); transform: translateY(-2px); }
+  .footer-socials svg { width: 18px; height: 18px; }
+
+  /* Responsivo */
+  @media (max-width: 768px) {
+    .project-details { grid-template-columns: 1fr !important; gap: 20px !important; }
+    #proj-titulo { font-size: 2.5rem !important; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Henrique R</a>
+  <div class="nav-links">
+    <a href="index.html#work">Projetos</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="contato.html">Contato</a>
+  </div>
+</nav>
+
+<!-- Cabeçalho do Projeto -->
+<header class="project-header" style="margin-top: 120px; padding: 0 5%;">
+  <div class="project-meta">
+    <span id="proj-categoria" class="tag">A carregar...</span>
+    <span id="proj-ano" class="year">---</span>
+  </div>
+  <h1 id="proj-titulo" class="project-title" style="font-size: 4rem; margin: 20px 0; font-family: var(--serif); font-weight: 300;">A carregar projeto...</h1>
+  
+  <div class="project-details" style="display: grid; grid-template-columns: 1fr 2fr; gap: 40px; margin-top: 40px; border-top: 1px solid var(--border); padding-top: 40px;">
+    <div class="project-info">
+      <p style="margin-bottom: 10px;"><strong>Cliente:</strong> <span id="proj-cliente" style="color: var(--muted);">---</span></p>
+      <p><strong>Papel:</strong> <span id="proj-papel" style="color: var(--muted);">---</span></p>
+    </div>
+    <div class="project-desc">
+      <p id="proj-descricao" style="font-size: 1.2rem; line-height: 1.6; color: var(--muted);">---</p>
+      
+      <!-- Ferramentas de IA -->
+      <div id="ai-tools" style="margin-top: 30px; display: none;">
+        <div style="margin-bottom: 15px;">
+          <button onclick="expandirCase()" class="ai-btn">Expandir Case ✨</button>
+          <button onclick="gerarPitch()" class="ai-btn">Gerar Pitch ✨</button>
+        </div>
+        <div id="ai-response" style="background: var(--surface2); padding: 20px; border-radius: 4px; border: 1px solid var(--border2); display: none; font-size: 1rem; color: var(--text); line-height: 1.6;"></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Galeria de Imagens Dinâmica -->
+<section class="project-gallery" style="padding: 5%; margin-top: 40px;">
+  <div id="galeria-container" style="
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-auto-rows: 10px;
+    gap: 20px;
+    align-items: start;
+  ">
+    <!-- As imagens aparecerão aqui automaticamente -->
+  </div>
+</section>
+
+<!-- Seção: Outros Projetos -->
+<section class="other-projects" style="padding: 5%; margin-top: 60px; border-top: 1px solid var(--border);">
+  <h3 style="font-family: var(--serif); font-size: 2.5rem; font-weight: 300; margin-bottom: 40px;">Outros Projetos</h3>
+  
+  <div id="outros-projetos-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px;">
+    <!-- Os cartões aleatórios aparecerão aqui -->
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="footer-brand">Henrique R</div>
+  <div class="footer-socials">
+    <a href="mailto:henriqver@gmail.com" aria-label="E-mail">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+    </a>
+    <a href="https://wa.me/5511983236151" target="_blank" aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+    </a>
+    <a href="https://instagram.com/henriqver" target="_blank" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+    </a>
+  </div>
+</footer>
+
+<script>
+  // Variável global para armazenar os projetos após o carregamento
+  let todosOsProjetos = [];
+
+  // Configuração da API do Gemini
+  const apiKey = ""; // A chave da API é injetada automaticamente no ambiente
+
+  async function callGemini(prompt) {
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+    const payload = { contents: [{ parts: [{ text: prompt }] }] };
+    let retries = 5;
+    let delay = 1000;
+    
+    for (let i = 0; i < retries; i++) {
+      try {
+        const response = await fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        if (!response.ok) throw new Error(`HTTP erro: ${response.status}`);
+        const result = await response.json();
+        return result.candidates?.[0]?.content?.parts?.[0]?.text || "Erro ao processar a resposta.";
+      } catch (e) {
+        if (i === retries - 1) return "Desculpe, ocorreu um erro ao ligar à IA. Tente novamente mais tarde.";
+        await new Promise(r => setTimeout(r, delay));
+        delay *= 2;
+      }
+    }
+  }
+
+  async function expandirCase() {
+    const btn = document.querySelector('button[onclick="expandirCase()"]');
+    const respDiv = document.getElementById('ai-response');
+    const textOriginal = btn.innerText;
+    
+    btn.innerText = "A gerar... ⏳";
+    respDiv.style.display = 'block';
+    respDiv.innerHTML = "<em style='color: var(--muted);'>A analisar o projeto e a estruturar o estudo de caso...</em>";
+    
+    const urlParams = new URLSearchParams(window.location.search);
+    const projectId = urlParams.get('id');
+    const projeto = todosOsProjetos.find(p => p.id === projectId);
+    
+    const prompt = `Atue como um redator sénior de design. Crie um estudo de caso profissional para o seguinte projeto de portfólio:
+    Título: ${projeto.titulo}
+    Cliente: ${projeto.cliente}
+    Papel: ${projeto.papel}
+    Resumo: ${projeto.descricao}
+    
+    Escreva em Português. Formate a sua resposta dividindo estritamente em 3 parágrafos curtos com os seguintes subtítulos em negrito: '**O Desafio**', '**A Solução**' e '**O Impacto**'. Seja criativo, inspirador e convincente.`;
+    
+    const resposta = await callGemini(prompt);
+    respDiv.innerHTML = resposta.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    btn.innerText = textOriginal;
+  }
+
+  async function gerarPitch() {
+    const btn = document.querySelector('button[onclick="gerarPitch()"]');
+    const respDiv = document.getElementById('ai-response');
+    const textOriginal = btn.innerText;
+    
+    btn.innerText = "A gerar... ⏳";
+    respDiv.style.display = 'block';
+    respDiv.innerHTML = "<em style='color: var(--muted);'>A criar o discurso de vendas magnético...</em>";
+    
+    const urlParams = new URLSearchParams(window.location.search);
+    const projectId = urlParams.get('id');
+    const projeto = todosOsProjetos.find(p => p.id === projectId);
+    
+    const prompt = `Atue como um diretor de criação experiente. Crie um 'elevator pitch' (discurso rápido de vendas de no máximo 2 frases impactantes) para o projeto de design "${projeto.titulo}", focado em convencer um grande cliente do valor deste trabalho. Contexto do projeto: ${projeto.descricao}. Escreva em Português.`;
+    
+    const resposta = await callGemini(prompt);
+    respDiv.innerHTML = `<strong>Elevator Pitch:</strong><br><br><em style="font-size: 1.1rem;">"${resposta.trim().replace(/^"|"$/g, '')}"</em>`;
+    btn.innerText = textOriginal;
+  }
+
+  function pegarProjetosAleatorios(arrayDeProjetos, idAtual, quantidade) {
+    const filtrados = arrayDeProjetos.filter(projeto => projeto.id !== idAtual);
+    const embaralhados = filtrados.sort(() => 0.5 - Math.random());
+    return embaralhados.slice(0, quantidade);
+  }
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const projectId = urlParams.get('id');
+
+  // Faz a leitura do projetos.json que o CMS (Decap) edita
+  fetch('projetos.json')
+    .then(response => response.json())
+    .then(data => {
+      // IMPORTANTE: Agora acedemos a data.lista por causa da estrutura do CMS
+      todosOsProjetos = data.lista || []; 
+      const projeto = todosOsProjetos.find(p => p.id === projectId);
+
+      if (projeto) {
+        document.title = `${projeto.titulo} — Henrique R`;
+        document.getElementById('proj-titulo').innerText = projeto.titulo;
+        document.getElementById('proj-categoria').innerText = projeto.categoria;
+        document.getElementById('proj-ano').innerText = projeto.ano;
+        document.getElementById('proj-cliente').innerText = projeto.cliente;
+        document.getElementById('proj-papel').innerText = projeto.papel;
+        document.getElementById('proj-descricao').innerText = projeto.descricao;
+
+        document.getElementById('ai-tools').style.display = 'block';
+
+        const galeria = document.getElementById('galeria-container');
+        if (projeto.imagens && projeto.imagens.length > 0) {
+          projeto.imagens.forEach(caminho => {
+            // O CMS pode guardar caminhos começando com '/' ou não. Ajustamos para garantir o caminho correto
+            const caminhoLimpo = caminho.startsWith('/') ? caminho.substring(1) : caminho;
+            
+            const img = document.createElement('img');
+            img.src = caminhoLimpo;
+            img.style.width = "100%";
+            img.style.borderRadius = "4px";
+            img.style.display = "block";
+            
+            img.onload = function() {
+              const rowSpan = Math.ceil((img.getBoundingClientRect().height + 20) / 10);
+              img.style.gridRowEnd = `span ${rowSpan}`;
+            };
+            
+            galeria.appendChild(img);
+          });
+        }
+
+        const sugestoes = pegarProjetosAleatorios(todosOsProjetos, projectId, 4);
+        const containerSugestoes = document.getElementById('outros-projetos-container');
+
+        sugestoes.forEach(sugestao => {
+          let imagemCapa = '';
+          if(sugestao.imagens && sugestao.imagens.length > 0) {
+            imagemCapa = sugestao.imagens[0].startsWith('/') ? sugestao.imagens[0].substring(1) : sugestao.imagens[0];
+          }
+
+          const cartaoHTML = `
+            <a href="projeto.html?id=${sugestao.id}" class="other-card" style="display: block; cursor: pointer;">
+              <div class="other-item">
+                <img src="${imagemCapa}">
+              </div>
+              <div style="font-size: 0.8rem; color: var(--accent); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px;">${sugestao.categoria}</div>
+              <div style="font-family: var(--serif); font-size: 1.8rem; line-height: 1.1;">${sugestao.titulo}</div>
+            </a>
+          `;
+          containerSugestoes.innerHTML += cartaoHTML;
+        });
+
+      } else {
+        document.getElementById('proj-titulo').innerText = "Projeto não encontrado.";
+      }
+    })
+    .catch(error => console.error("Erro ao carregar o projeto:", error));
+</script>
+
+</body>
+</html>
