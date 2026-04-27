@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contato | Henrique R</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -15,114 +16,113 @@
     --mono: 'Space Mono', monospace;
   }
   html { scroll-behavior: smooth; }
-  body { background: var(--bg); color: var(--text); font-family: var(--mono); font-size: 13px; line-height: 1.6; overflow-x: hidden; }
-
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 3rem; border-bottom: 1px solid var(--border); backdrop-filter: blur(12px); background: rgba(10,10,10,0.88); }
-  .nav-logo { font-family: var(--serif); font-size: 1.15rem; font-weight: 300; letter-spacing: 0.1em; color: var(--accent2); text-decoration: none; }
-  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-  .nav-links a { color: var(--muted); text-decoration: none; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; transition: color 0.3s; }
+  body { background: var(--bg); color: var(--text); font-family: var(--mono); font-size: 13px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+  
+  /* Navbar com fundo sólido */
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
+  }
+  .nav-logo { font-family: var(--serif); font-size: 1.4rem; font-style: italic; color: var(--text); text-decoration: none; }
+  .nav-links { display: flex; gap: 40px; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+  .nav-links a { color: var(--text); text-decoration: none; transition: color 0.3s; }
   .nav-links a:hover { color: var(--accent); }
 
-  .contact-main {
-    min-height: calc(100vh - 80px);
-    padding: 10rem 3rem 6rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-bottom: 1px solid var(--border);
-  }
+  /* Contacto Section */
+  /* align-items: center faz com que a coluna da esquerda fique centrada em relação à da direita */
+  .contact-section { padding: 150px 5% 100px; display: grid; grid-template-columns: 1fr 1fr; gap: 100px; min-height: 80vh; align-items: center; }
+  
+  .contact-name { font-family: var(--serif); font-size: 3.5rem; font-weight: 300; line-height: 1.1; margin-bottom: 40px; letter-spacing: -1px; }
 
-  .contact-form {
-    display: flex; flex-direction: column; gap: 1.2rem;
-    width: 100%; max-width: 680px;
-  }
+  .social-links { display: flex; flex-direction: column; gap: 20px; }
+  .social-links a { display: inline-flex; align-items: center; gap: 15px; color: var(--text); text-decoration: none; font-size: 1.1rem; transition: color 0.3s; }
+  .social-links a:hover { color: var(--accent); }
+  .social-links svg { width: 20px; height: 20px; stroke: var(--muted); transition: stroke 0.3s; }
+  .social-links a:hover svg { stroke: var(--accent); }
 
-  .field-group { display: flex; flex-direction: column; gap: 0.5rem; }
-  .field-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--dim); }
+  /* Formulário Simulado */
+  .contact-form { background: var(--surface); padding: 50px; border: 1px solid var(--border); border-radius: 4px; }
+  .form-group { margin-bottom: 30px; }
+  .form-group label { display: block; color: var(--accent); font-size: 10px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+  .form-control { width: 100%; background: transparent; border: none; border-bottom: 1px solid var(--border2); color: var(--text); font-family: var(--mono); font-size: 1rem; padding: 10px 0; transition: border-color 0.3s; }
+  .form-control:focus { outline: none; border-color: var(--accent); }
+  textarea.form-control { resize: vertical; min-height: 100px; }
 
-  .field-input {
-    background: var(--surface2); border: 1px solid var(--border2);
-    color: var(--text); font-family: var(--mono); font-size: 12px;
-    padding: 0.9rem 1rem; outline: none; transition: border-color 0.3s;
-    width: 100%; border-radius: 0; appearance: none;
-  }
-  .field-input:focus { border-color: var(--accent); }
-  .field-input::placeholder { color: var(--dim); }
-
-  .field-textarea {
-    background: var(--surface2); border: 1px solid var(--border2);
-    color: var(--text); font-family: var(--mono); font-size: 12px;
-    padding: 0.9rem 1rem; outline: none; transition: border-color 0.3s;
-    width: 100%; border-radius: 0; resize: vertical; min-height: 180px;
-    line-height: 1.8; appearance: none;
-  }
-  .field-textarea:focus { border-color: var(--accent); }
-  .field-textarea::placeholder { color: var(--dim); }
-
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-
-  .btn-send {
-    display: inline-flex; align-items: center; gap: 0.8rem;
-    margin-top: 0.4rem; padding: 0.9rem 2rem;
-    background: transparent; border: 1px solid var(--accent);
-    color: var(--accent); font-family: var(--mono); font-size: 11px;
-    letter-spacing: 0.15em; text-transform: uppercase;
-    cursor: pointer; transition: background 0.3s, color 0.3s;
-    align-self: flex-start;
-  }
+  .btn-send { background: transparent; border: 1px solid var(--accent); color: var(--text); padding: 15px 30px; font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; transition: all 0.4s; display: inline-flex; align-items: center; gap: 10px; }
+  .btn-send svg { width: 16px; transition: transform 0.4s; }
   .btn-send:hover { background: var(--accent); color: var(--bg); }
-  .btn-send svg { width: 14px; height: 14px; transition: transform 0.3s; }
-  .btn-send:hover svg { transform: translateX(3px); }
+  .btn-send:hover svg { transform: translateX(5px); stroke: var(--bg); }
 
-  footer { border-top: 1px solid var(--border); padding: 3.5rem 3rem; }
-  .footer-top { display: flex; justify-content: space-between; align-items: flex-start; }
-  .footer-logo { font-family: var(--serif); font-size: 1.5rem; font-weight: 300; color: var(--accent2); margin-bottom: 0.6rem; }
-  .footer-tagline { font-size: 11px; color: var(--dim); letter-spacing: 0.1em; }
-  .footer-col-title { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--dim); margin-bottom: 1rem; }
-  .footer-col a { display: block; font-size: 12px; color: var(--muted); text-decoration: none; line-height: 2.2; transition: color 0.3s; }
-  .footer-col a:hover { color: var(--accent); }
-
-  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
-  .fu { animation: fadeUp 0.8s cubic-bezier(0.25,0.46,0.45,0.94) both; }
+  /* Footer Minimalista */
+  footer { padding: 60px 5%; border-top: 1px solid var(--border); display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 20px; }
+  .footer-brand { color: var(--accent); font-family: var(--serif); font-size: 1.5rem; font-style: italic; letter-spacing: 0; }
+  .footer-socials { display: flex; gap: 25px; }
+  .footer-socials a { color: var(--muted); transition: color 0.3s, transform 0.3s; display: flex; align-items: center; justify-content: center; }
+  .footer-socials a:hover { color: var(--accent); transform: translateY(-2px); }
+  .footer-socials svg { width: 18px; height: 18px; }
 
   @media (max-width: 768px) {
-    nav { padding: 1.2rem 1.5rem; }
-    .contact-main { padding: 7rem 1.5rem 5rem; }
-    .form-row { grid-template-columns: 1fr; }
-    footer { padding: 3rem 1.5rem; }
-    .footer-top { flex-direction: column; gap: 2.5rem; }
+    .contact-section { grid-template-columns: 1fr; gap: 60px; }
+    .contact-name { font-size: 3rem; }
+    .contact-form { padding: 30px; }
+    .nav-links { display: none; }
   }
 </style>
 </head>
 <body>
 
 <nav>
-  <a class="nav-logo" href="#">Henrique R</a>
-  <ul class="nav-links">
-    <li><a href="#">Sobre Mim</a></li>
-    <li><a href="#">Contato</a></li>
-  </ul>
+  <a href="index.html" class="nav-logo">Henrique R</a>
+  <div class="nav-links">
+    <a href="index.html#work">Projetos</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="contato.html">Contato</a>
+  </div>
 </nav>
 
-<section class="contact-main">
-  <div class="contact-form fu">
-    <div class="form-row">
-      <div class="field-group">
-        <label class="field-label" for="nome">Nome</label>
-        <input class="field-input" type="text" id="nome" placeholder="Seu nome">
-      </div>
-      <div class="field-group">
-        <label class="field-label" for="email">E-mail</label>
-        <input class="field-input" type="email" id="email" placeholder="seu@email.com">
-      </div>
+<section class="contact-section">
+  <div class="contact-info">
+    <h1 class="contact-name">Henrique Rodrigues</h1>
+    <div class="social-links">
+      <a href="mailto:henriqver@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        henriqver@gmail.com
+      </a>
+      <a href="https://wa.me/5511983236151" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        +55 11 98323 6151
+      </a>
+      <a href="https://instagram.com/henriqver" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        @henriqver
+      </a>
     </div>
-    <div class="field-group">
-      <label class="field-label" for="assunto">Assunto</label>
-      <input class="field-input" type="text" id="assunto" placeholder="Identidade visual, editorial, embalagem...">
+  </div>
+
+  <div class="contact-form">
+    <div class="form-group">
+      <label>Nome</label>
+      <input type="text" id="nome" class="form-control">
     </div>
-    <div class="field-group">
-      <label class="field-label" for="mensagem">Mensagem</label>
-      <textarea class="field-textarea" id="mensagem" placeholder="Conte um pouco sobre o seu projeto..."></textarea>
+    <div class="form-group">
+      <label>E-mail</label>
+      <input type="email" id="email" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>Assunto</label>
+      <input type="text" id="assunto" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>Mensagem</label>
+      <textarea id="mensagem" class="form-control"></textarea>
     </div>
     <button class="btn-send" onclick="enviar()">
       Enviar mensagem
@@ -134,17 +134,17 @@
 </section>
 
 <footer id="footer">
-  <div class="footer-top">
-    <div>
-      <div class="footer-logo">Henrique R</div>
-      <div class="footer-tagline">Design Gráfico — São Paulo, BR</div>
-    </div>
-    <div class="footer-col">
-      <div class="footer-col-title">Contato</div>
-      <a href="mailto:henriqver@gmail.com">henriqver@gmail.com</a>
-      <a href="tel:+5511999999999">+55 11 99999-9999</a>
-      <a href="https://instagram.com/henriquer" target="_blank">@henriquer</a>
-    </div>
+  <div class="footer-brand">Henrique R</div>
+  <div class="footer-socials">
+    <a href="mailto:henriqver@gmail.com" aria-label="E-mail">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+    </a>
+    <a href="https://wa.me/5511983236151" target="_blank" aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+    </a>
+    <a href="https://instagram.com/henriqver" target="_blank" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+    </a>
   </div>
 </footer>
 
@@ -152,12 +152,20 @@
   function enviar() {
     const nome = document.getElementById('nome').value.trim();
     const email = document.getElementById('email').value.trim();
-    const assunto = document.getElementById('assunto').value.trim();
     const mensagem = document.getElementById('mensagem').value.trim();
-    if (!nome || !email || !mensagem) { alert('Por favor, preencha nome, e-mail e mensagem.'); return; }
-    const subjectEncoded = encodeURIComponent(assunto || 'Contato pelo portfólio');
-    const bodyEncoded = encodeURIComponent('Nome: ' + nome + '\nE-mail: ' + email + '\n\n' + mensagem);
-    window.location.href = 'mailto:henriqver@gmail.com?subject=' + subjectEncoded + '&body=' + bodyEncoded;
+    
+    if (!nome || !email || !mensagem) { 
+        alert('Por favor, preencha os campos obrigatórios (Nome, E-mail e Mensagem).');
+        return; 
+    }
+    
+    alert('Formulário enviado com sucesso! Entrarei em contacto em breve.');
+    
+    // Limpa os campos após enviar
+    document.getElementById('nome').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('assunto').value = '';
+    document.getElementById('mensagem').value = '';
   }
 </script>
 
