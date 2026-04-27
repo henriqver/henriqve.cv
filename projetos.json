@@ -30,6 +30,24 @@
       "imagens": [
         "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80"
       ]
+    },
+    {
+      "id": "trofeu-pele",
+      "titulo": "Troféu Rei Pelé",
+      "ano": "2024",
+      "descricao": "Em homenagem ao falecimento de Pelé no final de 2022, desenhei a coroa especial anexada à taça do Paulistão e aos troféus de todas as outras competições da FPF durante o ano de 2023.",
+      "categoria": "Design de Produto, Identidade Visual",
+      "cliente": "FPF | Paulistão 2024",
+      "papel": "Diretor de Arte",
+      "imagens": [
+        "assets/images/projetos/52809675756_a0805d6525_o.jpg",
+        "assets/images/projetos/52809112307_9531405841_o.jpg",
+        "assets/images/projetos/52809112362_c7f50edff1_o.jpg",
+        "assets/images/projetos/52809876744_9b696fdcb0_o.jpg",
+        "assets/images/projetos/52810125693_ba5b83bd83_o.jpg",
+        "assets/images/projetos/taça-pelé-2-.png",
+        "assets/images/projetos/prancheta-1.png"
+      ]
     }
   ]
 }
