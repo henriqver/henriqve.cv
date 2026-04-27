@@ -28,4 +28,4 @@ collections:
                 name: "imagens"
                 widget: "markdown"
                 required: false
-                buttons: ["image"]
+                minimal: true
