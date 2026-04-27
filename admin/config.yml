@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: main # Mude para master se o seu GitHub usar master
+  branch: main
 
 media_folder: "assets/images/projetos"
 public_folder: "assets/images/projetos"
@@ -11,7 +11,7 @@ collections:
     files:
       - label: "Meus Projetos"
         name: "projetos"
-        file: "projetos.json" # O ficheiro que ele vai editar
+        file: "projetos.json"
         fields:
           - label: "Lista de Projetos"
             name: "lista"
@@ -24,7 +24,8 @@ collections:
               - {label: "Cliente", name: "cliente", widget: "string"}
               - {label: "Seu Papel", name: "papel", widget: "string"}
               - {label: "Descrição", name: "descricao", widget: "text"}
-              - label: "Galeria de Imagens"
+              - label: "Galeria de Imagens (Arraste VÁRIAS fotos aqui de uma só vez)"
                 name: "imagens"
-                widget: "list"
-                field: {label: "Imagem", name: "imagem", widget: "image"}
+                widget: "markdown"
+                required: false
+                buttons: ["image"]
