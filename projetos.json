@@ -38,15 +38,16 @@
       ]
     },
     {
-      "id": "festival-jazz",
-      "titulo": "Sons Urbanos Festival",
+      "id": "familia_tacas_paulista",
+      "titulo": "Família de Taças do Futebol Paulista",
       "ano": "2023",
-      "categoria": "Pôster",
-      "cliente": "Câmara Municipal de SP",
-      "papel": "Ilustração e Tipografia",
-      "descricao": "Série de cartazes experimentais para o festival de jazz. O design reage visualmente ao ritmo da música através de formas geométricas distorcidas.",
+      "categoria": "Design de Produto, Identidade Visual",
+      "cliente": "FPF",
+      "papel": "Designer Gráfico",
+      "descricao": "Em conjunto com o time de comunicação e marketing da FPF, atuei na concepção da nova família de taças do futebol paulista. O projeto engloba os troféus do Paulistão, Paulistão Feminino, divisões de acesso e categorias de base, além do desenho das medalhas e patches de campeão.",
       "imagens": [
-        "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80"
+        "assets/images/projetos/dsc_5328_2.png",
+        "assets/images/projetos/dsc_3588.jpg"
       ]
     }
   ]
