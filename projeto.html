@@ -83,13 +83,12 @@
   </div>
 </nav>
 
-<!-- Cabeçalho do Projeto -->
 <header class="project-header" style="margin-top: 120px; padding: 0 5%;">
   <div class="project-meta">
-    <span id="proj-categoria" class="tag">A carregar...</span>
+    <span id="proj-categoria" class="tag">Carregando...</span>
     <span id="proj-ano" class="year">...</span>
   </div>
-  <h1 id="proj-titulo" class="project-title" style="font-size: 4rem; margin: 20px 0; font-family: var(--serif); font-weight: 300;">A carregar projeto...</h1>
+  <h1 id="proj-titulo" class="project-title" style="font-size: 4rem; margin: 20px 0; font-family: var(--serif); font-weight: 300;">Carregando projeto...</h1>
   
   <div class="project-details" style="display: grid; grid-template-columns: 1fr 2fr; gap: 40px; margin-top: 40px; border-top: 1px solid var(--border); padding-top: 40px;">
     <div class="project-info">
@@ -102,19 +101,16 @@
   </div>
 </header>
 
-<!-- Galeria de Imagens Dinâmica -->
 <section class="project-gallery" style="padding: 5%; margin-top: 40px;">
   <div id="galeria-container" class="gallery-grid">
-    <!-- As imagens aparecerão aqui automaticamente -->
+    <!-- Imagens injetadas via JS -->
   </div>
 </section>
 
-<!-- Secção: Outros Projetos -->
 <section class="other-projects" style="padding: 5%; margin-top: 60px; border-top: 1px solid var(--border);">
   <h3 style="font-family: var(--serif); font-size: 2.5rem; font-weight: 300; margin-bottom: 40px;">Outros Projetos</h3>
-  
   <div id="outros-projetos-container" class="other-projects-grid">
-    <!-- Os cartões aleatórios aparecerão aqui -->
+    <!-- Sugestões injetadas via JS -->
   </div>
 </section>
 
@@ -133,19 +129,12 @@
   </div>
 </footer>
 
-<!-- Modal Lightbox para expandir imagens -->
 <div id="lightbox" onclick="this.style.display='none'">
-  <img id="lightbox-img" src="" alt="Imagem Expandida">
+  <img id="lightbox-img" src="" alt="Expansão">
 </div>
 
 <script>
   let todosOsProjetos = [];
-
-  function pegarProjetosAleatorios(arrayDeProjetos, idAtual, quantidade) {
-    const filtrados = arrayDeProjetos.filter(projeto => projeto.id !== idAtual);
-    const embaralhados = filtrados.sort(() => 0.5 - Math.random());
-    return embaralhados.slice(0, quantidade);
-  }
 
   const urlParams = new URLSearchParams(window.location.search);
   const projectId = urlParams.get('id');
@@ -165,70 +154,57 @@
         document.getElementById('proj-papel').innerText = projeto.papel;
         document.getElementById('proj-descricao').innerText = projeto.descricao;
 
-        // Extração Inteligente das Imagens
+        // Extração Segura de Imagens[cite: 1]
         let urlsImagens = [];
-        
-        // Se as imagens vierem do novo campo em massa (texto Markdown)
-        if (typeof projeto.imagens === 'string') {
-            const regex = /!\[.*?\]\((.*?)\)/g;
-            let resultado;
-            while ((resultado = regex.exec(projeto.imagens)) !== null) {
-                urlsImagens.push(resultado[1]);
+        if (projeto.imagens) {
+            if (Array.isArray(projeto.imagens)) {
+                urlsImagens = projeto.imagens;
+            } else if (typeof projeto.imagens === 'string') {
+                const regex = /!\[.*?\]\((.*?)\)/g;
+                let match;
+                while ((match = regex.exec(projeto.imagens)) !== null) {
+                    urlsImagens.push(match[1]);
+                }
+                if (urlsImagens.length === 0 && projeto.imagens.trim() !== "") {
+                    urlsImagens = projeto.imagens.split(',').map(s => s.trim());
+                }
             }
-        } 
-        // Se forem imagens antigas guardadas no formato de lista
-        else if (Array.isArray(projeto.imagens)) {
-            urlsImagens = projeto.imagens;
         }
 
         const galeria = document.getElementById('galeria-container');
-        if (urlsImagens.length > 0) {
-          urlsImagens.forEach(caminho => {
-            const caminhoLimpo = caminho.startsWith('/') ? caminho.substring(1) : caminho;
-            const img = document.createElement('img');
-            img.src = caminhoLimpo;
-            img.className = 'gallery-img';
-            
-            img.onclick = function() {
-              document.getElementById('lightbox-img').src = this.src;
-              document.getElementById('lightbox').style.display = 'flex';
-            };
-            
-            galeria.appendChild(img);
-          });
-        }
-
-        const sugestoes = pegarProjetosAleatorios(todosOsProjetos, projectId, 4);
-        const containerSugestoes = document.getElementById('outros-projetos-container');
-
-        sugestoes.forEach(sugestao => {
-          let imagemCapa = '';
-          
-          // Lógica para encontrar a capa nos Outros Projetos
-          if (typeof sugestao.imagens === 'string') {
-              const match = /!\[.*?\]\((.*?)\)/.exec(sugestao.imagens);
-              if (match) imagemCapa = match[1].startsWith('/') ? match[1].substring(1) : match[1];
-          } else if (Array.isArray(sugestao.imagens) && sugestao.imagens.length > 0) {
-              imagemCapa = sugestao.imagens[0].startsWith('/') ? sugestao.imagens[0].substring(1) : sugestao.imagens[0];
-          }
-
-          const cartaoHTML = `
-            <a href="projeto.html?id=${sugestao.id}" class="other-card" style="display: block; cursor: pointer;">
-              <div class="other-item">
-                <img src="${imagemCapa}" alt="${sugestao.titulo}">
-              </div>
-              <div style="font-size: 0.8rem; color: var(--accent); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px;">${sugestao.categoria}</div>
-              <div style="font-family: var(--serif); font-size: 1.8rem; line-height: 1.1;">${sugestao.titulo}</div>
-            </a>
-          `;
-          containerSugestoes.innerHTML += cartaoHTML;
+        urlsImagens.forEach(caminho => {
+          const urlFormatada = caminho.replace(/^\//, '');
+          const img = document.createElement('img');
+          img.src = urlFormatada;
+          img.className = 'gallery-img';
+          img.onclick = () => {
+            document.getElementById('lightbox-img').src = img.src;
+            document.getElementById('lightbox').style.display = 'flex';
+          };
+          galeria.appendChild(img);
         });
 
-      } else {
-        document.getElementById('proj-titulo').innerText = "Projeto não encontrado.";
+        // Outros Projetos (Aleatórios)
+        const sugestoes = todosOsProjetos.filter(p => p.id !== projectId).sort(() => 0.5 - Math.random()).slice(0, 4);
+        const containerSugestoes = document.getElementById('outros-projetos-container');
+        sugestoes.forEach(s => {
+          let capa = '';
+          if (Array.isArray(s.imagens) && s.imagens.length > 0) capa = s.imagens[0];
+          else if (typeof s.imagens === 'string') {
+              const m = /!\[.*?\]\((.*?)\)/.exec(s.imagens);
+              if (m) capa = m[1];
+          }
+          const urlCapa = capa.replace(/^\//, '');
+          containerSugestoes.innerHTML += `
+            <a href="projeto.html?id=${s.id}" class="other-card">
+              <div class="other-item"><img src="${urlCapa}"></div>
+              <div style="font-size: 0.8rem; color: var(--accent); margin-bottom: 8px; text-transform: uppercase;">${s.categoria}</div>
+              <div style="font-family: var(--serif); font-size: 1.8rem; line-height: 1.1;">${s.titulo}</div>
+            </a>`;
+        });
       }
     })
-    .catch(error => console.error("Erro ao carregar o projeto:", error));
+    .catch(e => console.error("Erro:", e));
 </script>
 
 </body>
