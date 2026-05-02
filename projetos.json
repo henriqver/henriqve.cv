@@ -5,7 +5,9 @@
       "titulo": "Trono Rei Pelé",
       "ano": "2024",
       "cliente": "FPF | Paulistão 2024",
-       "imagens": "",
+      "imagens": [
+        "assets/images/projetos/trono-rei-pelé-8-.jpg"
+      ],
       "categoria": "Design",
       "papel": "Direção de Arte",
       "descricao": "Em homenagem ao Rei Pelé, falecido no final de 2022, fui responsável por desenhar a coroa especial anexada à taça do Paulistão — e de todas as competições da FPF em 2023. Foi um marco histórico e um imenso orgulho eternizar o maior jogador de todos os tempos no troféu mais tradicional do país."
@@ -18,7 +20,7 @@
       "categoria": "Design de Produto, Identidade Visual",
       "cliente": "FPF | Paulistão 2023",
       "papel": "Diretor de Arte",
-       "imagens": ""
+      "imagens": ""
     },
     {
       "id": "familia_tacas_paulista",
@@ -28,7 +30,7 @@
       "cliente": "FPF",
       "papel": "Designer Gráfico",
       "descricao": "Em conjunto com o time de comunicação e marketing da FPF, atuei na concepção da nova família de taças do futebol paulista. O projeto engloba os troféus do Paulistão, Paulistão Feminino, divisões de acesso e categorias de base, além do desenho das medalhas e patches de campeão.",
-       "imagens": ""
+      "imagens": ""
     },
     {
       "id": "kv_paulistao_2026",
