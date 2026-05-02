@@ -24,8 +24,7 @@ collections:
               - {label: "Cliente", name: "cliente", widget: "string"}
               - {label: "Seu Papel", name: "papel", widget: "string"}
               - {label: "Descrição", name: "descricao", widget: "text"}
-              - label: "Galeria de Imagens (Arraste VÁRIAS fotos aqui de uma só vez)"
+              - label: "Galeria de Imagens"
                 name: "imagens"
-                widget: "markdown"
-                required: false
-                minimal: true
+                widget: "list"
+                field: {label: "Imagem", name: "caminho", widget: "image", media_library: {allow_multiple: true}}
