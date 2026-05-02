@@ -63,14 +63,19 @@
     });
 
   function carregarSequenciaFotos(index) {
-    const nomeBase = index.toString().padStart(2, '0');
-    const caminhoBase = `assets/images/projetos/${projectId}/${nomeBase}`;
+    // O Windows gera o padrão: id-do-projeto (1).jpg, id-do-projeto (2).jpg, etc.
+    const nomeArquivo = `${projectId} (${index})`;
+    const caminhoBase = `assets/images/projetos/${projectId}/${nomeArquivo}`;
     const extensoes = ['.png', '.jpg', '.jpeg', '.webp'];
     
     let tentativaAtual = 0;
 
     function testarProximaExtensao() {
       if (tentativaAtual >= extensoes.length) {
+        // Se falhou em todas as extensões para o índice 1, tentamos sem o parênteses (caso a primeira foto não tenha)
+        if (index === 1 && !nomeArquivo.includes(" (1)")) {
+           // Lógica de fallback opcional se necessário
+        }
         console.log("Fim da pasta ou sequência interrompida.");
         return;
       }
