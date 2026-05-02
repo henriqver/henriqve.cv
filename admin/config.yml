@@ -2,7 +2,9 @@ backend:
   name: git-gateway
   branch: main
 
+# Pasta onde as imagens serão armazenadas fisicamente
 media_folder: "assets/images/projetos"
+# Caminho público para acesso via site
 public_folder: "assets/images/projetos"
 
 collections:
@@ -17,14 +19,15 @@ collections:
             name: "lista"
             widget: "list"
             fields:
-              - {label: "ID do Projeto (ex: projeto-01)", name: "id", widget: "string"}
+              - {label: "ID do Projeto (ex: trofeu-pele)", name: "id", widget: "string"}
               - {label: "Título do Projeto", name: "titulo", widget: "string"}
               - {label: "Ano", name: "ano", widget: "string"}
               - {label: "Categoria", name: "categoria", widget: "string"}
               - {label: "Cliente", name: "cliente", widget: "string"}
               - {label: "Seu Papel", name: "papel", widget: "string"}
               - {label: "Descrição", name: "descricao", widget: "text"}
-              - label: "Galeria de Imagens"
-                name: "imagens"
-                widget: "list"
-                field: {label: "Imagem", name: "caminho", widget: "image", media_library: {allow_multiple: true}}
+              # Lembrete visual no painel sobre a automação
+              - label: "Instruções de Imagem"
+                name: "helper"
+                widget: "hidden"
+                default: "As fotos devem estar na pasta assets/images/projetos/{{id}}/ nomeadas como {{id}} (1).jpg, {{id}} (2).jpg, etc."
