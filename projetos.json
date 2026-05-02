@@ -41,6 +41,16 @@
       "papel": "Diretor de Arte",
       "descricao": "Apresentada de forma adiantada no sorteio da edição de 2025, a identidade visual do Paulistão 2026 utiliza liquid glass e mesh gradients para trazer uma estética mais moderna ao campeonato. A ideia é refletir o novo formato do torneio e sua posição de vanguarda no Brasil, com um design estruturado para se desdobrar em todas as peças produzidas para a competição.",
       "imagens": ""
+    },
+    {
+      "helper": "As fotos devem estar na pasta assets/images/projetos/{{id}}/ nomeadas como {{id}} (1).jpg, {{id}} (2).jpg, etc.",
+      "id": "series_youtube_paulistao",
+      "titulo": "Séries YouTube Paulistão",
+      "ano": "2023 a 2026",
+      "categoria": "Identidade Visual, Design Digital, Broadcast Design",
+      "cliente": "FPF | Paulistão",
+      "papel": "Diretor de Arte",
+      "descricao": "Sou responsável pelo desenvolvimento e pelas atualizações contínuas da identidade visual e dos pacotes gráficos (assinaturas, thumbnails, GCs e vinhetas) para as diversas séries do canal do Paulistão no YouTube. O escopo inclui programas como Estado do Rei, Pelas Lentes do Paulistão, Taticamente Falando e Rolê Aleatório."
     }
   ]
 }
