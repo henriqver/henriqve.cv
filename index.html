@@ -255,5 +255,70 @@
     });
 </script>
 
+<!-- ... Resto do seu HTML (Nav, Header, etc) ... -->
+
+<section id="work" style="padding: 5%;">
+  <!-- Onde os projetos vão aparecer -->
+  <div id="projetos-container" class="projects-grid">
+    <!-- O JS vai preencher este espaço automaticamente -->
+  </div>
+</section>
+
+<!-- ... Seu Footer ... -->
+
+<!-- O SCRIPT DEVE VIR AQUI, ANTES DO FIM DO BODY -->
+<script>
+  fetch('projetos.json')
+    .then(response => response.json())
+    .then(data => {
+      const container = document.getElementById('projetos-container');
+      const listaProjetos = data.lista || [];
+
+      listaProjetos.forEach(projeto => {
+        const projetoCard = document.createElement('a');
+        projetoCard.href = `projeto.html?id=${projeto.id}`;
+        projetoCard.className = 'project-card';
+
+        const id = projeto.id;
+        const extensões = ['.png', '.jpg', '.jpeg', '.webp'];
+        
+        const imgElement = document.createElement('img');
+        imgElement.alt = projeto.titulo;
+        imgElement.loading = "lazy";
+
+        let tentativa = 0;
+        function testarCapa() {
+          if (tentativa < extensões.length) {
+            // Busca o arquivo (0) para a capa
+            const urlTeste = `assets/images/projetos/${id}/${id} (0)${extensões[tentativa]}`;
+            const imgTeste = new Image();
+            imgTeste.src = urlTeste;
+
+            imgTeste.onload = () => { imgElement.src = urlTeste; };
+            imgTeste.onerror = () => {
+              tentativa++;
+              testarCapa();
+            };
+          } else {
+            imgElement.style.backgroundColor = 'var(--surface)';
+          }
+        }
+        testarCapa();
+
+        projetoCard.innerHTML = `
+          <div class="project-image">
+            ${imgElement.outerHTML}
+          </div>
+          <div class="project-info">
+            <div class="project-category">${projeto.categoria}</div>
+            <h2 class="project-title">${projeto.titulo}</h2>
+          </div>
+        `;
+        container.appendChild(projetoCard);
+      });
+    })
+    .catch(error => console.error("Erro na home:", error));
+</script>
+
 </body>
 </html>
