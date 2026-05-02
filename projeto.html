@@ -8,67 +8,26 @@
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
   :root {
-    --bg: #0a0a0a; --surface: #111111; --surface2: #161616;
+    --bg: #0a0a0a; --surface: #111111;
     --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.14);
-    --accent: #c8a96e; --accent2: #e8d5b0;
-    --text: #f0ede8; --muted: #888880; --dim: #444440;
+    --accent: #c8a96e; --text: #f0ede8; --muted: #888880;
     --serif: 'Cormorant Garamond', Georgia, serif;
     --mono: 'Space Mono', monospace;
   }
-  html { scroll-behavior: smooth; }
-  body { background: var(--bg); color: var(--text); font-family: var(--mono); font-size: 13px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
-  a { color: inherit; text-decoration: none; transition: color 0.3s; }
-  a:hover { color: var(--accent); }
+  body { background: var(--bg); color: var(--text); font-family: var(--mono); font-size: 13px; line-height: 1.5; }
   
-  /* Navbar com fundo sólido */
-  nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 20px 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: var(--bg);
-    border-bottom: 1px solid var(--border);
-    z-index: 100;
-  }
-  .nav-logo { font-family: var(--serif); font-size: 1.4rem; font-style: italic; color: var(--text); text-decoration: none; }
-  .nav-links { display: flex; gap: 40px; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
-
-  /* Projeto Estrutura */
-  .tag { display: inline-block; padding: 4px 10px; border: 1px solid var(--accent); color: var(--accent); border-radius: 20px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; margin-right: 15px;}
-  .year { color: var(--muted); font-size: 0.9rem; }
+  nav { position: fixed; top: 0; width: 100%; padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; background: var(--bg); border-bottom: 1px solid var(--border); z-index: 100; }
+  .nav-logo { font-family: var(--serif); font-size: 1.4rem; font-style: italic; text-decoration: none; color: var(--text); }
   
-  /* Galeria e Lightbox */
-  .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-  .gallery-img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 4px; cursor: zoom-in; display: block; transition: opacity 0.3s; }
+  .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 5%; margin-top: 40px; }
+  .gallery-img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 4px; cursor: zoom-in; transition: opacity 0.3s; }
   .gallery-img:hover { opacity: 0.8; }
-  
+
   #lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10,10,10,0.95); z-index: 9999; align-items: center; justify-content: center; cursor: zoom-out; }
-  #lightbox img { max-width: 90vw; max-height: 90vh; object-fit: contain; border-radius: 4px; }
+  #lightbox img { max-width: 90vw; max-height: 90vh; object-fit: contain; }
 
-  /* Outros Projetos Grid */
-  .other-projects-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
-  .other-item { aspect-ratio: 3/4; overflow: hidden; background: var(--surface); border-radius: 4px; margin-bottom: 20px; border: 1px solid var(--border2); position: relative; }
-  .other-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
-  .other-card:hover .other-item img { transform: scale(1.05); }
-
-  /* Footer Minimalista */
-  footer { padding: 60px 5%; border-top: 1px solid var(--border); display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 20px; }
-  .footer-brand { color: var(--accent); font-family: var(--serif); font-size: 1.5rem; font-style: italic; letter-spacing: 0; }
-  .footer-socials { display: flex; gap: 25px; }
-  .footer-socials a { color: var(--muted); transition: color 0.3s, transform 0.3s; display: flex; align-items: center; justify-content: center; }
-  .footer-socials a:hover { color: var(--accent); transform: translateY(-2px); }
-  .footer-socials svg { width: 18px; height: 18px; }
-
-  /* Responsivo */
   @media (max-width: 768px) {
-    .project-details { grid-template-columns: 1fr !important; gap: 20px !important; }
-    #proj-titulo { font-size: 2.5rem !important; }
-    .nav-links { display: none; }
     .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
-    .other-projects-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
   }
 </style>
 </head>
@@ -76,136 +35,69 @@
 
 <nav>
   <a href="index.html" class="nav-logo">Henrique R</a>
-  <div class="nav-links">
-    <a href="index.html#work">Projetos</a>
-    <a href="sobre.html">Sobre</a>
-    <a href="contato.html">Contato</a>
-  </div>
 </nav>
 
-<header class="project-header" style="margin-top: 120px; padding: 0 5%;">
-  <div class="project-meta">
-    <span id="proj-categoria" class="tag">Carregando...</span>
-    <span id="proj-ano" class="year">...</span>
-  </div>
-  <h1 id="proj-titulo" class="project-title" style="font-size: 4rem; margin: 20px 0; font-family: var(--serif); font-weight: 300;">Carregando projeto...</h1>
-  
-  <div class="project-details" style="display: grid; grid-template-columns: 1fr 2fr; gap: 40px; margin-top: 40px; border-top: 1px solid var(--border); padding-top: 40px;">
-    <div class="project-info">
-      <p style="margin-bottom: 10px;"><strong>Cliente:</strong> <span id="proj-cliente" style="color: var(--muted);">...</span></p>
-      <p><strong>Papel:</strong> <span id="proj-papel" style="color: var(--muted);">...</span></p>
-    </div>
-    <div class="project-desc">
-      <p id="proj-descricao" style="font-size: 1.2rem; line-height: 1.6; color: var(--muted);">...</p>
-    </div>
-  </div>
+<header style="margin-top: 120px; padding: 0 5%;">
+  <h1 id="proj-titulo" style="font-size: 4rem; font-family: var(--serif); font-weight: 300;">Carregando...</h1>
+  <p id="proj-descricao" style="font-size: 1.2rem; color: var(--muted); margin-top: 20px; max-width: 800px;"></p>
 </header>
 
-<section class="project-gallery" style="padding: 5%; margin-top: 40px;">
-  <div id="galeria-container" class="gallery-grid">
-    <!-- Imagens injetadas via JS -->
-  </div>
-</section>
+<div id="galeria-container" class="gallery-grid"></div>
 
-<section class="other-projects" style="padding: 5%; margin-top: 60px; border-top: 1px solid var(--border);">
-  <h3 style="font-family: var(--serif); font-size: 2.5rem; font-weight: 300; margin-bottom: 40px;">Outros Projetos</h3>
-  <div id="outros-projetos-container" class="other-projects-grid">
-    <!-- Sugestões injetadas via JS -->
-  </div>
-</section>
-
-<footer id="footer">
-  <div class="footer-brand">Henrique R</div>
-  <div class="footer-socials">
-    <a href="mailto:henriqver@gmail.com" aria-label="E-mail">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-    </a>
-    <a href="https://wa.me/5511983236151" target="_blank" aria-label="WhatsApp">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-    </a>
-    <a href="https://instagram.com/henriqver" target="_blank" aria-label="Instagram">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-    </a>
-  </div>
-</footer>
-
-<div id="lightbox" onclick="this.style.display='none'">
-  <img id="lightbox-img" src="" alt="Expansão">
-</div>
+<div id="lightbox" onclick="this.style.display='none'"><img id="lightbox-img" src=""></div>
 
 <script>
-  let todosOsProjetos = [];
-
   const urlParams = new URLSearchParams(window.location.search);
   const projectId = urlParams.get('id');
+  const galeria = document.getElementById('galeria-container');
 
   fetch('projetos.json')
     .then(response => response.json())
     .then(data => {
-      todosOsProjetos = data.lista || []; 
-      const projeto = todosOsProjetos.find(p => p.id === projectId);
-
+      const projeto = data.lista.find(p => p.id === projectId);
       if (projeto) {
-        document.title = `${projeto.titulo} | Henrique R`;
         document.getElementById('proj-titulo').innerText = projeto.titulo;
-        document.getElementById('proj-categoria').innerText = projeto.categoria;
-        document.getElementById('proj-ano').innerText = projeto.ano;
-        document.getElementById('proj-cliente').innerText = projeto.cliente;
-        document.getElementById('proj-papel').innerText = projeto.papel;
         document.getElementById('proj-descricao').innerText = projeto.descricao;
-
-        // Extração Segura de Imagens[cite: 1]
-        let urlsImagens = [];
-        if (projeto.imagens) {
-            if (Array.isArray(projeto.imagens)) {
-                urlsImagens = projeto.imagens;
-            } else if (typeof projeto.imagens === 'string') {
-                const regex = /!\[.*?\]\((.*?)\)/g;
-                let match;
-                while ((match = regex.exec(projeto.imagens)) !== null) {
-                    urlsImagens.push(match[1]);
-                }
-                if (urlsImagens.length === 0 && projeto.imagens.trim() !== "") {
-                    urlsImagens = projeto.imagens.split(',').map(s => s.trim());
-                }
-            }
-        }
-
-        const galeria = document.getElementById('galeria-container');
-        urlsImagens.forEach(caminho => {
-          const urlFormatada = caminho.replace(/^\//, '');
-          const img = document.createElement('img');
-          img.src = urlFormatada;
-          img.className = 'gallery-img';
-          img.onclick = () => {
-            document.getElementById('lightbox-img').src = img.src;
-            document.getElementById('lightbox').style.display = 'flex';
-          };
-          galeria.appendChild(img);
-        });
-
-        // Outros Projetos (Aleatórios)
-        const sugestoes = todosOsProjetos.filter(p => p.id !== projectId).sort(() => 0.5 - Math.random()).slice(0, 4);
-        const containerSugestoes = document.getElementById('outros-projetos-container');
-        sugestoes.forEach(s => {
-          let capa = '';
-          if (Array.isArray(s.imagens) && s.imagens.length > 0) capa = s.imagens[0];
-          else if (typeof s.imagens === 'string') {
-              const m = /!\[.*?\]\((.*?)\)/.exec(s.imagens);
-              if (m) capa = m[1];
-          }
-          const urlCapa = capa.replace(/^\//, '');
-          containerSugestoes.innerHTML += `
-            <a href="projeto.html?id=${s.id}" class="other-card">
-              <div class="other-item"><img src="${urlCapa}"></div>
-              <div style="font-size: 0.8rem; color: var(--accent); margin-bottom: 8px; text-transform: uppercase;">${s.categoria}</div>
-              <div style="font-family: var(--serif); font-size: 1.8rem; line-height: 1.1;">${s.titulo}</div>
-            </a>`;
-        });
+        carregarSequenciaFotos(1); 
       }
-    })
-    .catch(e => console.error("Erro:", e));
-</script>
+    });
 
+  function carregarSequenciaFotos(index) {
+    const nomeBase = index.toString().padStart(2, '0');
+    const caminhoBase = `assets/images/projetos/${projectId}/${nomeBase}`;
+    const extensoes = ['.png', '.jpg', '.jpeg', '.webp'];
+    
+    let tentativaAtual = 0;
+
+    function testarProximaExtensao() {
+      if (tentativaAtual >= extensoes.length) {
+        console.log("Fim da pasta ou sequência interrompida.");
+        return;
+      }
+
+      const imgTeste = new Image();
+      imgTeste.src = caminhoBase + extensoes[tentativaAtual];
+
+      imgTeste.onload = function() {
+        const img = document.createElement('img');
+        img.src = this.src;
+        img.className = 'gallery-img';
+        img.onclick = () => {
+          document.getElementById('lightbox-img').src = img.src;
+          document.getElementById('lightbox').style.display = 'flex';
+        };
+        galeria.appendChild(img);
+        carregarSequenciaFotos(index + 1); 
+      };
+
+      imgTeste.onerror = function() {
+        tentativaAtual++;
+        testarProximaExtensao();
+      };
+    }
+
+    testarProximaExtensao();
+  }
+</script>
 </body>
 </html>
