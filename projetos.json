@@ -211,6 +211,16 @@
       "cliente": "FPF | Paulistão Feminino",
       "papel": "Diretor de Arte",
       "descricao": "Responsável pelo design do evento de Premiação do Paulistão Feminino, desenvolvi um Key Visual exclusivo para a cerimônia. A identidade foi desdobrada em aplicações cenográficas, materiais impressos, telas de LED e pacote gráfico para as redes sociais e transmissão oficial."
+    },
+    {
+      "helper": "As fotos devem estar na pasta assets/images/projetos/{{id}}/ nomeadas como {{id}} (1).jpg, {{id}} (2).jpg, etc.",
+      "id": "lancamento_copinha",
+      "titulo": "Lançamento da Copinha",
+      "ano": "2023 - 2026",
+      "categoria": "Key Visual, Cenografia",
+      "cliente": "FPF | Copinha",
+      "papel": "Diretor de Arte",
+      "descricao": "Para o evento de lançamento da maior competição de base do mundo, criei um Key Visual dinâmico que reflete a energia do torneio. A entrega abrangeu desde a cenografia do espaço físico até as artes digitais para telões, transmissão ao vivo e peças de engajamento nas redes sociais."
     }
   ]
 }
