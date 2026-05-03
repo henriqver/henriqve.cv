@@ -133,7 +133,7 @@
       "descricao": "Desenvolvo artes digitais para as redes sociais de equipes do futebol paulista durante suas campanhas em competições nacionais e internacionais. O foco é criar peças de alto impacto visual que engajem os torcedores e celebrem a força do futebol paulista além das fronteiras do estado."
     },
     {
-      "formato_galeria": "cortar",
+      "formato_galeria": "original",
       "helper": "Capa: id (0). Galeria: id (1), id (2), etc. na pasta assets/images/projetos/{{id}}/",
       "id": "paulistao_2025",
       "titulo": "Paulistão 2025",
