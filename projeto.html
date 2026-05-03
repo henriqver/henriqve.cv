@@ -23,30 +23,36 @@
   .project-title { font-size: 4rem; font-family: var(--serif); font-weight: 300; margin-bottom: 20px; }
   .project-desc { font-size: 1.2rem; color: var(--muted); max-width: 800px; line-height: 1.6; }
 
-  /* Implementação Masonry (Pinterest Style)[cite: 1] */
+  /* Grelha Dinâmica com preenchimento denso */
   .gallery-grid { 
-    column-count: 4; 
-    column-gap: 20px; 
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-flow: dense; /* Faz as imagens "subirem" para tapar buracos */
+    gap: 20px; 
     padding: 5%; 
     margin-top: 40px;
   }
   
   .gallery-img { 
     width: 100%; 
-    display: block;
-    margin-bottom: 20px; /* Espaço entre imagens na mesma coluna[cite: 1] */
+    height: 100%;
+    object-fit: cover;
     border-radius: 4px; 
     cursor: zoom-in; 
     transition: opacity 0.3s;
-    break-inside: avoid; /* Evita que a imagem quebre entre colunas[cite: 1] */
   }
   .gallery-img:hover { opacity: 0.8; }
+
+  /* Quando o formato é original, permitimos que imagens horizontais ocupem mais colunas */
+  .gallery-img.landscape {
+    grid-column: span 2; /* Opcional: faz imagens horizontais serem maiores[cite: 1] */
+  }
 
   #lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10,10,10,0.95); z-index: 9999; align-items: center; justify-content: center; cursor: zoom-out; }
   #lightbox img { max-width: 90vw; max-height: 90vh; object-fit: contain; }
 
   @media (max-width: 768px) {
-    .gallery-grid { column-count: 2; column-gap: 15px; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
     .project-title { font-size: 2.5rem; }
   }
 </style>
@@ -100,8 +106,12 @@
         img.src = this.src;
         img.className = 'gallery-img';
         
-        // Ajuste dinâmico com base na escolha do CMS[cite: 1]
+        // Ajuste conforme escolha no CMS[cite: 1]
         if (formato === "original") {
+            // Se for muito larga (16:9), pode ocupar 2 colunas se desejar[cite: 1]
+            if (this.width > this.height) {
+                img.classList.add('landscape');
+            }
             img.style.aspectRatio = 'auto';
             img.style.objectFit = 'contain';
         } else {
