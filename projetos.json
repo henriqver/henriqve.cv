@@ -264,6 +264,16 @@
       "titulo": "Lançamento da Copinha",
       "cliente": "FPF | Copinha",
       "id": "lancamento_copinha"
+    },
+    {
+      "formato_galeria": "cortar",
+      "helper": "Capa: id (0). Galeria: id (1), id (2), etc. na pasta assets/images/projetos/{{id}}/",
+      "id": "paulistas_em_campo",
+      "categoria": "Social Media Design, Direção de Arte",
+      "ano": "2025 - 2026",
+      "titulo": "Paulistas em Campo",
+      "cliente": "FPF",
+      "descricao": "Desenvolvo artes digitais para as redes sociais de equipes do futebol paulista durante suas campanhas em competições nacionais e internacionais. O foco é criar peças de alto impacto visual que engajem os torcedores e celebrem a força do futebol paulista além das fronteiras do estado."
     }
   ]
 }
