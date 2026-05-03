@@ -26,8 +26,18 @@ collections:
               - {label: "Cliente", name: "cliente", widget: "string"}
               - {label: "Seu Papel", name: "papel", widget: "string"}
               - {label: "Descrição", name: "descricao", widget: "text"}
-              # Lembrete visual no painel sobre a automação
+              
+              # Opção para controlar o visual da galeria (Opção 2)
+              - label: "Formato da Galeria"
+                name: "formato_galeria"
+                widget: "select"
+                options: 
+                  - {label: "Cortar (Mosaico 4:5)", value: "cortar"}
+                  - {label: "Inteira (Proporção Original)", value: "original"}
+                default: "cortar"
+
+              # Lembrete visual sobre a automação de pastas
               - label: "Instruções de Imagem"
                 name: "helper"
                 widget: "hidden"
-                default: "As fotos devem estar na pasta assets/images/projetos/{{id}}/ nomeadas como {{id}} (1).jpg, {{id}} (2).jpg, etc."
+                default: "Capa: id (0). Galeria: id (1), id (2), etc. na pasta assets/images/projetos/{{id}}/"

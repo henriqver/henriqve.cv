@@ -18,9 +18,21 @@
   
   nav { position: fixed; top: 0; width: 100%; padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; background: var(--bg); border-bottom: 1px solid var(--border); z-index: 100; }
   .nav-logo { font-family: var(--serif); font-size: 1.4rem; font-style: italic; text-decoration: none; color: var(--text); }
-  
+
+  header { margin-top: 120px; padding: 0 5%; }
+  .project-title { font-size: 4rem; font-family: var(--serif); font-weight: 300; margin-bottom: 20px; }
+  .project-desc { font-size: 1.2rem; color: var(--muted); max-width: 800px; line-height: 1.6; }
+
   .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 5%; margin-top: 40px; }
-  .gallery-img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 4px; cursor: zoom-in; transition: opacity 0.3s; }
+  
+  /* Estilo base da imagem - o JS controlará o corte ou visualização inteira */
+  .gallery-img { 
+    width: 100%; 
+    display: block;
+    border-radius: 4px; 
+    cursor: zoom-in; 
+    transition: opacity 0.3s;
+  }
   .gallery-img:hover { opacity: 0.8; }
 
   #lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10,10,10,0.95); z-index: 9999; align-items: center; justify-content: center; cursor: zoom-out; }
@@ -28,6 +40,7 @@
 
   @media (max-width: 768px) {
     .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+    .project-title { font-size: 2.5rem; }
   }
 </style>
 </head>
@@ -37,9 +50,9 @@
   <a href="index.html" class="nav-logo">Henrique R</a>
 </nav>
 
-<header style="margin-top: 120px; padding: 0 5%;">
-  <h1 id="proj-titulo" style="font-size: 4rem; font-family: var(--serif); font-weight: 300;">Carregando...</h1>
-  <p id="proj-descricao" style="font-size: 1.2rem; color: var(--muted); margin-top: 20px; max-width: 800px;"></p>
+<header>
+  <h1 id="proj-titulo" class="project-title">Carregando...</h1>
+  <p id="proj-descricao" class="project-desc"></p>
 </header>
 
 <div id="galeria-container" class="gallery-grid"></div>
@@ -58,12 +71,14 @@
       if (projeto) {
         document.getElementById('proj-titulo').innerText = projeto.titulo;
         document.getElementById('proj-descricao').innerText = projeto.descricao;
-        carregarSequenciaFotos(1); 
+        
+        // Inicia a sequência passando o formato escolhido no CMS[cite: 1]
+        carregarSequenciaFotos(1, projeto.formato_galeria); 
       }
     });
 
-  function carregarSequenciaFotos(index) {
-    // O Windows gera o padrão: id-do-projeto (1).jpg, id-do-projeto (2).jpg, etc.
+  function carregarSequenciaFotos(index, formato) {
+    // Padrão Windows: id-do-projeto (1).jpg[cite: 1]
     const nomeArquivo = `${projectId} (${index})`;
     const caminhoBase = `assets/images/projetos/${projectId}/${nomeArquivo}`;
     const extensoes = ['.png', '.jpg', '.jpeg', '.webp'];
@@ -72,11 +87,7 @@
 
     function testarProximaExtensao() {
       if (tentativaAtual >= extensoes.length) {
-        // Se falhou em todas as extensões para o índice 1, tentamos sem o parênteses (caso a primeira foto não tenha)
-        if (index === 1 && !nomeArquivo.includes(" (1)")) {
-           // Lógica de fallback opcional se necessário
-        }
-        console.log("Fim da pasta ou sequência interrompida.");
+        console.log("Fim da galeria.");
         return;
       }
 
@@ -87,12 +98,24 @@
         const img = document.createElement('img');
         img.src = this.src;
         img.className = 'gallery-img';
+        
+        // Aplicação da lógica de formato do CMS[cite: 1]
+        if (formato === "original") {
+            img.style.aspectRatio = 'auto';
+            img.style.objectFit = 'contain';
+            img.style.marginBottom = '10px'; 
+        } else {
+            img.style.aspectRatio = '4/5';
+            img.style.objectFit = 'cover';
+        }
+
         img.onclick = () => {
           document.getElementById('lightbox-img').src = img.src;
           document.getElementById('lightbox').style.display = 'flex';
         };
+        
         galeria.appendChild(img);
-        carregarSequenciaFotos(index + 1); 
+        carregarSequenciaFotos(index + 1, formato); 
       };
 
       imgTeste.onerror = function() {
