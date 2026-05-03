@@ -1,6 +1,28 @@
 {
   "lista": [
     {
+      "imagens": "",
+      "ano": "2025",
+      "papel": "Diretor de Arte",
+      "descricao": "Apresentada de forma adiantada no sorteio da edição de 2025, a identidade visual do Paulistão 2026 utiliza liquid glass e mesh gradients para trazer uma estética mais moderna ao campeonato. A ideia é refletir o novo formato do torneio e sua posição de vanguarda no Brasil, com um design estruturado para se desdobrar em todas as peças produzidas para a competição.",
+      "formato_galeria": "original",
+      "categoria": "Key Visual, Identidade Visual, Direção de Arte",
+      "titulo": "KV Paulistão 2026",
+      "cliente": "FPF | Paulistão",
+      "id": "kv-paulistao-2026"
+    },
+    {
+      "imagens": "",
+      "ano": "2023",
+      "papel": "Designer Gráfico",
+      "descricao": "Em conjunto com o time de comunicação e marketing da FPF, atuei na concepção da nova família de taças do futebol paulista. O projeto engloba os troféus do Paulistão, Paulistão Feminino, divisões de acesso e categorias de base, além do desenho das medalhas e patches de campeão.",
+      "formato_galeria": "cortar",
+      "categoria": "Design de Produto, Identidade Visual",
+      "titulo": "Família de Taças do Futebol Paulista",
+      "cliente": "FPF",
+      "id": "familia_tacas_paulista"
+    },
+    {
       "imagens": [
         "assets/images/projetos/trono-rei-pelé-8-.jpg"
       ],
@@ -23,28 +45,6 @@
       "titulo": "Troféu Rei Pelé",
       "cliente": "FPF | Paulistão 2023",
       "id": "trofeu-pele"
-    },
-    {
-      "imagens": "",
-      "ano": "2023",
-      "papel": "Designer Gráfico",
-      "descricao": "Em conjunto com o time de comunicação e marketing da FPF, atuei na concepção da nova família de taças do futebol paulista. O projeto engloba os troféus do Paulistão, Paulistão Feminino, divisões de acesso e categorias de base, além do desenho das medalhas e patches de campeão.",
-      "formato_galeria": "cortar",
-      "categoria": "Design de Produto, Identidade Visual",
-      "titulo": "Família de Taças do Futebol Paulista",
-      "cliente": "FPF",
-      "id": "familia_tacas_paulista"
-    },
-    {
-      "imagens": "",
-      "ano": "2025",
-      "papel": "Diretor de Arte",
-      "descricao": "Apresentada de forma adiantada no sorteio da edição de 2025, a identidade visual do Paulistão 2026 utiliza liquid glass e mesh gradients para trazer uma estética mais moderna ao campeonato. A ideia é refletir o novo formato do torneio e sua posição de vanguarda no Brasil, com um design estruturado para se desdobrar em todas as peças produzidas para a competição.",
-      "formato_galeria": "original",
-      "categoria": "Key Visual, Identidade Visual, Direção de Arte",
-      "titulo": "KV Paulistão 2026",
-      "cliente": "FPF | Paulistão",
-      "id": "kv-paulistao-2026"
     },
     {
       "ano": "2023",
