@@ -131,6 +131,76 @@
       "titulo": "Paulistas em Campo",
       "cliente": "FPF",
       "descricao": "Desenvolvo artes digitais para as redes sociais de equipes do futebol paulista durante suas campanhas em competições nacionais e internacionais. O foco é criar peças de alto impacto visual que engajem os torcedores e celebrem a força do futebol paulista além das fronteiras do estado."
+    },
+    {
+      "formato_galeria": "cortar",
+      "helper": "Capa: id (0). Galeria: id (1), id (2), etc. na pasta assets/images/projetos/{{id}}/",
+      "id": "paulistao_2025",
+      "titulo": "Paulistão 2025",
+      "ano": "2025",
+      "categoria": "Key Visual, Identidade Visual",
+      "cliente": "FPF | Paulistão",
+      "descricao": "A estratégia visual do Paulistão 2025 focou no uso de gradientes em tons luminosos para criar um design icônico e adaptado ao ambiente digital. Fui responsável pela concepção desse Key Visual e pelo seu desdobramento para os eventos oficiais (Sorteio e Premiação), coordenando as artes aplicadas em painéis de LED, telões, pacote gráfico de transmissão, redes sociais e toda a cenografia."
+    },
+    {
+      "formato_galeria": "cortar",
+      "helper": "Capa: id (0). Galeria: id (1), id (2), etc. na pasta assets/images/projetos/{{id}}/",
+      "id": "paulistao_feminino_2025",
+      "titulo": "Paulistão Feminino 2025",
+      "ano": "2025",
+      "categoria": "Key Visual, Identidade Visual",
+      "cliente": "FPF | Paulistão Feminino",
+      "descricao": "Criei o Key Visual do Paulistão Feminino 2025 com o objetivo de traduzir a força e a evolução da modalidade. O trabalho englobou a identidade principal do torneio e sua aplicação completa nos eventos oficiais (Sorteio e Premiação), contemplando o desenvolvimento da cenografia, materiais impressos, telas de LED e o pacote gráfico para as transmissões e redes sociais."
+    },
+    {
+      "formato_galeria": "cortar",
+      "helper": "Capa: id (0). Galeria: id (1), id (2), etc. na pasta assets/images/projetos/{{id}}/",
+      "id": "paulistao_2024",
+      "titulo": "Paulistão 2024",
+      "ano": "2024",
+      "categoria": "Key Visual, Identidade Visual",
+      "cliente": "FPF | Paulistão",
+      "descricao": "A identidade visual do Paulistão 2024 destacou o uso de cores vibrantes para atender às exigências das transmissões em alta resolução. Este projeto unificou a criação do Key Visual da competição e sua aplicação imersiva nos eventos de Sorteio e Premiação, onde desenvolvi desde a cenografia do espaço físico até os conteúdos digitais para telões e comunicação oficial."
+    },
+    {
+      "formato_galeria": "cortar",
+      "helper": "Capa: id (0). Galeria: id (1), id (2), etc. na pasta assets/images/projetos/{{id}}/",
+      "id": "paulistao_feminino_2024",
+      "titulo": "Paulistão Feminino 2024",
+      "ano": "2024",
+      "categoria": "Key Visual, Identidade Visual",
+      "cliente": "FPF | Paulistão Feminino",
+      "descricao": "Como responsável por desenvolver a identidade do Paulistão Feminino 2024, criei um Key Visual dinâmico que acompanhou toda a competição e seus principais eventos (Sorteio e Premiação). A entrega garantiu uma experiência visual coesa e impactante, abrangendo a direção de arte dos palcos, painéis de LED, materiais impressos e comunicação digital."
+    },
+    {
+      "formato_galeria": "cortar",
+      "helper": "Capa: id (0). Galeria: id (1), id (2), etc. na pasta assets/images/projetos/{{id}}/",
+      "id": "paulistao_2023",
+      "titulo": "Paulistão 2023",
+      "ano": "2023",
+      "categoria": "Key Visual, Identidade Visual",
+      "cliente": "FPF | Paulistão",
+      "descricao": "Com o desafio de lapidar a grande reformulação de marca feita no ano anterior, o Key Visual do Paulistão 2023 trouxe maior maturidade e consistência gráfica ao torneio. Essa identidade refinada foi desdobrada para a identidade dos eventos de Sorteio e Premiação, englobando a concepção cenográfica, pacote de transmissão e direção de arte em todas as telas e ativações."
+    },
+    {
+      "formato_galeria": "cortar",
+      "helper": "Capa: id (0). Galeria: id (1), id (2), etc. na pasta assets/images/projetos/{{id}}/",
+      "id": "paulistao_feminino_2023",
+      "titulo": "Paulistão Feminino 2023",
+      "cliente": "FPF | Paulistão Feminino",
+      "categoria": "Key Visual, Identidade Visual",
+      "ano": "2023",
+      "descricao": "No Paulistão Feminino 2023, atuei na concepção visual da competição e em suas extensões para os eventos oficiais (Sorteio e Premiação). O trabalho envolveu a direção de arte e o design completo dos espaços de evento, criando ambientes imersivos através de telões e LEDs, além da produção gráfica para as redes sociais e transmissão ao vivo."
+    },
+    {
+      "formato_galeria": "cortar",
+      "helper": "Capa: id (0). Galeria: id (1), id (2), etc. na pasta assets/images/projetos/{{id}}/",
+      "id": "copinha_eventos",
+      "titulo": "Copinha",
+      "ano": "2023 - 2026",
+      "categoria": "Key Visual, Identidade Visual",
+      "cliente": "FPF | Copinha",
+      "descricao": "Responsável por aprimorar anualmente a identidade da maior competição de base do mundo, envolvendo agora as edições masculina e feminina. O trabalho une o ajuste fino constante do Key Visual (cores, tipografia e elementos gráficos) à entrega completa dos eventos de lançamento de cada edição, incluindo a cenografia física e os pacotes gráficos de transmissão e telões."
     }
   ]
 }
