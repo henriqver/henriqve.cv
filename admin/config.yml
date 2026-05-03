@@ -24,7 +24,6 @@ collections:
               - {label: "Ano", name: "ano", widget: "string"}
               - {label: "Categoria", name: "categoria", widget: "string"}
               - {label: "Cliente", name: "cliente", widget: "string"}
-              - {label: "Seu Papel", name: "papel", widget: "string"}
               - {label: "Descrição", name: "descricao", widget: "text"}
               
               # Opção para controlar o visual da galeria (Opção 2)
