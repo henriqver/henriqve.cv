@@ -47,6 +47,17 @@
       "id": "kv-paulistao-2026"
     },
     {
+      "ano": "2023",
+      "papel": "Designer Gráfico",
+      "descricao": "Fui responsável pelo desenvolvimento da identidade visual do novo mote institucional da entidade. O projeto marcou uma transição simbólica importante, onde a sigla FPF deixou de representar apenas a Federação Paulista de Futebol para assumir o conceito Fanáticos por Futebol.",
+      "helper": "As fotos devem estar na pasta assets/images/projetos/{{id}}/ nomeadas como {{id}} (1).jpg, {{id}} (2).jpg, etc.",
+      "formato_galeria": "original",
+      "categoria": "Branding, Identidade Visual",
+      "titulo": "Fanáticos por Futebol",
+      "cliente": "FPF",
+      "id": "fanaticos_por_futebol"
+    },
+    {
       "ano": "2026",
       "papel": "Design",
       "descricao": "Apresentada de forma adiantada no sorteio da edição de 2025, a identidade visual do Paulistão 2026 utiliza liquid glass e mesh gradients para trazer uma estética mais moderna ao campeonato. A ideia é refletir o novo formato do torneio e sua posição de vanguarda no Brasil, com um design estruturado para se desdobrar em todas as peças produzidas para a competição.",
@@ -100,17 +111,6 @@
       "titulo": "KV Copinha",
       "cliente": "FPF | Copinha",
       "id": "kv_copinha"
-    },
-    {
-      "ano": "2023",
-      "papel": "Designer Gráfico",
-      "descricao": "Fui responsável pelo desenvolvimento da identidade visual do novo mote institucional da entidade. O projeto marcou uma transição simbólica importante, onde a sigla FPF deixou de representar apenas a Federação Paulista de Futebol para assumir o conceito Fanáticos por Futebol.",
-      "helper": "As fotos devem estar na pasta assets/images/projetos/{{id}}/ nomeadas como {{id}} (1).jpg, {{id}} (2).jpg, etc.",
-      "formato_galeria": "original",
-      "categoria": "Branding, Identidade Visual",
-      "titulo": "Fanáticos por Futebol",
-      "cliente": "FPF",
-      "id": "fanaticos_por_futebol"
     },
     {
       "ano": "2023",
