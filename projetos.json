@@ -91,15 +91,14 @@
       "id": "series_youtube_paulistao"
     },
     {
-      "ano": "2023 - 2026",
-      "papel": "Diretor de Arte",
-      "descricao": "Como responsável pela identidade da maior competição de base do mundo, trabalho no aprimoramento contínuo do Key Visual a cada nova edição. O processo envolve o ajuste pontual de cores, tipografia e elementos gráficos, mantendo a marca sempre moderna e em evolução.",
-      "helper": "As fotos devem estar na pasta assets/images/projetos/{{id}}/ nomeadas como {{id}} (1).jpg, {{id}} (2).jpg, etc.",
-      "formato_galeria": "original",
-      "categoria": "Key Visual, Identidade Visual, Direção de Arte",
-      "titulo": "KV Copinha",
-      "cliente": "FPF | Copinha",
-      "id": "kv_copinha"
+      "formato_galeria": "cortar",
+      "helper": "Capa: id (0). Galeria: id (1), id (2), etc. na pasta assets/images/projetos/{{id}}/",
+      "id": "direcao_de_arte_com_ia",
+      "titulo": "Direção de Arte com IA",
+      "ano": "2026",
+      "categoria": "Direção de Arte, Design Digital",
+      "cliente": "FPF | Paulistão 2026",
+      "descricao": "Utilizo a IA para conceber imagens hiper-realistas e composições complexas, que em seguida passam por um rigoroso processo de pós-produção em softwares de design. Esse refinamento humano é fundamental para corrigir anomalias, ajustar a colorimetria, integrar elementos de marca e garantir um acabamento impecável."
     },
     {
       "ano": "2026",
@@ -111,6 +110,17 @@
       "titulo": "KV Paulistão Feminino 2026",
       "cliente": "FPF | Paulistão",
       "id": "kv-paulistao-feminino-2026"
+    },
+    {
+      "ano": "2023 - 2026",
+      "papel": "Diretor de Arte",
+      "descricao": "Como responsável pela identidade da maior competição de base do mundo, trabalho no aprimoramento contínuo do Key Visual a cada nova edição. O processo envolve o ajuste pontual de cores, tipografia e elementos gráficos, mantendo a marca sempre moderna e em evolução.",
+      "helper": "As fotos devem estar na pasta assets/images/projetos/{{id}}/ nomeadas como {{id}} (1).jpg, {{id}} (2).jpg, etc.",
+      "formato_galeria": "original",
+      "categoria": "Key Visual, Identidade Visual, Direção de Arte",
+      "titulo": "KV Copinha",
+      "cliente": "FPF | Copinha",
+      "id": "kv_copinha"
     },
     {
       "ano": "2024 - 2025",
@@ -254,16 +264,6 @@
       "titulo": "Lançamento da Copinha",
       "cliente": "FPF | Copinha",
       "id": "lancamento_copinha"
-    },
-    {
-      "formato_galeria": "cortar",
-      "helper": "Capa: id (0). Galeria: id (1), id (2), etc. na pasta assets/images/projetos/{{id}}/",
-      "id": "direcao_de_arte_com_ia",
-      "titulo": "Direção de Arte com IA",
-      "ano": "2026",
-      "categoria": "Direção de Arte, Design Digital",
-      "cliente": "FPF | Paulistão 2026",
-      "descricao": "Utilizo a IA para conceber imagens hiper-realistas e composições complexas, que em seguida passam por um rigoroso processo de pós-produção em softwares de design. Esse refinamento humano é fundamental para corrigir anomalias, ajustar a colorimetria, integrar elementos de marca e garantir um acabamento impecável."
     }
   ]
 }
