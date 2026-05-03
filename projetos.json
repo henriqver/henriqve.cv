@@ -69,6 +69,28 @@
       "id": "premiacao_paulistao_2026"
     },
     {
+      "ano": "2026",
+      "papel": "Diretor de Arte",
+      "descricao": "Para o Sorteio do Paulistão, desenvolvi um Key Visual exclusivo derivado da identidade principal da competição. Fui responsável pela direção de arte das telas de LED, transmissões, materiais de redes sociais, cenografia e impressos, garantindo uma experiência visual coesa para o evento de abertura da temporada.",
+      "helper": "As fotos devem estar na pasta assets/images/projetos/{{id}}/ nomeadas como {{id}} (1).jpg, {{id}} (2).jpg, etc.",
+      "formato_galeria": "original",
+      "categoria": "Key Visual, Cenografia",
+      "titulo": "Sorteio do Paulistão 2026",
+      "cliente": "FPF | Paulistão",
+      "id": "sorteio_paulistao_2026"
+    },
+    {
+      "ano": "2023 - 2026",
+      "papel": "Diretor de Arte",
+      "descricao": "Sou responsável pelo desenvolvimento e pelas atualizações contínuas da identidade visual e dos pacotes gráficos (assinaturas, thumbnails, GCs e vinhetas) para as diversas séries do canal do Paulistão no YouTube. O escopo inclui programas como Estado do Rei, Pelas Lentes do Paulistão, Taticamente Falando e Rolê Aleatório.",
+      "helper": "As fotos devem estar na pasta assets/images/projetos/{{id}}/ nomeadas como {{id}} (1).jpg, {{id}} (2).jpg, etc.",
+      "formato_galeria": "original",
+      "categoria": "Identidade Visual, Design Digital, Broadcast Design",
+      "titulo": "Séries YouTube Paulistão",
+      "cliente": "FPF | Paulistão",
+      "id": "series_youtube_paulistao"
+    },
+    {
       "ano": "2023 - 2026",
       "papel": "Diretor de Arte",
       "descricao": "Como responsável pela identidade da maior competição de base do mundo, trabalho no aprimoramento contínuo do Key Visual a cada nova edição. O processo envolve o ajuste pontual de cores, tipografia e elementos gráficos, mantendo a marca sempre moderna e em evolução.",
@@ -89,17 +111,6 @@
       "titulo": "KV Paulistão Feminino 2026",
       "cliente": "FPF | Paulistão",
       "id": "kv-paulistao-feminino-2026"
-    },
-    {
-      "ano": "2023 - 2026",
-      "papel": "Diretor de Arte",
-      "descricao": "Sou responsável pelo desenvolvimento e pelas atualizações contínuas da identidade visual e dos pacotes gráficos (assinaturas, thumbnails, GCs e vinhetas) para as diversas séries do canal do Paulistão no YouTube. O escopo inclui programas como Estado do Rei, Pelas Lentes do Paulistão, Taticamente Falando e Rolê Aleatório.",
-      "helper": "As fotos devem estar na pasta assets/images/projetos/{{id}}/ nomeadas como {{id}} (1).jpg, {{id}} (2).jpg, etc.",
-      "formato_galeria": "original",
-      "categoria": "Identidade Visual, Design Digital, Broadcast Design",
-      "titulo": "Séries YouTube Paulistão",
-      "cliente": "FPF | Paulistão",
-      "id": "series_youtube_paulistao"
     },
     {
       "ano": "2024 - 2025",
@@ -155,17 +166,6 @@
       "titulo": "Sorteio do Paulistão 2025",
       "cliente": "FPF | Paulistão",
       "id": "sorteio_paulistao_2025"
-    },
-    {
-      "ano": "2026",
-      "papel": "Diretor de Arte",
-      "descricao": "Para o Sorteio do Paulistão, desenvolvi um Key Visual exclusivo derivado da identidade principal da competição. Fui responsável pela direção de arte das telas de LED, transmissões, materiais de redes sociais, cenografia e impressos, garantindo uma experiência visual coesa para o evento de abertura da temporada.",
-      "helper": "As fotos devem estar na pasta assets/images/projetos/{{id}}/ nomeadas como {{id}} (1).jpg, {{id}} (2).jpg, etc.",
-      "formato_galeria": "original",
-      "categoria": "Key Visual, Cenografia",
-      "titulo": "Sorteio do Paulistão 2026",
-      "cliente": "FPF | Paulistão",
-      "id": "sorteio_paulistao_2026"
     },
     {
       "ano": "2023",
@@ -254,6 +254,16 @@
       "titulo": "Lançamento da Copinha",
       "cliente": "FPF | Copinha",
       "id": "lancamento_copinha"
+    },
+    {
+      "formato_galeria": "cortar",
+      "helper": "Capa: id (0). Galeria: id (1), id (2), etc. na pasta assets/images/projetos/{{id}}/",
+      "id": "direcao_de_arte_com_ia",
+      "titulo": "Direção de Arte com IA",
+      "ano": "2026",
+      "categoria": "Direção de Arte, Design Digital",
+      "cliente": "FPF | Paulistão 2026",
+      "descricao": "Utilizo a IA para conceber imagens hiper-realistas e composições complexas, que em seguida passam por um rigoroso processo de pós-produção em softwares de design. Esse refinamento humano é fundamental para corrigir anomalias, ajustar a colorimetria, integrar elementos de marca e garantir um acabamento impecável."
     }
   ]
 }
