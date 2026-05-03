@@ -41,6 +41,186 @@
       "papel": "Diretor de Arte",
       "descricao": "Apresentada de forma adiantada no sorteio da edição de 2025, a identidade visual do Paulistão 2026 utiliza liquid glass e mesh gradients para trazer uma estética mais moderna ao campeonato. A ideia é refletir o novo formato do torneio e sua posição de vanguarda no Brasil, com um design estruturado para se desdobrar em todas as peças produzidas para a competição.",
       "imagens": ""
+    },
+    {
+      "helper": "As fotos devem estar na pasta assets/images/projetos/{{id}}/ nomeadas como {{id}} (1).jpg, {{id}} (2).jpg, etc.",
+      "id": "series_youtube_paulistao",
+      "titulo": "Séries YouTube Paulistão",
+      "ano": "2023 - 2026",
+      "categoria": "Identidade Visual, Design Digital, Broadcast Design",
+      "cliente": "FPF | Paulistão",
+      "papel": "Diretor de Arte",
+      "descricao": "Sou responsável pelo desenvolvimento e pelas atualizações contínuas da identidade visual e dos pacotes gráficos (assinaturas, thumbnails, GCs e vinhetas) para as diversas séries do canal do Paulistão no YouTube. O escopo inclui programas como Estado do Rei, Pelas Lentes do Paulistão, Taticamente Falando e Rolê Aleatório."
+    },
+    {
+      "helper": "As fotos devem estar na pasta assets/images/projetos/{{id}}/ nomeadas como {{id}} (1).jpg, {{id}} (2).jpg, etc.",
+      "id": "kv_paulistao_2024_2025",
+      "titulo": "KV Paulistão 2024 e 2025",
+      "ano": "2024 - 2025",
+      "categoria": "Key Visual, Identidade Visual, Direção de Arte",
+      "cliente": "FPF | Paulistão",
+      "papel": "Diretor de Arte",
+      "descricao": "A estratégia visual do Paulistão focou no uso de gradientes em tons luminosos. O design foi elaborado para ser mais icônico e perfeitamente adaptado ao ambiente digital e às demandas das transmissões em alta resolução. Essa identidade foi aplicada em todos os materiais da competição."
+    },
+    {
+      "helper": "As fotos devem estar na pasta assets/images/projetos/{{id}}/ nomeadas como {{id}} (1).jpg, {{id}} (2).jpg, etc.",
+      "id": "kv_paulistao_2023",
+      "titulo": "KV Paulistão 2023",
+      "ano": "2023",
+      "categoria": "Key Visual, Identidade Visual, Direção de Arte",
+      "cliente": "FPF | Paulistão",
+      "papel": "Diretor de Arte",
+      "descricao": "Após a grande reformulação de marca ocorrida em 2022, o desafio do Key Visual para 2023 foi lapidar a identidade existente. O trabalho teve foco em aprimorar os detalhes visuais, trazendo maior consistência e maturidade gráfica para a apresentação do campeonato."
+    },
+    {
+      "helper": "As fotos devem estar na pasta assets/images/projetos/{{id}}/ nomeadas como {{id}} (1).jpg, {{id}} (2).jpg, etc.",
+      "id": "kv_copinha",
+      "titulo": "KV Copinha",
+      "ano": "2023 - 2026",
+      "categoria": "Key Visual, Identidade Visual, Direção de Arte",
+      "cliente": "FPF | Copinha",
+      "papel": "Diretor de Arte",
+      "descricao": "Como responsável pela identidade da maior competição de base do mundo, trabalho no aprimoramento contínuo do Key Visual a cada nova edição. O processo envolve o ajuste pontual de cores, tipografia e elementos gráficos, mantendo a marca sempre moderna e em evolução."
+    },
+    {
+      "helper": "As fotos devem estar na pasta assets/images/projetos/{{id}}/ nomeadas como {{id}} (1).jpg, {{id}} (2).jpg, etc.",
+      "id": "fanaticos_por_futebol",
+      "titulo": "Fanáticos por Futebol",
+      "ano": "2023",
+      "categoria": "Branding, Identidade Visual",
+      "cliente": "FPF",
+      "papel": "Designer Gráfico",
+      "descricao": "Fui responsável pelo desenvolvimento da identidade visual do novo mote institucional da entidade. O projeto marcou uma transição simbólica importante, onde a sigla FPF deixou de representar apenas a Federação Paulista de Futebol para assumir o conceito Fanáticos por Futebol."
+    },
+    {
+      "helper": "As fotos devem estar na pasta assets/images/projetos/{{id}}/ nomeadas como {{id}} (1).jpg, {{id}} (2).jpg, etc.",
+      "id": "sorteio_paulistao_2023",
+      "titulo": "Sorteio do Paulistão 2023",
+      "ano": "2023",
+      "categoria": "Key Visual, Cenografia, Direção de Arte, Design Digital",
+      "cliente": "FPF | Paulistão",
+      "papel": "Diretor de Arte",
+      "descricao": "Para o Sorteio do Paulistão, desenvolvi um Key Visual exclusivo derivado da identidade principal da competição. Fui responsável pela direção de arte das telas de LED, transmissões, materiais de redes sociais, cenografia e impressos, garantindo uma experiência visual coesa para o evento de abertura da temporada."
+    },
+    {
+      "helper": "As fotos devem estar na pasta assets/images/projetos/{{id}}/ nomeadas como {{id}} (1).jpg, {{id}} (2).jpg, etc.",
+      "id": "sorteio_paulistao_2024",
+      "titulo": "Sorteio do Paulistão 2024",
+      "ano": "2024",
+      "categoria": "Key Visual, Cenografia",
+      "cliente": "FPF | Paulistão",
+      "papel": "Diretor de Arte",
+      "descricao": "Para o Sorteio do Paulistão, desenvolvi um Key Visual exclusivo derivado da identidade principal da competição. Fui responsável pela direção de arte das telas de LED, transmissões, materiais de redes sociais, cenografia e impressos, garantindo uma experiência visual coesa para o evento de abertura da temporada."
+    },
+    {
+      "helper": "As fotos devem estar na pasta assets/images/projetos/{{id}}/ nomeadas como {{id}} (1).jpg, {{id}} (2).jpg, etc.",
+      "id": "sorteio_paulistao_2025",
+      "titulo": "Sorteio do Paulistão 2025",
+      "ano": "2025",
+      "categoria": "Key Visual, Cenografia",
+      "cliente": "FPF | Paulistão",
+      "papel": "Diretor de Arte",
+      "descricao": "Para o Sorteio do Paulistão, desenvolvi um Key Visual exclusivo derivado da identidade principal da competição. Fui responsável pela direção de arte das telas de LED, transmissões, materiais de redes sociais, cenografia e impressos, garantindo uma experiência visual coesa para o evento de abertura da temporada."
+    },
+    {
+      "helper": "As fotos devem estar na pasta assets/images/projetos/{{id}}/ nomeadas como {{id}} (1).jpg, {{id}} (2).jpg, etc.",
+      "id": "sorteio_paulistao_2026",
+      "titulo": "Sorteio do Paulistão 2026",
+      "ano": "2026",
+      "categoria": "Key Visual, Cenografia",
+      "cliente": "FPF | Paulistão",
+      "papel": "Diretor de Arte",
+      "descricao": "Para o Sorteio do Paulistão, desenvolvi um Key Visual exclusivo derivado da identidade principal da competição. Fui responsável pela direção de arte das telas de LED, transmissões, materiais de redes sociais, cenografia e impressos, garantindo uma experiência visual coesa para o evento de abertura da temporada."
+    },
+    {
+      "helper": "As fotos devem estar na pasta assets/images/projetos/{{id}}/ nomeadas como {{id}} (1).jpg, {{id}} (2).jpg, etc.",
+      "id": "premiacao_paulistao_2023",
+      "titulo": "Premiação do Paulistão 2023",
+      "ano": "2023",
+      "categoria": "Key Visual, Cenografia",
+      "cliente": "FPF | Paulistão",
+      "descricao": "Na cerimônia de encerramento e Premiação do Paulistão, criei um Key Visual comemorativo adaptado da identidade visual do campeonato. O projeto envolveu a criação de todas as artes digitais para telões, painéis de LED e pacote gráfico de transmissão, além da cenografia completa e comunicação visual da cerimônia.",
+      "papel": "Diretor de Arte"
+    },
+    {
+      "helper": "As fotos devem estar na pasta assets/images/projetos/{{id}}/ nomeadas como {{id}} (1).jpg, {{id}} (2).jpg, etc.",
+      "id": "premiacao_paulistao_2024",
+      "titulo": "Premiação do Paulistão 2024",
+      "ano": "2024",
+      "categoria": "Key Visual, Cenografia",
+      "cliente": "FPF | Paulistão",
+      "papel": "Diretor de Arte",
+      "descricao": "Na cerimônia de encerramento e Premiação do Paulistão, criei um Key Visual comemorativo adaptado da identidade visual do campeonato. O projeto envolveu a criação de todas as artes digitais para telões, painéis de LED e pacote gráfico de transmissão, além da cenografia completa e comunicação visual da cerimônia."
+    },
+    {
+      "helper": "As fotos devem estar na pasta assets/images/projetos/{{id}}/ nomeadas como {{id}} (1).jpg, {{id}} (2).jpg, etc.",
+      "id": "premiacao_paulistao_2025",
+      "titulo": "Premiação do Paulistão 2025",
+      "ano": "2025",
+      "categoria": "Key Visual, Cenografia",
+      "cliente": "FPF | Paulistão",
+      "papel": "Diretor de Arte",
+      "descricao": "Na cerimônia de encerramento e Premiação do Paulistão, criei um Key Visual comemorativo adaptado da identidade visual do campeonato. O projeto envolveu a criação de todas as artes digitais para telões, painéis de LED e pacote gráfico de transmissão, além da cenografia completa e comunicação visual da cerimônia."
+    },
+    {
+      "helper": "As fotos devem estar na pasta assets/images/projetos/{{id}}/ nomeadas como {{id}} (1).jpg, {{id}} (2).jpg, etc.",
+      "id": "premiacao_paulistao_2026",
+      "titulo": "Premiação do Paulistão 2026",
+      "ano": "2026",
+      "categoria": "Key Visual, Cenografia",
+      "cliente": "FPF | Paulistão",
+      "papel": "Diretor de Arte",
+      "descricao": "Na cerimônia de encerramento e Premiação do Paulistão, criei um Key Visual comemorativo adaptado da identidade visual do campeonato. O projeto envolveu a criação de todas as artes digitais para telões, painéis de LED e pacote gráfico de transmissão, além da cenografia completa e comunicação visual da cerimônia."
+    },
+    {
+      "helper": "As fotos devem estar na pasta assets/images/projetos/{{id}}/ nomeadas como {{id}} (1).jpg, {{id}} (2).jpg, etc.",
+      "id": "premiacao_feminino_2023",
+      "titulo": "Premiação do Paulistão Feminino 2023",
+      "ano": "2023",
+      "categoria": "Key Visual, Cenografia",
+      "cliente": "FPF | Paulistão Feminino",
+      "papel": "Diretor de Arte",
+      "descricao": "Responsável pelo design do evento de Premiação do Paulistão Feminino, desenvolvi um Key Visual exclusivo para a cerimônia. A identidade foi desdobrada em aplicações cenográficas, materiais impressos, telas de LED e pacote gráfico para as redes sociais e transmissão oficial."
+    },
+    {
+      "helper": "As fotos devem estar na pasta assets/images/projetos/{{id}}/ nomeadas como {{id}} (1).jpg, {{id}} (2).jpg, etc.",
+      "id": "premiacao_feminino_2024",
+      "titulo": "Premiação do Paulistão Feminino 2024",
+      "ano": "2024",
+      "categoria": "Key Visual, Cenografia",
+      "cliente": "FPF | Paulistão Feminino",
+      "papel": "Diretor de Arte",
+      "descricao": "Responsável pelo design do evento de Premiação do Paulistão Feminino, desenvolvi um Key Visual exclusivo para a cerimônia. A identidade foi desdobrada em aplicações cenográficas, materiais impressos, telas de LED e pacote gráfico para as redes sociais e transmissão oficial."
+    },
+    {
+      "helper": "As fotos devem estar na pasta assets/images/projetos/{{id}}/ nomeadas como {{id}} (1).jpg, {{id}} (2).jpg, etc.",
+      "id": "premiacao_feminino_2025",
+      "titulo": "Premiação do Paulistão Feminino 2025",
+      "ano": "2025",
+      "categoria": "Key Visual, Cenografia",
+      "papel": "Diretor de Arte",
+      "cliente": "FPF | Paulistão Feminino",
+      "descricao": "Responsável pelo design do evento de Premiação do Paulistão Feminino, desenvolvi um Key Visual exclusivo para a cerimônia. A identidade foi desdobrada em aplicações cenográficas, materiais impressos, telas de LED e pacote gráfico para as redes sociais e transmissão oficial."
+    },
+    {
+      "helper": "As fotos devem estar na pasta assets/images/projetos/{{id}}/ nomeadas como {{id}} (1).jpg, {{id}} (2).jpg, etc.",
+      "id": "premiacao_feminino_2026",
+      "titulo": "Premiação do Paulistão Feminino 2026",
+      "ano": "2026",
+      "categoria": "Key Visual, Cenografia",
+      "cliente": "FPF | Paulistão Feminino",
+      "papel": "Diretor de Arte",
+      "descricao": "Responsável pelo design do evento de Premiação do Paulistão Feminino, desenvolvi um Key Visual exclusivo para a cerimônia. A identidade foi desdobrada em aplicações cenográficas, materiais impressos, telas de LED e pacote gráfico para as redes sociais e transmissão oficial."
+    },
+    {
+      "helper": "As fotos devem estar na pasta assets/images/projetos/{{id}}/ nomeadas como {{id}} (1).jpg, {{id}} (2).jpg, etc.",
+      "id": "lancamento_copinha",
+      "titulo": "Lançamento da Copinha",
+      "ano": "2023 - 2026",
+      "categoria": "Key Visual, Cenografia",
+      "cliente": "FPF | Copinha",
+      "papel": "Diretor de Arte",
+      "descricao": "Para os eventos anuais de lançamento da maior competição de base do mundo, crio um Key Visual dinâmico que reflete a energia do torneio a cada edição. A entrega abrange desde a cenografia do espaço físico até as artes digitais para telões, transmissão ao vivo e peças de engajamento nas redes sociais."
     }
   ]
 }
