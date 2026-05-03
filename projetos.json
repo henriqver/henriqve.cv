@@ -36,17 +36,6 @@
       "id": "familia_tacas_paulista"
     },
     {
-      "ano": "2026",
-      "papel": "Design",
-      "descricao": "Apresentada de forma adiantada no sorteio da edição de 2025, a identidade visual do Paulistão 2026 utiliza liquid glass e mesh gradients para trazer uma estética mais moderna ao campeonato. A ideia é refletir o novo formato do torneio e sua posição de vanguarda no Brasil, com um design estruturado para se desdobrar em todas as peças produzidas para a competição.",
-      "helper": "Capa: id (0). Galeria: id (1), id (2), etc. na pasta assets/images/projetos/{{id}}/",
-      "formato_galeria": "cortar",
-      "categoria": "Key Visual, Identidade Visual",
-      "titulo": "KV Paulistão Feminino 2026",
-      "cliente": "FPF | Paulistão",
-      "id": "kv-paulistao-feminino-2026"
-    },
-    {
       "imagens": "",
       "ano": "2025",
       "papel": "Diretor de Arte",
@@ -56,6 +45,17 @@
       "titulo": "KV Paulistão 2026",
       "cliente": "FPF | Paulistão",
       "id": "kv-paulistao-2026"
+    },
+    {
+      "ano": "2026",
+      "papel": "Design",
+      "descricao": "Apresentada de forma adiantada no sorteio da edição de 2025, a identidade visual do Paulistão 2026 utiliza liquid glass e mesh gradients para trazer uma estética mais moderna ao campeonato. A ideia é refletir o novo formato do torneio e sua posição de vanguarda no Brasil, com um design estruturado para se desdobrar em todas as peças produzidas para a competição.",
+      "helper": "Capa: id (0). Galeria: id (1), id (2), etc. na pasta assets/images/projetos/{{id}}/",
+      "formato_galeria": "cortar",
+      "categoria": "Key Visual, Identidade Visual",
+      "titulo": "KV Paulistão Feminino 2026",
+      "cliente": "FPF | Paulistão",
+      "id": "kv-paulistao-feminino-2026"
     },
     {
       "ano": "2023 - 2026",
