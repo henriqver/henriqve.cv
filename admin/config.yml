@@ -23,9 +23,19 @@ collections:
               - {label: "Categoria", name: "categoria", widget: "string"}
               - {label: "Descrição", name: "descricao", widget: "text"}
               
-              # Novos campos para ícones[cite: 1]
-              - {label: "Software (ex: Photoshop, Illustrator, IA)", name: "software", widget: "string", hint: "Separe por vírgula"}
-              - {label: "Campo (ex: Branding, Editorial, Tipografia)", name: "campo", widget: "string", hint: "Separe por vírgula"}
+              # Software com opções predefinidas e padrão ativado[cite: 1, 4]
+              - label: "Software"
+                name: "software"
+                widget: "select"
+                multiple: true
+                options: 
+                  - "Photoshop"
+                  - "Illustrator"
+                  - "InDesign"
+                  - "IA"
+                  - "After Effects"
+                  - "Premiere Pro"
+                default: ["Photoshop", "Illustrator"]
 
               - label: "Formato da Galeria"
                 name: "formato_galeria"
