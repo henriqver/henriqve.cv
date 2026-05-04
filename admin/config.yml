@@ -2,9 +2,7 @@ backend:
   name: git-gateway
   branch: main
 
-# Pasta onde as imagens serão armazenadas fisicamente
 media_folder: "assets/images/projetos"
-# Caminho público para acesso via site
 public_folder: "assets/images/projetos"
 
 collections:
@@ -19,14 +17,16 @@ collections:
             name: "lista"
             widget: "list"
             fields:
-              - {label: "ID do Projeto (ex: trofeu-pele)", name: "id", widget: "string"}
+              - {label: "ID do Projeto", name: "id", widget: "string"}
               - {label: "Título do Projeto", name: "titulo", widget: "string"}
               - {label: "Ano", name: "ano", widget: "string"}
               - {label: "Categoria", name: "categoria", widget: "string"}
-              - {label: "Cliente", name: "cliente", widget: "string"}
               - {label: "Descrição", name: "descricao", widget: "text"}
               
-              # Opção para controlar o visual da galeria (Opção 2)
+              # Novos campos para ícones[cite: 1]
+              - {label: "Software (ex: Photoshop, Illustrator, IA)", name: "software", widget: "string", hint: "Separe por vírgula"}
+              - {label: "Campo (ex: Branding, Editorial, Tipografia)", name: "campo", widget: "string", hint: "Separe por vírgula"}
+
               - label: "Formato da Galeria"
                 name: "formato_galeria"
                 widget: "select"
@@ -35,8 +35,7 @@ collections:
                   - {label: "Inteira (Proporção Original)", value: "original"}
                 default: "cortar"
 
-              # Lembrete visual sobre a automação de pastas
               - label: "Instruções de Imagem"
                 name: "helper"
                 widget: "hidden"
-                default: "Capa: id (0). Galeria: id (1), id (2), etc. na pasta assets/images/projetos/{{id}}/"
+                default: "Capa: id (0). Galeria: id (1), id (2), etc."

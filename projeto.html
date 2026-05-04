@@ -10,50 +10,48 @@
   :root {
     --bg: #0a0a0a; --surface: #111111;
     --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.14);
-    --accent: #c8a96e; --text: #f0ede8; --muted: #888880;
-    --serif: 'Cormorant Garamond', Georgia, serif;
-    --mono: 'Space Mono', monospace;
+    --accent: #c8a96e; --text: #f0ede8; --muted: #888880; --dim: #444440;
+    --serif: 'Cormorant Garamond', Georgia, serif; --mono: 'Space Mono', monospace;
   }
-  body { background: var(--bg); color: var(--text); font-family: var(--mono); font-size: 13px; line-height: 1.5; }
+  body { background: var(--bg); color: var(--text); font-family: var(--mono); font-size: 13px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
   
   nav { position: fixed; top: 0; width: 100%; padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; background: var(--bg); border-bottom: 1px solid var(--border); z-index: 100; }
   .nav-logo { font-family: var(--serif); font-size: 1.4rem; font-style: italic; text-decoration: none; color: var(--text); }
 
-  header { margin-top: 120px; padding: 0 5%; }
-  .project-title { font-size: 4rem; font-family: var(--serif); font-weight: 300; margin-bottom: 20px; }
-  .project-desc { font-size: 1.2rem; color: var(--muted); max-width: 800px; line-height: 1.6; }
+  header { margin-top: 120px; padding: 0 5%; display: grid; grid-template-columns: 1fr 300px; gap: 60px; align-items: start; }
+  .project-title { font-size: 4rem; font-family: var(--serif); font-weight: 300; margin-bottom: 20px; grid-column: 1 / -1; }
+  .project-desc { font-size: 1.2rem; color: var(--muted); line-height: 1.6; }
 
-  /* Grelha Dinâmica com preenchimento denso */
-  .gallery-grid { 
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-flow: dense; /* Faz as imagens "subirem" para tapar buracos */
-    gap: 20px; 
-    padding: 5%; 
-    margin-top: 40px;
-  }
-  
-  .gallery-img { 
-    width: 100%; 
-    height: 100%;
-    object-fit: cover;
-    border-radius: 4px; 
-    cursor: zoom-in; 
-    transition: opacity 0.3s;
-  }
-  .gallery-img:hover { opacity: 0.8; }
+  .project-meta-grid { border-top: 1px solid var(--border); padding-top: 20px; display: flex; flex-direction: column; gap: 20px; }
+  .meta-item label { display: block; color: var(--accent); font-size: 9px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 5px; }
+  .meta-item span { font-size: 13px; color: var(--text); }
 
-  /* Quando o formato é original, permitimos que imagens horizontais ocupem mais colunas */
-  .gallery-img.landscape {
-    grid-column: span 2; /* Opcional: faz imagens horizontais serem maiores[cite: 1] */
-  }
+  .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-flow: dense; gap: 20px; padding: 5%; margin-top: 40px; }
+  .gallery-img { width: 100%; height: 100%; object-fit: cover; border-radius: 4px; cursor: zoom-in; transition: opacity 0.3s; }
+  .gallery-img.landscape { grid-column: span 2; }
+
+  /* TOOLS & FIELDS SECTION */
+  .tools-section { padding: 4rem 5% 100px; border-top: 1px solid var(--border); margin: 0 5%; }
+  .tools-row { display: flex; flex-wrap: wrap; gap: 2.5rem; align-items: flex-start; }
+  .tool-item { display: flex; flex-direction: column; align-items: center; gap: 0.8rem; width: 60px; }
+  .tool-icon { width: 48px; height: 48px; border: 1px solid var(--border2); display: flex; align-items: center; justify-content: center; background: var(--surface); transition: border-color 0.3s; }
+  .tool-item:hover .tool-icon { border-color: var(--accent); }
+  .tool-icon svg { width: 24px; height: 24px; }
+  .tool-label { font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); text-align: center; line-height: 1.4; }
+
+  footer { padding: 60px 5%; border-top: 1px solid var(--border); display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 20px; }
+  .footer-brand { color: var(--accent); font-family: var(--serif); font-size: 1.5rem; font-style: italic; }
+  .footer-socials { display: flex; gap: 25px; }
+  .footer-socials a { color: var(--muted); transition: all 0.3s; }
+  .footer-socials a:hover { color: var(--accent); transform: translateY(-2px); }
 
   #lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10,10,10,0.95); z-index: 9999; align-items: center; justify-content: center; cursor: zoom-out; }
   #lightbox img { max-width: 90vw; max-height: 90vh; object-fit: contain; }
 
   @media (max-width: 768px) {
-    .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+    header { grid-template-columns: 1fr; gap: 30px; }
     .project-title { font-size: 2.5rem; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
   }
 </style>
 </head>
@@ -66,16 +64,44 @@
 <header>
   <h1 id="proj-titulo" class="project-title">Carregando...</h1>
   <p id="proj-descricao" class="project-desc"></p>
+  <aside class="project-meta-grid">
+    <div class="meta-item"><label>Ano</label><span id="proj-ano">—</span></div>
+    <div class="meta-item"><label>Categoria</label><span id="proj-categoria">—</span></div>
+  </aside>
 </header>
 
 <div id="galeria-container" class="gallery-grid"></div>
+
+<!-- Seção de Ícones (Software e Campo) -->
+<section class="tools-section">
+  <div class="tools-row" id="icons-container">
+    <!-- JS preencherá aqui -->
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="footer-brand">Henrique R</div>
+  <div class="footer-socials">
+    <a href="mailto:henriqver@gmail.com">Email</a>
+    <a href="https://wa.me/5511983236151">WhatsApp</a>
+    <a href="https://instagram.com/henriqver">Instagram</a>
+  </div>
+</footer>
 
 <div id="lightbox" onclick="this.style.display='none'"><img id="lightbox-img" src=""></div>
 
 <script>
   const urlParams = new URLSearchParams(window.location.search);
   const projectId = urlParams.get('id');
-  const galeria = document.getElementById('galeria-container');
+
+  // Mapeamento de Ícones SVG Simplificados
+  const iconLibrary = {
+    "Photoshop": '<svg viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="2" fill="#001E36"/><text x="4" y="16" font-family="serif" font-size="12" font-weight="bold" fill="#31A8FF">Ps</text></svg>',
+    "Illustrator": '<svg viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="2" fill="#300000"/><text x="4" y="16" font-family="serif" font-size="12" font-weight="bold" fill="#FF9A00">Ai</text></svg>',
+    "IA": '<svg viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="1.5"><path d="M12 3l1.5 6.5L21 12l-7.5 2.5L12 21l-1.5-6.5L3 12l7.5-2.5L12 3z"/></svg>',
+    "Branding": '<svg viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="1"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5"/></svg>',
+    "Tipografia": '<svg viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="1.5"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></svg>'
+  };
 
   fetch('projetos.json')
     .then(response => response.json())
@@ -84,6 +110,23 @@
       if (projeto) {
         document.getElementById('proj-titulo').innerText = projeto.titulo;
         document.getElementById('proj-descricao').innerText = projeto.descricao;
+        document.getElementById('proj-ano').innerText = projeto.ano || "—";
+        document.getElementById('proj-categoria').innerText = projeto.categoria || "—";
+        
+        // Gerar Ícones Dinamicamente[cite: 4]
+        const iconsBox = document.getElementById('icons-container');
+        const softwares = (projeto.software || "").split(',').map(s => s.trim());
+        const campos = (projeto.campo || "").split(',').map(s => s.trim());
+        
+        [...softwares, ...campos].filter(val => val).forEach(item => {
+           const iconHtml = iconLibrary[item] || '<svg viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="1"><circle cx="12" cy="12" r="10"/></svg>';
+           iconsBox.innerHTML += `
+             <div class="tool-item">
+               <div class="tool-icon">${iconHtml}</div>
+               <span class="tool-label">${item}</span>
+             </div>`;
+        });
+
         carregarSequenciaFotos(1, projeto.formato_galeria); 
       }
     });
@@ -92,48 +135,24 @@
     const nomeArquivo = `${projectId} (${index})`;
     const caminhoBase = `assets/images/projetos/${projectId}/${nomeArquivo}`;
     const extensoes = ['.png', '.jpg', '.jpeg', '.webp'];
-    
-    let tentativaAtual = 0;
+    let tentativa = 0;
 
-    function testarProximaExtensao() {
-      if (tentativaAtual >= extensoes.length) return;
-
+    function testar() {
+      if (tentativa >= extensoes.length) return;
       const imgTeste = new Image();
-      imgTeste.src = caminhoBase + extensoes[tentativaAtual];
-
+      imgTeste.src = caminhoBase + extensoes[tentativa];
       imgTeste.onload = function() {
         const img = document.createElement('img');
         img.src = this.src;
         img.className = 'gallery-img';
-        
-        // Ajuste conforme escolha no CMS[cite: 1]
-        if (formato === "original") {
-            // Se for muito larga (16:9), pode ocupar 2 colunas se desejar[cite: 1]
-            if (this.width > this.height) {
-                img.classList.add('landscape');
-            }
-            img.style.aspectRatio = 'auto';
-            img.style.objectFit = 'contain';
-        } else {
-            img.style.aspectRatio = '4/5';
-            img.style.objectFit = 'cover';
-        }
-
-        img.onclick = () => {
-          document.getElementById('lightbox-img').src = img.src;
-          document.getElementById('lightbox').style.display = 'flex';
-        };
-        
-        galeria.appendChild(img);
-        carregarSequenciaFotos(index + 1, formato); 
+        if (formato === "original" && this.width > this.height) img.classList.add('landscape');
+        img.onclick = () => { document.getElementById('lightbox-img').src = img.src; document.getElementById('lightbox').style.display = 'flex'; };
+        document.getElementById('galeria-container').appendChild(img);
+        carregarSequenciaFotos(index + 1, formato);
       };
-
-      imgTeste.onerror = function() {
-        tentativaAtual++;
-        testarProximaExtensao();
-      };
+      imgTeste.onerror = () => { tentativa++; testar(); };
     }
-    testarProximaExtensao();
+    testar();
   }
 </script>
 </body>
