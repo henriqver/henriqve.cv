@@ -23,10 +23,24 @@
   .nav-links a { color: var(--text); text-decoration: none; transition: color 0.3s; }
   .nav-links a:hover { color: var(--accent); }
 
-  .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 0 5%; }
-  .hero-title { font-family: var(--serif); font-size: clamp(2.5rem, 8vw, 6rem); line-height: 0.9; font-weight: 300; letter-spacing: -2px; }
+  /* Ajustes Hero para suportar a textura[cite: 7] */
+  .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 0 5%; position: relative; overflow: hidden; }
+  
+  /* Textura de Malha Técnica[cite: 7] */
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px), 
+                      linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  /* Título Reduzido[cite: 6] */
+  .hero-title { position: relative; z-index: 2; font-family: var(--serif); font-size: clamp(2.5rem, 8vw, 6rem); line-height: 0.9; font-weight: 300; letter-spacing: -2px; }
   .hero-title em { font-style: italic; color: var(--accent); }
-  .hero-meta { margin-top: 40px; display: flex; gap: 60px; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
+  .hero-meta { position: relative; z-index: 2; margin-top: 40px; display: flex; gap: 60px; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
 
   .work-grid { padding: 0 5% 100px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; }
   .work-item { position: relative; cursor: pointer; overflow: hidden; text-decoration: none; color: inherit; display: block; }
@@ -71,6 +85,7 @@
 </nav>
 
 <section class="hero">
+  <div class="hero-grid"></div>
   <h1 class="hero-title">Henrique Rodrigues<br>designer <em>multidisciplinar</em></h1>
   <div class="hero-meta">
     <div>+10 anos de experiência</div>
@@ -79,17 +94,14 @@
   </div>
 </section>
 
-<!-- Grade de Projetos -->
-<section class="work-grid" id="work">
-  <!-- JS injetará os itens aqui -->
-</section>
+<section class="work-grid" id="work"></section>
 
 <section class="about-section" id="about">
   <div>
     <p class="about-label">Sobre Mim</p>
     <h2 class="about-title">Designer<br>focado no<br><em>mercado esportivo</em>.</h2>
     <p class="about-body">
-Designer gráfico multidisciplinar com mais de 10 anos de experiência, dedicando a maior parte da carreira à criação para a indústria esportiva. Hoje, atuo no futebol paulista, o ecossistema mais inovador do país, entregando de forma versátil soluções visuais completas.
+      Designer gráfico multidisciplinar com mais de 10 anos de experiência, dedicando a maior parte da carreira à criação para a indústria esportiva. Hoje, atuo no futebol paulista, o ecossistema mais inovador do país, entregando de forma versátil soluções visuais completas.
     </p>
   </div>
   <div class="about-visual">
@@ -97,7 +109,6 @@ Designer gráfico multidisciplinar com mais de 10 anos de experiência, dedicand
   </div>
 </section>
 
-<!-- Rodapé Atualizado Sincronizado com Contato[cite: 2] -->
 <footer id="footer">
   <div class="footer-brand">Henrique R</div>
   <div class="footer-socials">
@@ -114,14 +125,12 @@ Designer gráfico multidisciplinar com mais de 10 anos de experiência, dedicand
 </footer>
 
 <script>
-  // Script Netlify Identity
   if (window.netlifyIdentity) {
     window.netlifyIdentity.on("init", user => {
       if (!user) { window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; }); }
     });
   }
 
-  // Carregamento de Projetos com Capa Automática (0)
   fetch('projetos.json')
     .then(response => response.json())
     .then(data => {
@@ -129,7 +138,6 @@ Designer gráfico multidisciplinar com mais de 10 anos de experiência, dedicand
       const projetos = data.lista || [];
       grid.innerHTML = ''; 
 
-      // Itera apenas sobre os projetos existentes[cite: 2, 3]
       projetos.forEach(projeto => {
         const id = projeto.id;
         const workItem = document.createElement('a');
@@ -149,7 +157,6 @@ Designer gráfico multidisciplinar com mais de 10 anos de experiência, dedicand
         `;
         grid.appendChild(workItem);
 
-        // Busca a capa (0)
         const extensoes = ['.png', '.jpg', '.jpeg', '.webp'];
         let tentativa = 0;
 
@@ -171,7 +178,6 @@ Designer gráfico multidisciplinar com mais de 10 anos de experiência, dedicand
         }
         carregarCapa();
       });
-      // Placeholders "Em breve" removidos[cite: 2]
     })
     .catch(err => console.error("Erro:", err));
 </script>
