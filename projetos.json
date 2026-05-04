@@ -122,7 +122,8 @@
     {
       "ano": "2026",
       "software": [
-        "IA"
+        "IA",
+        "Photoshop"
       ],
       "descricao": "Utilização de Inteligência Artificial para a geração de imagens, aliada a um rigoroso processo de pós-produção. O trabalho consiste no refinamento técnico para a correção de detalhes, ajuste de colorimetria e integração de elementos de marca, unindo a ferramenta de IA ao olhar de um especialista para garantir um acabamento final impecável.",
       "helper": "Capa: id (0). Galeria: id (1), id (2), etc. na pasta assets/images/projetos/{{id}}/",
