@@ -23,10 +23,8 @@
   .nav-links a { color: var(--text); text-decoration: none; transition: color 0.3s; }
   .nav-links a:hover { color: var(--accent); }
 
-  /* Ajustes Hero para suportar a textura[cite: 7] */
   .hero { height: 80vh; display: flex; flex-direction: column; justify-content: center; padding: 0 5%; position: relative; overflow: hidden; }
   
-  /* Textura de Malha Técnica[cite: 7] */
   .hero-grid {
     position: absolute; inset: 0;
     background-image: linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), 
@@ -37,7 +35,6 @@
     pointer-events: none;
   }
 
-  /* Título Reduzido[cite: 6] */
   .hero-title { position: relative; z-index: 2; font-family: var(--serif); font-size: clamp(2.5rem, 8vw, 6rem); line-height: 0.9; font-weight: 300; letter-spacing: -2px; }
   .hero-title em { font-style: italic; color: var(--accent); }
   .hero-meta { position: relative; z-index: 2; margin-top: 40px; display: flex; gap: 60px; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
@@ -53,10 +50,15 @@
   .work-name { font-family: var(--serif); font-size: 1.8rem; line-height: 1; }
   .work-tag { color: var(--accent); font-size: 10px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
 
-  .about-section { padding: 150px 5%; display: grid; grid-template-columns: 1fr 1fr; gap: 100px; border-top: 1px solid var(--border); }
+  /* Ajuste na seção Sobre para garantir alinhamento nas extremidades[cite: 6] */
+  .about-section { padding: 150px 5%; display: grid; grid-template-columns: 1fr 1fr; gap: 100px; border-top: 1px solid var(--border); align-items: start; }
   .about-label { color: var(--accent); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px; }
   .about-title { font-family: var(--serif); font-size: 4rem; line-height: 1; font-weight: 300; margin-bottom: 40px; }
   .about-body { color: var(--muted); font-size: 1.2rem; line-height: 1.6; max-width: 500px; }
+
+  /* Solução para a foto ancorada à direita[cite: 6] */
+  .about-visual { display: flex; justify-content: flex-end; }
+  .about-visual-box { width: 300px; height: 400px; border: 1px solid var(--border2); background: var(--surface); }
 
   footer { padding: 60px 5%; border-top: 1px solid var(--border); display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 20px; }
   .footer-brand { color: var(--accent); font-family: var(--serif); font-size: 1.5rem; font-style: italic; letter-spacing: 0; }
@@ -68,6 +70,8 @@
   @media (max-width: 768px) {
     .work-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
     .about-section { grid-template-columns: 1fr; }
+    /* No mobile, a foto volta para o fluxo natural[cite: 6] */
+    .about-visual { justify-content: flex-start; }
     .hero-title { font-size: 4rem; }
     .nav-links { display: none; }
   }
@@ -105,7 +109,7 @@
     </p>
   </div>
   <div class="about-visual">
-    <div style="width: 300px; height: 400px; border: 1px solid var(--border2); background: var(--surface);"></div>
+    <div class="about-visual-box"></div>
   </div>
 </section>
 
