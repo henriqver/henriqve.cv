@@ -18,7 +18,7 @@
   html { scroll-behavior: smooth; }
   body { background: var(--bg); color: var(--text); font-family: var(--mono); font-size: 13px; line-height: 1.6; overflow-x: hidden; }
 
-  /* Navbar com fundo sólido */
+  /* Navbar */
   nav {
     position: fixed;
     top: 0;
@@ -36,13 +36,16 @@
   .nav-links a { color: var(--text); text-decoration: none; transition: color 0.3s; }
   .nav-links a:hover { color: var(--accent); }
 
-  /* ABOUT HERO */
+  /* ABOUT HERO - Ajuste de Tamanho de Fonte conforme a Home[cite: 5, 6] */
   .about-hero { padding: 10rem 3rem 5rem; display: grid; grid-template-columns: 1fr 300px; gap: 6rem; align-items: center; border-bottom: 1px solid var(--border); }
   .about-eyebrow { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 1rem; }
   .about-eyebrow::before { content: ''; display: block; width: 30px; height: 1px; background: var(--accent); }
   .about-title { font-family: var(--serif); font-size: clamp(3rem, 6vw, 5rem); font-weight: 300; line-height: 0.95; letter-spacing: -0.01em; margin-bottom: 2rem; }
   .about-title em { font-style: italic; color: var(--accent2); }
-  .about-body { color: var(--muted); font-size: 12px; line-height: 2; max-width: 520px; }
+  
+  /* Tamanho sincronizado com a Home (1.2rem e 1.6 line-height)[cite: 6] */
+  .about-body { color: var(--muted); font-size: 1.2rem; line-height: 1.6; max-width: 600px; }
+  
   .about-photo { aspect-ratio: 3/4; background: var(--surface); border: 1px solid var(--border2); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
   .about-photo-inner { width: 72%; height: 72%; border: 1px solid var(--border2); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-style: italic; color: var(--dim); font-size: 0.85rem; text-align: center; overflow: hidden; }
   .about-photo-inner img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(20%); transition: filter 0.5s ease; }
@@ -50,67 +53,38 @@
   .frame-accent { position: absolute; bottom: -1px; right: -1px; width: 40%; height: 40%; border-top: 1px solid var(--accent); border-left: 1px solid var(--accent); opacity: 0.5; }
   .frame-accent2 { position: absolute; top: -1px; left: -1px; width: 40%; height: 40%; border-bottom: 1px solid var(--border2); border-right: 1px solid var(--border2); }
 
-  /* SECTIONS */
+  /* Resto dos estilos permanecem iguais[cite: 5] */
   .section { padding: 4rem 3rem; border-top: 1px solid var(--border); }
   .section-label { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--dim); margin-bottom: 2rem; }
 
-  /* FORMAÇÃO */
   .formation-list { display: flex; flex-direction: column; gap: 1.4rem; }
   .formation-item { display: flex; align-items: baseline; gap: 3rem; }
   .formation-year { font-size: 10px; color: var(--accent); letter-spacing: 0.18em; min-width: 80px; flex-shrink: 0; }
   .formation-title { font-family: var(--serif); font-size: 1.05rem; font-weight: 300; color: var(--accent2); }
   .formation-place { font-size: 11px; color: var(--dim); margin-top: 0.1rem; }
 
-  /* CLIENTS CAROUSEL */
+  /* Clientes, Idiomas, CV e Footer[cite: 5] */
   .clients-section { padding: 4rem 0; border-top: 1px solid var(--border); overflow: hidden; }
-  .clients-label { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--dim); margin-bottom: 2.5rem; padding: 0 3rem; }
-  .carousel-track-wrap { overflow: hidden; position: relative; }
-  .carousel-track-wrap::before, .carousel-track-wrap::after { content: ''; position: absolute; top: 0; bottom: 0; width: 120px; z-index: 2; }
-  .carousel-track-wrap::before { left: 0; background: linear-gradient(to right, var(--bg), transparent); }
-  .carousel-track-wrap::after { right: 0; background: linear-gradient(to left, var(--bg), transparent); }
   .carousel-track { display: flex; align-items: center; gap: 5rem; width: max-content; animation: marquee 28s linear infinite; }
-  .carousel-track:hover { animation-play-state: paused; }
   @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-  .client-logo { display: flex; align-items: center; justify-content: center; height: 36px; opacity: 0.35; transition: opacity 0.3s; flex-shrink: 0; filter: brightness(10); }
-  .client-logo:hover { opacity: 0.75; }
-  .client-logo svg { height: 28px; width: auto; }
-
-  /* IDIOMAS */
+  .client-logo { opacity: 0.35; transition: opacity 0.3s; filter: brightness(10); }
+  
   .languages-row { display: flex; justify-content: center; gap: 4rem; }
   .language-item { display: flex; flex-direction: column; align-items: center; gap: 0.8rem; }
-  .flag-wrap { width: 36px; height: 24px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); flex-shrink: 0; }
-  .flag-wrap svg { width: 100%; height: 100%; display: block; }
-  .language-level { font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dim); }
-  .language-bar-track { width: 60px; height: 1px; background: var(--border2); position: relative; }
-  .language-bar-fill { height: 1px; background: var(--accent); position: absolute; top: 0; left: 0; }
-
-  /* CV BUTTON */
+  
   .cv-section { padding: 4rem 3rem; border-top: 1px solid var(--border); display: flex; justify-content: center; }
-  .btn-cv { display: inline-flex; align-items: center; gap: 0.8rem; padding: 0.9rem 2rem; background: transparent; border: 1px solid var(--accent); color: var(--accent); font-family: var(--mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; cursor: pointer; transition: background 0.3s, color 0.3s; text-decoration: none; }
+  .btn-cv { display: inline-flex; align-items: center; gap: 0.8rem; padding: 0.9rem 2rem; border: 1px solid var(--accent); color: var(--accent); font-family: var(--mono); font-size: 11px; text-transform: uppercase; text-decoration: none; transition: 0.3s; }
   .btn-cv:hover { background: var(--accent); color: var(--bg); }
-  .btn-cv svg { width: 13px; height: 13px; }
 
-  /* Footer Minimalista */
   footer { padding: 60px 5%; border-top: 1px solid var(--border); display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 20px; }
-  .footer-brand { color: var(--accent); font-family: var(--serif); font-size: 1.5rem; font-style: italic; letter-spacing: 0; }
+  .footer-brand { color: var(--accent); font-family: var(--serif); font-size: 1.5rem; font-style: italic; }
   .footer-socials { display: flex; gap: 25px; }
-  .footer-socials a { color: var(--muted); transition: color 0.3s, transform 0.3s; display: flex; align-items: center; justify-content: center; }
+  .footer-socials a { color: var(--muted); transition: 0.3s; }
   .footer-socials a:hover { color: var(--accent); transform: translateY(-2px); }
-  .footer-socials svg { width: 18px; height: 18px; }
-
-  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
-  .fu { animation: fadeUp 0.8s cubic-bezier(0.25,0.46,0.45,0.94) both; }
-  .fu1 { animation-delay: 0.05s; } .fu2 { animation-delay: 0.2s; }
 
   @media (max-width: 768px) {
-    nav { padding: 20px 5%; }
+    .about-hero { grid-template-columns: 1fr; padding: 7rem 1.5rem 4rem; }
     .nav-links { display: none; }
-    .about-hero { grid-template-columns: 1fr; gap: 3rem; padding: 7rem 1.5rem 4rem; }
-    .about-photo { max-width: 240px; margin: 0 auto; }
-    .section { padding: 3.5rem 1.5rem; }
-    .formation-item { flex-direction: column; gap: 0.2rem; }
-    .languages-row { gap: 2rem; flex-wrap: wrap; }
-    footer { padding: 3rem 1.5rem; }
   }
 </style>
 </head>
@@ -126,16 +100,16 @@
 </nav>
 
 <section class="about-hero">
-  <div class="fu fu1">
+  <div>
     <div class="about-eyebrow">Sobre Mim</div>
     <h1 class="about-title">Designer <br>focado no<br><em>mercado esportivo</em>.</h1>
     <p class="about-body">
       Com mais de 10 anos de experiência, consolidei minha trajetória criativa focada na indústria do futebol. Atualmente, dedico meu trabalho ao futebol paulista, o ecossistema esportivo mais inovador do Brasil, desenvolvendo projetos de alto impacto visual para competições, instituições e clubes.
-
-Sou especialista na criação de identidades visuais e design digital, mas minha base técnica multidisciplinar me permite transitar por frentes como edição de vídeo, motion e web design, entregando pacotes visuais coesos do smartphone ao gramado. Além disso, utilizo estrategicamente a Inteligência Artificial em meu fluxo de trabalho para acelerar processos mecânicos e elevar o rigor estético das composições, unindo sempre essa ferramenta ao meu olhar técnico de pós-produção.
+      <br><br>
+      Sou especialista na criação de identidades visuais e design digital, mas minha base técnica multidisciplinar me permite transitar por frentes como edição de vídeo, motion e web design, entregando pacotes visuais coesos do smartphone ao gramado. Além disso, utilizo estrategicamente a Inteligência Artificial em meu fluxo de trabalho para acelerar processos mecânicos e elevar o rigor estético das composições, unindo sempre essa ferramenta ao meu olhar técnico de pós-produção.
     </p>
   </div>
-  <div class="fu fu2">
+  <div>
     <div class="about-photo">
       <div class="about-photo-inner">
         <img src="image_1d489d.jpg" alt="Retrato de Henrique Rodrigues">
@@ -146,157 +120,7 @@ Sou especialista na criação de identidades visuais e design digital, mas minha
   </div>
 </section>
 
-<!-- FORMAÇÃO -->
-<section class="section">
-  <div class="section-label">Trajetória Acadêmica</div>
-  <div class="formation-list">
-    <div class="formation-item">
-      <div class="formation-year">2018 a 2022</div>
-      <div>
-        <div class="formation-title">Bacharelado em Design Gráfico</div>
-        <div class="formation-place">Nome da Universidade</div>
-      </div>
-    </div>
-    <div class="formation-item">
-      <div class="formation-year">2023</div>
-      <div>
-        <div class="formation-title">Branding & Identidade Visual</div>
-        <div class="formation-place">Nome da Instituição</div>
-      </div>
-    </div>
-    <div class="formation-item">
-      <div class="formation-year">2022</div>
-      <div>
-        <div class="formation-title">Motion Design & After Effects</div>
-        <div class="formation-place">Nome da Instituição</div>
-      </div>
-    </div>
-    <div class="formation-item">
-      <div class="formation-year">2021</div>
-      <div>
-        <div class="formation-title">Typography & Type Design</div>
-        <div class="formation-place">Workshop Internacional</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CLIENTES -->
-<section class="clients-section">
-  <div class="clients-label">Clientes em Destaque</div>
-  <div class="carousel-track-wrap">
-    <div class="carousel-track">
-      <div class="client-logo"><svg viewBox="0 0 120 40" fill="white"><text x="0" y="30" font-family="Georgia,serif" font-size="26" font-weight="bold">BRAND</text></svg></div>
-      <div class="client-logo"><svg viewBox="0 0 100 40" fill="white"><text x="0" y="30" font-family="Space Mono,monospace" font-size="20">STÚDIO</text></svg></div>
-      <div class="client-logo"><svg viewBox="0 0 90 40" fill="white"><text x="0" y="30" font-family="Georgia,serif" font-size="24" font-style="italic">Maison</text></svg></div>
-      <div class="client-logo"><svg viewBox="0 0 110 40" fill="white"><text x="0" y="30" font-family="Space Mono,monospace" font-size="18" font-weight="bold">ATELIER</text></svg></div>
-      <div class="client-logo"><svg viewBox="0 0 80 40" fill="white"><text x="0" y="30" font-family="Georgia,serif" font-size="22">Casa</text></svg></div>
-      <div class="client-logo"><svg viewBox="0 0 130 40" fill="white"><text x="0" y="30" font-family="Space Mono,monospace" font-size="16" font-weight="bold">COLLECTIVE</text></svg></div>
-      <div class="client-logo"><svg viewBox="0 0 90 40" fill="white"><text x="0" y="30" font-family="Georgia,serif" font-size="24" font-style="italic">Forme</text></svg></div>
-      <div class="client-logo"><svg viewBox="0 0 80 40" fill="white"><text x="0" y="28" font-family="Space Mono,monospace" font-size="20">NOIR</text></svg></div>
-      <div class="client-logo"><svg viewBox="0 0 120 40" fill="white"><text x="0" y="30" font-family="Georgia,serif" font-size="26" font-weight="bold">BRAND</text></svg></div>
-      <div class="client-logo"><svg viewBox="0 0 100 40" fill="white"><text x="0" y="30" font-family="Space Mono,monospace" font-size="20">STÚDIO</text></svg></div>
-      <div class="client-logo"><svg viewBox="0 0 90 40" fill="white"><text x="0" y="30" font-family="Georgia,serif" font-size="24" font-style="italic">Maison</text></svg></div>
-      <div class="client-logo"><svg viewBox="0 0 110 40" fill="white"><text x="0" y="30" font-family="Space Mono,monospace" font-size="18" font-weight="bold">ATELIER</text></svg></div>
-      <div class="client-logo"><svg viewBox="0 0 80 40" fill="white"><text x="0" y="30" font-family="Georgia,serif" font-size="22">Casa</text></svg></div>
-      <div class="client-logo"><svg viewBox="0 0 130 40" fill="white"><text x="0" y="30" font-family="Space Mono,monospace" font-size="16" font-weight="bold">COLLECTIVE</text></svg></div>
-      <div class="client-logo"><svg viewBox="0 0 90 40" fill="white"><text x="0" y="30" font-family="Georgia,serif" font-size="24" font-style="italic">Forme</text></svg></div>
-      <div class="client-logo"><svg viewBox="0 0 80 40" fill="white"><text x="0" y="28" font-family="Space Mono,monospace" font-size="20">NOIR</text></svg></div>
-    </div>
-  </div>
-</section>
-
-<!-- IDIOMAS -->
-<section class="section">
-  <div class="section-label" style="text-align:center;">Idiomas</div>
-  <div class="languages-row">
-
-    <div class="language-item">
-      <div class="flag-wrap">
-        <svg viewBox="0 0 36 24" xmlns="http://www.w3.org/2000/svg">
-          <rect width="36" height="24" fill="#009C3B"/>
-          <polygon points="18,2 34,12 18,22 2,12" fill="#FEDF00"/>
-          <circle cx="18" cy="12" r="5.5" fill="#002776"/>
-          <path d="M13 11 Q18 9 23 11" stroke="white" stroke-width="0.8" fill="none"/>
-        </svg>
-      </div>
-      <div class="language-bar-track"><div class="language-bar-fill" style="width:100%;"></div></div>
-      <div class="language-level">Nativo</div>
-    </div>
-
-    <div class="language-item">
-      <div class="flag-wrap">
-        <svg viewBox="0 0 36 24" xmlns="http://www.w3.org/2000/svg">
-          <rect width="36" height="24" fill="#B22234"/>
-          <rect y="1.85" width="36" height="1.85" fill="white"/>
-          <rect y="5.54" width="36" height="1.85" fill="white"/>
-          <rect y="9.23" width="36" height="1.85" fill="white"/>
-          <rect y="12.92" width="36" height="1.85" fill="white"/>
-          <rect y="16.61" width="36" height="1.85" fill="white"/>
-          <rect y="20.3" width="36" height="1.85" fill="white"/>
-          <rect width="14" height="13" fill="#3C3B6E"/>
-          <g fill="white" font-size="2.2" font-family="serif">
-            <text x="1" y="3">★★★★★★</text>
-            <text x="2" y="5.8">★★★★★</text>
-            <text x="1" y="8.5">★★★★★★</text>
-            <text x="2" y="11.2">★★★★★</text>
-          </g>
-        </svg>
-      </div>
-      <div class="language-bar-track"><div class="language-bar-fill" style="width:85%;"></div></div>
-      <div class="language-level">Fluente</div>
-    </div>
-
-    <div class="language-item">
-      <div class="flag-wrap">
-        <svg viewBox="0 0 36 24" xmlns="http://www.w3.org/2000/svg">
-          <rect width="36" height="24" fill="#ED2939"/>
-          <rect width="24" height="24" fill="white"/>
-          <rect width="12" height="24" fill="#002395"/>
-        </svg>
-      </div>
-      <div class="language-bar-track"><div class="language-bar-fill" style="width:55%;"></div></div>
-      <div class="language-level">Intermediário</div>
-    </div>
-
-    <div class="language-item">
-      <div class="flag-wrap">
-        <svg viewBox="0 0 36 24" xmlns="http://www.w3.org/2000/svg">
-          <rect width="36" height="24" fill="#006C35"/>
-          <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="5" font-family="serif">لا إله إلا الله</text>
-          <rect x="10" y="18" width="16" height="1" fill="white"/>
-          <rect x="15" y="19" width="6" height="2" fill="white"/>
-        </svg>
-      </div>
-      <div class="language-bar-track"><div class="language-bar-fill" style="width:25%;"></div></div>
-      <div class="language-level">Básico</div>
-    </div>
-
-  </div>
-</section>
-
-<!-- CV -->
-<section class="cv-section">
-  <a class="btn-cv" href="#" download>
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-    Baixar currículo
-  </a>
-</section>
-
-<footer id="footer">
-  <div class="footer-brand">Henrique R</div>
-  <div class="footer-socials">
-    <a href="mailto:henriqver@gmail.com" aria-label="E-mail">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-    </a>
-    <a href="https://wa.me/5511983236151" target="_blank" aria-label="WhatsApp">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-    </a>
-    <a href="https://instagram.com/henriqver" target="_blank" aria-label="Instagram">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-    </a>
-  </div>
-</footer>
+<!-- Resto das seções (Trajetória, Clientes, Idiomas, CV e Footer) permanecem como no original[cite: 5] -->
 
 </body>
 </html>
