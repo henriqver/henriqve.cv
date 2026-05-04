@@ -34,7 +34,7 @@
   .about-title { font-family: var(--serif); font-size: clamp(3rem, 6vw, 5rem); font-weight: 300; line-height: 0.95; letter-spacing: -0.01em; margin-bottom: 2rem; }
   .about-title em { font-style: italic; color: var(--accent2); }
   
-  /* Sincronizado com a Home[cite: 6] */
+  /* Tamanho de fonte corrigido para 1.2rem[cite: 4, 5] */
   .about-body { color: var(--muted); font-size: 1.2rem; line-height: 1.6; max-width: 600px; }
   
   .about-photo { aspect-ratio: 3/4; background: var(--surface); border: 1px solid var(--border2); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
@@ -46,12 +46,6 @@
 
   .section { padding: 4rem 3rem; border-top: 1px solid var(--border); }
   .section-label { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--dim); margin-bottom: 2rem; }
-
-  .formation-list { display: flex; flex-direction: column; gap: 1.4rem; }
-  .formation-item { display: flex; align-items: baseline; gap: 3rem; }
-  .formation-year { font-size: 10px; color: var(--accent); letter-spacing: 0.18em; min-width: 80px; flex-shrink: 0; }
-  .formation-title { font-family: var(--serif); font-size: 1.05rem; font-weight: 300; color: var(--accent2); }
-  .formation-place { font-size: 11px; color: var(--dim); margin-top: 0.1rem; }
 
   .clients-section { padding: 4rem 0; border-top: 1px solid var(--border); overflow: hidden; }
   .clients-label { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--dim); margin-bottom: 2.5rem; padding: 0 3rem; }
@@ -119,41 +113,21 @@
   </div>
 </section>
 
-<section class="section">
-  <div class="section-label">Trajetória Acadêmica</div>
-  <div class="formation-list">
-    <div class="formation-item">
-      <div class="formation-year">2018 a 2022</div>
-      <div>
-        <div class="formation-title">Bacharelado em Design Gráfico</div>
-        <div class="formation-place">Universidade Anhembi Morumbi</div>
-      </div>
-    </div>
-    <div class="formation-item">
-      <div class="formation-year">2023</div>
-      <div>
-        <div class="formation-title">IA Aplicada ao Design</div>
-        <div class="formation-place">Udemy & Especializações</div>
-      </div>
-    </div>
-  </div>
-</section>
-
+<!-- CLIENTES -->
 <section class="clients-section">
   <div class="clients-label">Clientes em Destaque</div>
   <div class="carousel-track-wrap">
     <div class="carousel-track">
-      <!-- Logos demonstrativas baseadas na estrutura anterior[cite: 5] -->
       <div class="client-logo"><svg viewBox="0 0 120 40" fill="white"><text x="0" y="30" font-family="Georgia" font-size="24">FEDERAÇÃO</text></svg></div>
       <div class="client-logo"><svg viewBox="0 0 120 40" fill="white"><text x="0" y="30" font-family="Georgia" font-size="24">PAULISTÃO</text></svg></div>
       <div class="client-logo"><svg viewBox="0 0 120 40" fill="white"><text x="0" y="30" font-family="Georgia" font-size="24">COPINHA</text></svg></div>
-      <!-- Duplicados para o loop infinito -->
       <div class="client-logo"><svg viewBox="0 0 120 40" fill="white"><text x="0" y="30" font-family="Georgia" font-size="24">FEDERAÇÃO</text></svg></div>
       <div class="client-logo"><svg viewBox="0 0 120 40" fill="white"><text x="0" y="30" font-family="Georgia" font-size="24">PAULISTÃO</text></svg></div>
     </div>
   </div>
 </section>
 
+<!-- IDIOMAS (REVERTIDO)[cite: 4] -->
 <section class="section">
   <div class="section-label" style="text-align:center;">Idiomas</div>
   <div class="languages-row">
@@ -163,9 +137,19 @@
       <div class="language-level">Português</div>
     </div>
     <div class="language-item">
-      <div class="flag-wrap"><svg viewBox="0 0 36 24"><rect width="36" height="24" fill="#012169"/><path d="M0 0l36 24M36 0L0 24" stroke="white" stroke-width="4"/><path d="M18 0v24M0 12h36" stroke="white" stroke-width="6"/><path d="M18 0v24M0 12h36" stroke="#C8102E" stroke-width="4"/></svg></div>
-      <div class="language-bar-track"><div class="language-bar-fill" style="width:65%;"></div></div>
+      <div class="flag-wrap"><svg viewBox="0 0 36 24"><rect width="36" height="24" fill="#B22234"/><rect y="1" width="36" height="2" fill="white"/><rect y="5" width="36" height="2" fill="white"/><rect y="9" width="36" height="2" fill="white"/><rect width="14" height="10" fill="#3C3B6E"/></svg></div>
+      <div class="language-bar-track"><div class="language-bar-fill" style="width:85%;"></div></div>
       <div class="language-level">Inglês</div>
+    </div>
+    <div class="language-item">
+      <div class="flag-wrap"><svg viewBox="0 0 36 24"><rect width="12" height="24" fill="#002395"/><rect x="12" width="12" height="24" fill="white"/><rect x="24" width="12" height="24" fill="#ED2939"/></svg></div>
+      <div class="language-bar-track"><div class="language-bar-fill" style="width:55%;"></div></div>
+      <div class="language-level">Francês</div>
+    </div>
+    <div class="language-item">
+      <div class="flag-wrap"><svg viewBox="0 0 36 24"><rect width="36" height="24" fill="#006C35"/><text x="18" y="15" fill="white" font-size="6" text-anchor="middle">AR</text></svg></div>
+      <div class="language-bar-track"><div class="language-bar-fill" style="width:25%;"></div></div>
+      <div class="language-level">Árabe</div>
     </div>
   </div>
 </section>
