@@ -173,7 +173,7 @@
       "descricao": "Criação do Key Visual dinâmico para o Paulistão Feminino 2024, alinhado ao peso do campeonato feminino mais forte e inovador do Brasil. O projeto integra o desenvolvimento da identidade principal da competição e a sua aplicação visual na festa oficial de premiação, além do desdobramento completo da marca em todas as peças do torneio, marcando presença do digital ao gramado."
     },
     {
-      "formato_galeria": "cortar",
+      "formato_galeria": "original",
       "helper": "Capa: id (0). Galeria: id (1), id (2), etc. na pasta assets/images/projetos/{{id}}/",
       "id": "paulistao_2023",
       "titulo": "Paulistão 2023",
