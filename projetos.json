@@ -7,7 +7,7 @@
       "descricao": "Desenvolvimento da identidade visual do Paulistão 2026 com a utilização de liquid glass e mesh gradients, acompanhando as tendências de design. O projeto alinha-se ao perfil do campeonato mais inovador do Brasil, estruturando um Key Visual que é reproduzido em todas as peças da competição, desde o ambiente digital até o gramado.",
       "formato_galeria": "original",
       "categoria": "Key Visual, Identidade Visual, Direção de Arte",
-      "titulo": "KV Paulistão 2026",
+      "titulo": "Paulistão 2026",
       "cliente": "FPF | Paulistão",
       "id": "kv-paulistao-2026"
     },
@@ -107,7 +107,7 @@
       "helper": "Capa: id (0). Galeria: id (1), id (2), etc. na pasta assets/images/projetos/{{id}}/",
       "formato_galeria": "original",
       "categoria": "Key Visual, Identidade Visual",
-      "titulo": "KV Paulistão Feminino 2026",
+      "titulo": "Paulistão Feminino 2026",
       "cliente": "FPF | Paulistão",
       "id": "kv-paulistao-feminino-2026"
     },
@@ -118,7 +118,7 @@
       "helper": "As fotos devem estar na pasta assets/images/projetos/{{id}}/ nomeadas como {{id}} (1).jpg, {{id}} (2).jpg, etc.",
       "formato_galeria": "original",
       "categoria": "Key Visual, Identidade Visual, Direção de Arte",
-      "titulo": "KV Copinha",
+      "titulo": "Copinha",
       "cliente": "FPF | Copinha",
       "id": "kv_copinha"
     },
@@ -191,16 +191,6 @@
       "categoria": "Key Visual, Identidade Visual",
       "ano": "2023",
       "descricao": "Desenvolvimento da identidade visual do Paulistão Feminino 2023, o campeonato feminino mais forte e inovador do mercado. O escopo abrange o design do Key Visual, a sua extensão imersiva para a cenografia da festa oficial de premiação e a replicação de toda a identidade gráfica nas mais variadas peças da competição, garantindo total consistência do digital ao gramado."
-    },
-    {
-      "formato_galeria": "original",
-      "helper": "Capa: id (0). Galeria: id (1), id (2), etc. na pasta assets/images/projetos/{{id}}/",
-      "id": "copinha_eventos",
-      "titulo": "Copinha",
-      "ano": "2023 - 2026",
-      "categoria": "Key Visual, Identidade Visual",
-      "cliente": "FPF | Copinha",
-      "descricao": "Responsável por aprimorar anualmente a identidade da maior competição de base do mundo, envolvendo agora as edições masculina e feminina. O trabalho une o ajuste fino constante do Key Visual (cores, tipografia e elementos gráficos) à entrega completa dos eventos de lançamento de cada edição, incluindo a cenografia física e os pacotes gráficos de transmissão e telões."
     }
   ]
 }
