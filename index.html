@@ -50,7 +50,6 @@
   .work-name { font-family: var(--serif); font-size: 1.8rem; line-height: 1; }
   .work-tag { color: var(--accent); font-size: 10px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
 
-  /* Seção Sobre: Layout equilibrado e centralizado[cite: 6, 7] */
   .about-section { padding: 150px 5%; border-top: 1px solid var(--border); display: flex; justify-content: center; }
   .about-container { display: grid; grid-template-columns: 1fr 350px; gap: 80px; width: 100%; max-width: 1200px; align-items: stretch; }
 
@@ -58,14 +57,13 @@
   .about-title { font-family: var(--serif); font-size: 4rem; line-height: 1; font-weight: 300; margin-bottom: 40px; }
   .about-body { color: var(--muted); font-size: 1.2rem; line-height: 1.6; }
 
-  /* Moldura de Foto Unificada com Efeitos[cite: 6] */
   .about-visual { display: flex; justify-content: flex-end; align-items: stretch; }
   .about-photo-wrapper { width: 100%; position: relative; background: var(--surface); border: 1px solid var(--border2); display: flex; align-items: center; justify-content: center; overflow: hidden; }
-  .about-photo-inner { width: 75%; height: 85%; border: 1px solid var(--border2); position: relative; overflow: hidden; }
-  .about-photo-inner img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); transition: filter 0.5s ease; }
-  .about-photo-inner img:hover { filter: grayscale(0); }
+  .about-photo-inner { width: 75%; height: 85%; border: 1px solid var(--border2); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+  /* Removido grayscale e corrigido object-fit[cite: 6] */
+  .about-photo-inner img { width: 100%; height: 100%; object-fit: contain; filter: none; transition: transform 0.5s ease; }
+  .about-photo-inner img:hover { transform: scale(1.05); }
 
-  /* Cantoneiras Decorativas[cite: 6] */
   .frame-accent { position: absolute; bottom: -1px; right: -1px; width: 40px; height: 40px; border-top: 1px solid var(--accent); border-left: 1px solid var(--accent); opacity: 0.5; z-index: 2; }
   .frame-accent2 { position: absolute; top: -1px; left: -1px; width: 40px; height: 40px; border-bottom: 1px solid var(--border2); border-right: 1px solid var(--border2); z-index: 2; }
 
@@ -120,7 +118,7 @@
     <div class="about-visual">
       <div class="about-photo-wrapper">
         <div class="about-photo-inner">
-          <img src="assets/images/sobre/foto-sobre.png" alt="Henrique Rodrigues">
+          <img src="assets/images/sobre/foto-sobre-home.png" alt="Henrique Rodrigues">
         </div>
         <div class="frame-accent"></div>
         <div class="frame-accent2"></div>
