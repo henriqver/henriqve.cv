@@ -28,21 +28,34 @@
   .nav-links a { color: var(--text); text-decoration: none; transition: color 0.3s; }
   .nav-links a:hover { color: var(--accent); }
 
-  .about-hero { padding: 10rem 3rem 5rem; display: grid; grid-template-columns: 1fr 300px; gap: 6rem; align-items: center; border-bottom: 1px solid var(--border); }
+  /* Ajuste para altura dinâmica e alinhamento sincronizado[cite: 5] */
+  .about-hero { 
+    padding: 10rem 5% 5rem; 
+    display: grid; 
+    grid-template-columns: 1fr 350px; 
+    gap: 80px; 
+    align-items: stretch; 
+    border-bottom: 1px solid var(--border);
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  
   .about-eyebrow { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 1rem; }
   .about-eyebrow::before { content: ''; display: block; width: 30px; height: 1px; background: var(--accent); }
   .about-title { font-family: var(--serif); font-size: clamp(3rem, 6vw, 5rem); font-weight: 300; line-height: 0.95; letter-spacing: -0.01em; margin-bottom: 2rem; }
   .about-title em { font-style: italic; color: var(--accent2); }
   
-  /* Tamanho de fonte corrigido para 1.2rem[cite: 4, 5] */
   .about-body { color: var(--muted); font-size: 1.2rem; line-height: 1.6; max-width: 600px; }
   
-  .about-photo { aspect-ratio: 3/4; background: var(--surface); border: 1px solid var(--border2); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
-  .about-photo-inner { width: 72%; height: 72%; border: 1px solid var(--border2); display: flex; align-items: center; justify-content: center; overflow: hidden; }
-  .about-photo-inner img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(20%); transition: filter 0.5s ease; }
-  .about-photo-inner img:hover { filter: grayscale(0%); }
-  .frame-accent { position: absolute; bottom: -1px; right: -1px; width: 40%; height: 40%; border-top: 1px solid var(--accent); border-left: 1px solid var(--accent); opacity: 0.5; }
-  .frame-accent2 { position: absolute; top: -1px; left: -1px; width: 40%; height: 40%; border-bottom: 1px solid var(--border2); border-right: 1px solid var(--border2); }
+  /* Moldura unificada com a Home[cite: 5, 6] */
+  .about-photo { position: relative; background: var(--surface); border: 1px solid var(--border2); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .about-photo-inner { width: 75%; height: 85%; border: 1px solid var(--border2); display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; }
+  .about-photo-inner img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); transition: filter 0.5s ease; }
+  .about-photo-inner img:hover { filter: grayscale(0); }
+
+  /* Cantoneiras decorativas[cite: 5] */
+  .frame-accent { position: absolute; bottom: -1px; right: -1px; width: 40px; height: 40px; border-top: 1px solid var(--accent); border-left: 1px solid var(--accent); opacity: 0.5; z-index: 2; }
+  .frame-accent2 { position: absolute; top: -1px; left: -1px; width: 40px; height: 40px; border-bottom: 1px solid var(--border2); border-right: 1px solid var(--border2); z-index: 2; }
 
   .section { padding: 4rem 3rem; border-top: 1px solid var(--border); }
   .section-label { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--dim); margin-bottom: 2rem; }
@@ -76,6 +89,7 @@
 
   @media (max-width: 768px) {
     .about-hero { grid-template-columns: 1fr; gap: 3rem; padding: 7rem 1.5rem 4rem; }
+    .about-photo { aspect-ratio: 3/4; height: auto; }
     .nav-links { display: none; }
     .languages-row { gap: 2rem; flex-wrap: wrap; }
   }
@@ -102,14 +116,12 @@
       Sou especialista na criação de identidades visuais e design digital, mas minha base técnica multidisciplinar me permite transitar por frentes como edição de vídeo, motion e web design, entregando pacotes visuais coesos do smartphone ao gramado. Além disso, utilizo estrategicamente a Inteligência Artificial em meu fluxo de trabalho para acelerar processos mecânicos e elevar o rigor estético das composições, unindo sempre essa ferramenta ao meu olhar técnico de pós-produção.
     </p>
   </div>
-  <div>
-    <div class="about-photo">
-      <div class="about-photo-inner">
-        <img src="assets/images/sobre/foto-sobre.png" alt="Henrique Rodrigues">
-      </div>
-      <div class="frame-accent"></div>
-      <div class="frame-accent2"></div>
+  <div class="about-photo">
+    <div class="about-photo-inner">
+      <img src="assets/images/sobre/foto-sobre.png" alt="Henrique Rodrigues">
     </div>
+    <div class="frame-accent"></div>
+    <div class="frame-accent2"></div>
   </div>
 </section>
 
