@@ -55,13 +55,17 @@
 
   .about-label { color: var(--accent); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px; }
   .about-title { font-family: var(--serif); font-size: 4rem; line-height: 1; font-weight: 300; margin-bottom: 40px; }
-  .about-body { color: var(--muted); font-size: 1.2rem; line-height: 1.6; }
+  .about-body { color: var(--muted); font-size: 1.2rem; line-height: 1.6; margin-bottom: 35px; }
+
+  /* Estilização do Botão "Saiba Mais"[cite: 5, 6] */
+  .btn-about { display: inline-flex; align-items: center; gap: 0.8rem; padding: 0.9rem 2rem; border: 1px solid var(--accent); color: var(--accent); font-family: var(--mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; transition: 0.3s; }
+  .btn-about:hover { background: var(--accent); color: var(--bg); }
+  .btn-about svg { width: 14px; height: 14px; }
 
   .about-visual { display: flex; justify-content: flex-end; align-items: stretch; }
   .about-photo-wrapper { width: 100%; position: relative; background: var(--surface); border: 1px solid var(--border2); display: flex; align-items: center; justify-content: center; overflow: hidden; }
   .about-photo-inner { width: 75%; height: 85%; border: 1px solid var(--border2); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
-  /* Removido grayscale e corrigido object-fit[cite: 6] */
-  .about-photo-inner img { width: 100%; height: 100%; object-fit: contain; filter: none; transition: transform 0.5s ease; }
+  .about-photo-inner img { width: 100%; height: 100%; object-fit: cover; filter: none; transition: transform 0.5s ease; }
   .about-photo-inner img:hover { transform: scale(1.05); }
 
   .frame-accent { position: absolute; bottom: -1px; right: -1px; width: 40px; height: 40px; border-top: 1px solid var(--accent); border-left: 1px solid var(--accent); opacity: 0.5; z-index: 2; }
@@ -114,11 +118,16 @@
       <p class="about-body">
         Designer gráfico multidisciplinar com mais de 10 anos de experiência, dedicando a maior parte da carreira à criação para a indústria esportiva. Hoje, atuo no futebol paulista, o ecossistema mais inovador do país, entregando de forma versátil soluções visuais completas.
       </p>
+      <!-- Botão para a página Sobre[cite: 5, 6] -->
+      <a href="sobre.html" class="btn-about">
+        Conheça minha trajetória
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
     </div>
     <div class="about-visual">
       <div class="about-photo-wrapper">
         <div class="about-photo-inner">
-          <img src="assets/images/sobre/foto-sobre-home.png" alt="Henrique Rodrigues">
+          <img src="assets/images/sobre/foto-sobre.png" alt="Henrique Rodrigues">
         </div>
         <div class="frame-accent"></div>
         <div class="frame-accent2"></div>
