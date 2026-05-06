@@ -111,71 +111,87 @@
 <div id="lightbox" onclick="this.style.display='none'"><img id="lightbox-img" src=""></div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const idProjeto = urlParams.get('id');
+  const urlParams = new URLSearchParams(window.location.search);
+  const projectId = urlParams.get('id');
 
-    if (!idProjeto) {
-      document.getElementById('projeto-detalhes').innerHTML = '<p>Project not found.</p>';
-      return;
+  const iconLibrary = {
+    "Photoshop": '<svg viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="2" fill="#001E36"/><text x="4" y="16" font-family="serif" font-size="12" font-weight="bold" fill="#31A8FF">Ps</text></svg>',
+    "Illustrator": '<svg viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="2" fill="#300000"/><text x="4" y="16" font-family="serif" font-size="12" font-weight="bold" fill="#FF9A00">Ai</text></svg>',
+    "InDesign": '<svg viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="2" fill="#1A0030"/><text x="4" y="16" font-family="serif" font-size="12" font-weight="bold" fill="#FF3366">Id</text></svg>',
+    "After Effects": '<svg viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="2" fill="#00005B"/><text x="4" y="16" font-family="serif" font-size="12" font-weight="bold" fill="#D191FF">Ae</text></svg>',
+    "Premiere Pro": '<svg viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="2" fill="#00005B"/><text x="4" y="16" font-family="serif" font-size="12" font-weight="bold" fill="#9999FF">Pr</text></svg>',
+    "IA": '<svg viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="1.5"><path d="M12 3l1.5 6.5L21 12l-7.5 2.5L12 21l-1.5-6.5L3 12l7.5-2.5L12 3z"/></svg>'
+  };
+
+  // 1. Caminho ajustado para buscar o JSON na pasta raiz
+  fetch('../projetos.json')
+    .then(response => response.json())
+    .then(data => {
+      const projeto = data.lista.find(p => p.id === projectId);
+      if (projeto) {
+        
+        // 2. Prioriza os textos em inglês (com fallback para português)
+        const tituloProjeto = projeto.titulo_en || projeto.titulo;
+        document.getElementById('proj-titulo').innerText = tituloProjeto;
+        document.getElementById('proj-descricao').innerText = projeto.descricao_en || projeto.descricao;
+        document.getElementById('proj-ano').innerText = projeto.ano || "";
+        document.getElementById('proj-categoria').innerText = projeto.categoria_en || projeto.categoria || "";
+        
+        const iconsBox = document.getElementById('icons-container');
+        let softwares = projeto.software || [];
+        if (typeof softwares === 'string') softwares = softwares.split(',').map(s => s.trim());
+
+        softwares.forEach(item => {
+           const iconHtml = iconLibrary[item] || '<svg viewBox="0 0 24 24" fill="none" stroke="#c8a96e" stroke-width="1"><circle cx="12" cy="12" r="10"/></svg>';
+           iconsBox.innerHTML += `
+             <div class="tool-item">
+               <div class="tool-icon">${iconHtml}</div>
+               <span class="tool-label">${item}</span>
+             </div>`;
+        });
+
+        // Passando o título para ser usado na tag alt das fotos
+        carregarSequenciaFotos(1, projeto.formato_galeria, tituloProjeto); 
+      }
+    });
+
+  function carregarSequenciaFotos(index, formato, tituloProjeto) {
+    const nomeArquivo = `${projectId} (${index})`;
+    
+    // 3. Caminho da imagem ajustado com ../
+    const caminhoBase = `../assets/images/projetos/${projectId}/${nomeArquivo}`;
+    
+    // 4. Priorizando o WebP
+    const extensoes = ['.webp', '.png', '.jpg', '.jpeg'];
+    let tentativa = 0;
+
+    function testar() {
+      if (tentativa >= extensoes.length) return;
+      const imgTeste = new Image();
+      imgTeste.src = caminhoBase + extensoes[tentativa];
+      
+      imgTeste.onload = function() {
+        const img = document.createElement('img');
+        img.src = this.src;
+        img.className = 'gallery-img';
+        
+        // 5. Otimização e SEO
+        img.loading = 'lazy'; 
+        img.alt = tituloProjeto;
+
+        if (formato === "original" && this.width > this.height) img.classList.add('landscape');
+        
+        img.onclick = () => { 
+          document.getElementById('lightbox-img').src = img.src; 
+          document.getElementById('lightbox').style.display = 'flex'; 
+        };
+        
+        document.getElementById('galeria-container').appendChild(img);
+        carregarSequenciaFotos(index + 1, formato, tituloProjeto);
+      };
+      imgTeste.onerror = () => { tentativa++; testar(); };
     }
-
-    // 1. Busca o JSON voltando uma pasta (../)
-    fetch('../projetos.json')
-      .then(response => response.json())
-      .then(data => {
-        const projeto = data.lista.find(p => p.id === idProjeto);
-
-        if (projeto) {
-          // 2. Prioriza os campos em inglês (titulo_en, categoria_en, descricao_en)
-          document.getElementById('projeto-titulo').innerText = projeto.titulo_en || projeto.titulo;
-          document.getElementById('projeto-categoria').innerText = projeto.categoria_en || projeto.categoria;
-          
-          // 3. Converte a descrição em inglês do CMS (usando sua função de markdown)
-          const descricaoHTML = converterMarkdown(projeto.descricao_en || projeto.descricao);
-          document.getElementById('projeto-descricao').innerHTML = descricaoHTML;
-
-          // 4. Carregamento da galeria com caminhos ajustados
-          const galeria = document.getElementById('projeto-galeria');
-          const totalFotos = 30; // Ajuste conforme a média de fotos dos seus projetos
-          const extensoes = ['.webp', '.png', '.jpg', '.jpeg'];
-
-          for (let i = 1; i <= totalFotos; i++) {
-            const wrapper = document.createElement('div');
-            wrapper.className = 'gallery-item';
-            wrapper.id = `foto-${i}`;
-            galeria.appendChild(wrapper);
-
-            let encontrou = false;
-            const testarFoto = (extIndex) => {
-              if (extIndex >= extensoes.length || encontrou) return;
-              
-              const imgObj = new Image();
-              // Adicionado ../ para buscar as imagens na pasta correta
-              imgObj.src = `../assets/images/projetos/${idProjeto}/${i}${extensoes[extIndex]}`;
-              
-              imgObj.onload = () => {
-                encontrou = true;
-                wrapper.innerHTML = `<img src="${imgObj.src}" loading="lazy" alt="${projeto.titulo_en || projeto.titulo}">`;
-              };
-              imgObj.onerror = () => { testarFoto(extIndex + 1); };
-            };
-            testarFoto(0);
-          }
-        }
-      })
-      .catch(err => console.error("Erro ao carregar projeto:", err));
-  });
-
-  // Sua função de conversão de Markdown (mantenha-a abaixo do DOMContentLoaded)
-  function converterMarkdown(texto) {
-    if (!texto) return "";
-    return texto
-      .replace(/### (.*)/g, '<h3>$1</h3>')
-      .replace(/## (.*)/g, '<h2>$1</h2>')
-      .replace(/\*\*(.*)\*\*/g, '<strong>$1</strong>')
-      .replace(/\*(.*)\*/g, '<em>$1</em>')
-      .replace(/\n/g, '<br>');
+    testar();
   }
 </script>
 </body>
