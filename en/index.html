@@ -166,7 +166,8 @@
     });
   }
 
-  fetch('projetos.json')
+  // 1. Buscando o arquivo na pasta raiz
+  fetch('../projetos.json')
     .then(response => response.json())
     .then(data => {
       const grid = document.getElementById('work');
@@ -179,31 +180,38 @@
         workItem.href = `projeto.html?id=${id}`;
         workItem.className = 'work-item';
 
+        // 2. Definindo os textos em inglês, com o português como plano B
+        const titulo = projeto.titulo_en || projeto.titulo;
+        const categoria = projeto.categoria_en || projeto.categoria;
+
         workItem.innerHTML = `
           <div class="work-placeholder" id="capa-${id}">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.5" style="width:40%; opacity:0.1;"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
           </div>
           <div class="work-overlay">
             <div>
-              <div class="work-tag">${projeto.categoria}</div>
-              <div class="work-name">${projeto.titulo}</div>
+              <div class="work-tag">${categoria}</div>
+              <div class="work-name">${titulo}</div>
             </div>
           </div>
         `;
         grid.appendChild(workItem);
 
-        const extensoes = ['.png', '.jpg', '.jpeg', '.webp'];
+        // 3. Priorizando o WebP
+        const extensoes = ['.webp', '.png', '.jpg', '.jpeg'];
         let tentativa = 0;
 
         function carregarCapa() {
           if (tentativa < extensoes.length) {
-            const urlTeste = `assets/images/projetos/${id}/${id} (0)${extensoes[tentativa]}`;
+            // 4. Caminho ajustado com ../
+            const urlTeste = `../assets/images/projetos/${id}/${id} (0)${extensoes[tentativa]}`;
             const imgTeste = new Image();
             imgTeste.src = urlTeste;
 
             imgTeste.onload = () => {
               const placeholder = document.getElementById(`capa-${id}`);
-              placeholder.innerHTML = `<img src="${urlTeste}" class="work-img" style="opacity:1">`;
+              // 5. Loading lazy e alt text adicionados
+              placeholder.innerHTML = `<img src="${urlTeste}" class="work-img" loading="lazy" style="opacity:1" alt="${titulo}">`;
             };
             imgTeste.onerror = () => {
               tentativa++;
