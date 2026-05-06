@@ -82,16 +82,16 @@
 <nav>
   <a href="index.html" class="nav-logo">Henrique R</a>
   <div class="nav-links">
-    <a href="index.html#work">Projetos</a>
-    <a href="sobre.html">Sobre</a>
-    <a href="contato.html">Contato</a>
+    <a href="index.html#work">Projects</a>
+    <a href="sobre.html">About</a>
+    <a href="contato.html">Contact</a>
     <div class="lang-switcher" style="margin-left: 20px; display: flex; gap: 8px; align-items: center;">
-      <span style="opacity: 1; cursor: default;" title="Português">
+      <a href="../contato.html" style="opacity: 0.4; transition: 0.3s;" title="Português">
         <img src="https://flagcdn.com/br.svg" width="18" alt="BR" style="border-radius: 2px; display: block;">
-      </span>
-      <a href="en/contato.html" style="opacity: 0.4; transition: 0.3s;" title="English">
-        <img src="https://flagcdn.com/us.svg" width="18" alt="US" style="border-radius: 2px; display: block;">
       </a>
+      <span style="opacity: 1; cursor: default;" title="English">
+        <img src="https://flagcdn.com/us.svg" width="18" alt="US" style="border-radius: 2px; display: block;">
+      </span>
     </div>
   </div>
 </nav>
@@ -117,23 +117,23 @@
 
   <div class="contact-form">
     <div class="form-group">
-      <label>Nome</label>
+      <label>Name</label>
       <input type="text" id="nome" class="form-control">
     </div>
     <div class="form-group">
-      <label>E-mail</label>
+      <label>Email</label>
       <input type="email" id="email" class="form-control">
     </div>
     <div class="form-group">
-      <label>Assunto</label>
+      <label>Subject</label>
       <input type="text" id="assunto" class="form-control">
     </div>
     <div class="form-group">
-      <label>Mensagem</label>
+      <label>Message</label>
       <textarea id="mensagem" class="form-control"></textarea>
     </div>
     <button class="btn-send" onclick="enviar()">
-      Enviar mensagem
+      Send message
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
         <path d="M5 12h14M12 5l7 7-7 7"/>
       </svg>
@@ -163,11 +163,11 @@
     const mensagem = document.getElementById('mensagem').value.trim();
     
     if (!nome || !email || !mensagem) { 
-        alert('Por favor, preencha os campos obrigatórios (Nome, E-mail e Mensagem).');
+        alert('Please fill in the required fields (Name, Email, and Message).');
         return; 
     }
     
-    alert('Mensagem enviada com sucesso! Entrarei em contato em breve.');
+    alert('Message submitted successfully! I will get in touch soon.');
     
     // Limpa os campos após enviar
     document.getElementById('nome').value = '';

@@ -62,26 +62,26 @@
 <nav>
   <a href="index.html" class="nav-logo">Henrique R</a>
   <div class="nav-links">
-    <a href="index.html#work">Projetos</a>
-    <a href="sobre.html">Sobre</a>
-    <a href="contato.html">Contato</a>
+    <a href="index.html#work">Projects</a>
+    <a href="sobre.html">About</a>
+    <a href="contato.html">Contact</a>
     <div class="lang-switcher" style="margin-left: 20px; display: flex; gap: 8px; align-items: center;">
-      <span style="opacity: 1; cursor: default;" title="Português">
+      <a href="#" onclick="window.location.href='../projeto.html' + window.location.search; return false;" style="opacity: 0.4; transition: 0.3s;" title="Português">
         <img src="https://flagcdn.com/br.svg" width="18" alt="BR" style="border-radius: 2px; display: block;">
-      </span>
-      <a href="#" onclick="window.location.href='en/projeto.html' + window.location.search; return false;" style="opacity: 0.4; transition: 0.3s;" title="English">
-        <img src="https://flagcdn.com/us.svg" width="18" alt="US" style="border-radius: 2px; display: block;">
       </a>
+      <span style="opacity: 1; cursor: default;" title="English">
+        <img src="https://flagcdn.com/us.svg" width="18" alt="US" style="border-radius: 2px; display: block;">
+      </span>
     </div>
   </div>
 </nav>
 
 <header>
-  <h1 id="proj-titulo" class="project-title">Carregando...</h1>
+  <h1 id="proj-titulo" class="project-title">Loading...</h1>
   <p id="proj-descricao" class="project-desc"></p>
   <aside class="project-meta-grid">
-    <div class="meta-item"><label>Ano</label><span id="proj-ano">—</span></div>
-    <div class="meta-item"><label>Categoria</label><span id="proj-categoria">—</span></div>
+    <div class="meta-item"><label>YEAR</label><span id="proj-ano">—</span></div>
+    <div class="meta-item"><label>Disciplines</label><span id="proj-categoria">—</span></div>
   </aside>
 </header>
 
