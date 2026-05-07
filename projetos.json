@@ -11,9 +11,11 @@
       "descricao": "Desenvolvimento da identidade visual do Paulistão 2026 com a utilização de liquid glass e mesh gradients, acompanhando as tendências de design. O projeto alinha-se ao perfil do campeonato mais inovador do Brasil, estruturando um Key Visual que é reproduzido em todas as peças da competição, desde o ambiente digital até o gramado.",
       "formato_galeria": "original",
       "categoria": "Key Visual, Identidade Visual, Direção de Arte",
+      "categoria_en": "Key Visual, Visual Identity, Art Direction",
       "titulo": "Paulistão 2026",
       "cliente": "FPF | Paulistão",
-      "id": "kv-paulistao-2026"
+      "id": "kv-paulistao-2026",
+      "descricao_en": "Development of the visual identity for Paulistão 2026 using liquid glass and mesh gradients, following current design trends. The project aligns with the profile of the most innovative championship in Brazil, structuring a Key Visual that is deployed across all competition assets, from the digital environment to the pitch."
     },
     {
       "imagens": "",
@@ -23,11 +25,13 @@
         "Illustrator"
       ],
       "descricao": "Concepção da nova família de taças do futebol paulista, realizada em conjunto com o time de comunicação e marketing da FPF. O projeto engloba os troféus do Paulistão, Paulistão Feminino, divisões de acesso e categorias de base.",
+      "titulo_en": "Product Design, Visual Identity",
       "formato_galeria": "original",
       "categoria": "Design de Produto, Identidade Visual",
-      "titulo": "Família de Taças do Futebol Paulista",
+      "titulo": "Trophy Collection",
       "cliente": "FPF",
-      "id": "familia_tacas_paulista"
+      "id": "familia_tacas_paulista",
+      "descricao_en": "Creation of the new São Paulo state football trophy collection, developed alongside the FPF communication and marketing team. The project includes the trophies for the Paulistão, Paulistão Feminino, lower divisions, and youth categories."
     },
     {
       "imagens": [
@@ -39,6 +43,7 @@
         "Photoshop"
       ],
       "descricao": "Criação de arte para as redes sociais da FPF ilustrando um trono vazio e uma coroa, em homenagem a Pelé. O conceito serviu de inspiração direta para a construção de um trono físico utilizado na abertura do Paulistão 2023, na Vila Belmiro. Atualmente, a peça integra a Sala do Trono do Memorial das Conquistas do Santos FC.",
+      "titulo_en": "King Pelé Throne",
       "formato_galeria": "original",
       "categoria": "Design",
       "titulo": "Trono Rei Pelé",
@@ -53,6 +58,7 @@
         "Illustrator"
       ],
       "descricao": "Desenho de coroa especial anexada à taça do Paulistão e aos troféus de todas as competições da FPF durante a temporada de 2023, em homenagem a Pelé.",
+      "titulo_en": "King Pelé Trophy",
       "formato_galeria": "cortar",
       "categoria": "Design de Produto, Identidade Visual",
       "titulo": "Troféu Rei Pelé",
@@ -144,7 +150,7 @@
       "helper": "Capa: id (0). Galeria: id (1), id (2), etc. na pasta assets/images/projetos/{{id}}/",
       "formato_galeria": "original",
       "categoria": "Key Visual, Identidade Visual",
-      "titulo": "Paulistão Feminino 2026",
+      "titulo": "Paulistão F 2026",
       "cliente": "FPF | Paulistão",
       "id": "kv-paulistao-feminino-2026"
     },
