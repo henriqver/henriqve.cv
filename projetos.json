@@ -74,11 +74,14 @@
       ],
       "descricao": "Desenvolvimento da identidade visual do novo mote institucional da FPF. O projeto marca uma transição simbólica na qual a sigla deixa de representar apenas a Federação Paulista de Futebol para assumir o conceito Fanáticos por Futebol.",
       "helper": "As fotos devem estar na pasta assets/images/projetos/{{id}}/ nomeadas como {{id}} (1).jpg, {{id}} (2).jpg, etc.",
+      "titulo_en": "Fanáticos por Futebol",
       "formato_galeria": "original",
       "categoria": "Branding, Identidade Visual",
+      "categoria_en": "Branding, Visual Identity",
       "titulo": "Fanáticos por Futebol",
       "cliente": "FPF",
-      "id": "fanaticos_por_futebol"
+      "id": "fanaticos_por_futebol",
+      "descricao_en": "Development of the visual identity for FPF’s new institutional motto. The project marks a symbolic transition where the acronym moves beyond representing the São Paulo state Football Federation to embrace the concept Fanáticos por Futebol (Fanatics for Football)."
     },
     {
       "ano": "2026",
@@ -165,9 +168,11 @@
       "helper": "As fotos devem estar na pasta assets/images/projetos/{{id}}/ nomeadas como {{id}} (1).jpg, {{id}} (2).jpg, etc.",
       "formato_galeria": "original",
       "categoria": "Key Visual, Identidade Visual, Direção de Arte",
+      "categoria_en": "Key Visual, Visual Identity, Art Direction",
       "titulo": "Copinha",
       "cliente": "FPF | Copinha",
-      "id": "kv_copinha"
+      "id": "kv_copinha",
+      "descricao_en": "Annual enhancement of the Key Visual and development of the entire identity for Copinha, the world’s largest youth competition organized by FPF. The work covers the adjustment of colors, typography, and graphic elements, the set design for launch events, and the standardized reproduction of the visual identity across all tournament assets, from digital to the pitch."
     },
     {
       "ano": "2025 - 2026",
@@ -176,11 +181,14 @@
       ],
       "descricao": "Criação de artes digitais para a cobertura de equipes do futebol paulista em campeonatos nacionais e internacionais, fora do calendário de competições da FPF. O foco é a produção de peças de alto impacto visual para as redes sociais, engajando os torcedores e destacando a força dos clubes do estado.",
       "helper": "Capa: id (0). Galeria: id (1), id (2), etc. na pasta assets/images/projetos/{{id}}/",
+      "titulo_en": "Paulistas em Campo",
       "formato_galeria": "cortar",
       "categoria": "Social Media Design, Direção de Arte",
+      "categoria_en": "Social Media Design, Art Direction",
       "titulo": "Paulistas em Campo",
       "cliente": "FPF",
-      "id": "paulistas_em_campo"
+      "id": "paulistas_em_campo",
+      "descricao_en": "Creation of digital assets for the coverage of São Paulo state football teams in national and international championships outside the FPF competition calendar. The focus is on producing high impact visual pieces for social media, engaging fans and highlighting the strength of the state’s clubs."
     },
     {
       "ano": "2025",
@@ -190,11 +198,14 @@
       ],
       "descricao": "Criação da identidade visual do Paulistão 2025, o campeonato mais inovador do Brasil, com a utilização de gradientes em tons luminosos para um design focado no ambiente digital. O projeto centraliza a concepção do Key Visual da competição e o seu desdobramento para os eventos oficiais de sorteio e festa de premiação, garantindo que a identidade seja reproduzida em todas as peças, do digital ao gramado.",
       "helper": "Capa: id (0). Galeria: id (1), id (2), etc. na pasta assets/images/projetos/{{id}}/",
+      "titulo_en": "Paulistão 2025",
       "formato_galeria": "original",
       "categoria": "Key Visual, Identidade Visual",
+      "categoria_en": "Key Visual, Visual Identity",
       "titulo": "Paulistão 2025",
       "cliente": "FPF | Paulistão",
-      "id": "paulistao_2025"
+      "id": "paulistao_2025",
+      "descricao_en": "Creation of the visual identity for Paulistão 2025, the most innovative São Paulo state championship, using luminous gradients for a digital first design. The project centralizes the Key Visual conceptualization and its implementation for official draw and awards events, ensuring the identity is deployed across all assets, from digital to the pitch."
     },
     {
       "ano": "2025",
@@ -204,11 +215,14 @@
       ],
       "descricao": "Concepção da identidade visual do Paulistão Feminino 2025, consolidado como o campeonato feminino mais forte e inovador do país. O trabalho engloba a criação do Key Visual e a sua adaptação cenográfica e digital para a festa oficial de premiação. O projeto assegura o desdobramento padronizado da identidade para todas as peças produzidas durante a competição, do ambiente digital ao gramado.",
       "helper": "Capa: id (0). Galeria: id (1), id (2), etc. na pasta assets/images/projetos/{{id}}/",
+      "titulo_en": "Paulistão Feminino 2025",
       "formato_galeria": "original",
       "categoria": "Key Visual, Identidade Visual",
+      "categoria_en": "ey Visual, Visual Identity",
       "titulo": "Paulistão Feminino 2025",
       "cliente": "FPF | Paulistão Feminino",
-      "id": "paulistao_feminino_2025"
+      "id": "paulistao_feminino_2025",
+      "descricao_en": "Conceptualization of the visual identity for Paulistão Feminino 2025, established as the strongest and most innovative São Paulo state women’s championship. The work includes the creation of the Key Visual and its set design and digital adaptation for the official awards ceremony. The project ensures the standardized rollout of the identity across all assets produced during the competition, from digital to the pitch."
     },
     {
       "ano": "2024",
