@@ -59,17 +59,23 @@
 </head>
 <body>
 
+<style>
+  .nav-links { display: flex; align-items: center; gap: 24px; }
+  .nav-links a { text-decoration: none; color: inherit; transition: opacity 0.3s; }
+  .nav-links a:hover { opacity: 0.7; }
+</style>
+
 <nav>
-  <a href="index.html" class="nav-logo">Henrique R</a>
+  <a href="index.html" class="nav-logo" style="text-decoration: none; color: inherit;">Henrique R</a>
   <div class="nav-links">
     <a href="index.html#work">Projetos</a>
     <a href="sobre.html">Sobre</a>
     <a href="contato.html">Contato</a>
-    <div class="lang-switcher" style="margin-left: 20px; display: flex; gap: 8px; align-items: center;">
+    <div class="lang-switcher" style="display: flex; gap: 8px; align-items: center;">
       <span style="opacity: 1; cursor: default;" title="Português">
         <img src="https://flagcdn.com/br.svg" width="18" alt="BR" style="border-radius: 2px; display: block;">
       </span>
-      <a href="#" onclick="window.location.href='en/projeto.html' + window.location.search; return false;" style="opacity: 0.4; transition: 0.3s;" title="English">
+      <a href="#" onclick="window.location.href='en/projeto.html' + window.location.search; return false;" style="opacity: 0.4;" title="English">
         <img src="https://flagcdn.com/us.svg" width="18" alt="US" style="border-radius: 2px; display: block;">
       </a>
     </div>

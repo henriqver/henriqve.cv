@@ -59,14 +59,20 @@
 </head>
 <body>
 
+<style>
+  .nav-links { display: flex; align-items: center; gap: 24px; }
+  .nav-links a { text-decoration: none; color: inherit; transition: opacity 0.3s; }
+  .nav-links a:hover { opacity: 0.7; }
+</style>
+
 <nav>
-  <a href="index.html" class="nav-logo">Henrique R</a>
+  <a href="index.html" class="nav-logo" style="text-decoration: none; color: inherit;">Henrique R</a>
   <div class="nav-links">
     <a href="index.html#work">Projects</a>
     <a href="sobre.html">About</a>
     <a href="contato.html">Contact</a>
-    <div class="lang-switcher" style="margin-left: 20px; display: flex; gap: 8px; align-items: center;">
-      <a href="#" onclick="window.location.href='../projeto.html' + window.location.search; return false;" style="opacity: 0.4; transition: 0.3s;" title="Português">
+    <div class="lang-switcher" style="display: flex; gap: 8px; align-items: center;">
+      <a href="#" onclick="window.location.href='../projeto.html' + window.location.search; return false;" style="opacity: 0.4;" title="Português">
         <img src="https://flagcdn.com/br.svg" width="18" alt="BR" style="border-radius: 2px; display: block;">
       </a>
       <span style="opacity: 1; cursor: default;" title="English">
