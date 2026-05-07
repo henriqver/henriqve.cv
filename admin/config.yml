@@ -18,12 +18,22 @@ collections:
             widget: "list"
             fields:
               - {label: "ID do Projeto", name: "id", widget: "string"}
-              - {label: "Título do Projeto", name: "titulo", widget: "string"}
-              - {label: "Ano", name: "ano", widget: "string"}
-              - {label: "Categoria", name: "categoria", widget: "string"}
-              - {label: "Descrição", name: "descricao", widget: "text"}
               
-              # Software com opções predefinidas e padrão ativado[cite: 1, 4]
+              # Títulos em dois idiomas
+              - {label: "Título do Projeto (PT)", name: "titulo", widget: "string"}
+              - {label: "Título do Projeto (EN)", name: "titulo_en", widget: "string", required: false}
+              
+              - {label: "Ano", name: "ano", widget: "string"}
+              
+              # Categorias em dois idiomas
+              - {label: "Categoria (PT)", name: "categoria", widget: "string"}
+              - {label: "Categoria (EN)", name: "categoria_en", widget: "string", required: false}
+              
+              # Descrições usando Markdown para permitir quebras de linha e negrito
+              - {label: "Descrição (PT)", name: "descricao", widget: "markdown"}
+              - {label: "Descrição (EN)", name: "descricao_en", widget: "markdown", required: false}
+              
+              # Software com as opções e ícones que configuramos no script
               - label: "Software"
                 name: "software"
                 widget: "select"
@@ -37,6 +47,7 @@ collections:
                   - "Premiere Pro"
                 default: ["Photoshop", "Illustrator"]
 
+              # Opção para controlar o comportamento visual da galeria
               - label: "Formato da Galeria"
                 name: "formato_galeria"
                 widget: "select"
@@ -45,6 +56,7 @@ collections:
                   - {label: "Inteira (Proporção Original)", value: "original"}
                 default: "cortar"
 
+              # Campo informativo para lembrar o padrão de nomes das fotos
               - label: "Instruções de Imagem"
                 name: "helper"
                 widget: "hidden"
