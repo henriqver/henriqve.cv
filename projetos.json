@@ -1,6 +1,23 @@
 {
   "lista": [
     {
+      "ano": "2026",
+      "software": [
+        "IA",
+        "Photoshop"
+      ],
+      "descricao": "Utilização de Inteligência Artificial para a geração de imagens, aliada a um rigoroso processo de pós-produção. O trabalho consiste no refinamento técnico para a correção de detalhes, ajuste de colorimetria e integração de elementos de marca, unindo a ferramenta de IA ao olhar de um especialista para garantir um acabamento final impecável.",
+      "helper": "Capa: id (0). Galeria: id (1), id (2), etc. na pasta assets/images/projetos/{{id}}/",
+      "titulo_en": "IA + Retouch",
+      "formato_galeria": "original",
+      "categoria": "Direção de Arte, Design Digital",
+      "categoria_en": "Art Direction, Digital Design",
+      "titulo": "IA + Retouch",
+      "cliente": "FPF | Paulistão 2026",
+      "id": "direcao_de_arte_com_ia",
+      "descricao_en": "Use of Artificial Intelligence for image generation combined with a rigorous post production process. The work consists of technical refinement for detail correction, color grading, and brand element integration, merging AI tools with a specialist’s eye to ensure a flawless final finish."
+    },
+    {
       "imagens": "",
       "ano": "2026",
       "papel": "Diretor de Arte",
@@ -142,23 +159,6 @@
       "cliente": "FPF | Paulistão",
       "id": "series_youtube_paulistao",
       "descricao_en": "Ongoing development and updates of the visual identity and graphics packages (signatures, thumbnails, lower thirds, and intros) for various series on the Paulistão YouTube channel, including shows such as Estado do Rei, Pelas Lentes do Paulistão, Taticamente Falando, and Rolê Aleatório."
-    },
-    {
-      "ano": "2026",
-      "software": [
-        "IA",
-        "Photoshop"
-      ],
-      "descricao": "Utilização de Inteligência Artificial para a geração de imagens, aliada a um rigoroso processo de pós-produção. O trabalho consiste no refinamento técnico para a correção de detalhes, ajuste de colorimetria e integração de elementos de marca, unindo a ferramenta de IA ao olhar de um especialista para garantir um acabamento final impecável.",
-      "helper": "Capa: id (0). Galeria: id (1), id (2), etc. na pasta assets/images/projetos/{{id}}/",
-      "titulo_en": "IA + Retouch",
-      "formato_galeria": "original",
-      "categoria": "Direção de Arte, Design Digital",
-      "categoria_en": "Art Direction, Digital Design",
-      "titulo": "IA + Retouch",
-      "cliente": "FPF | Paulistão 2026",
-      "id": "direcao_de_arte_com_ia",
-      "descricao_en": "Use of Artificial Intelligence for image generation combined with a rigorous post production process. The work consists of technical refinement for detail correction, color grading, and brand element integration, merging AI tools with a specialist’s eye to ensure a flawless final finish."
     },
     {
       "ano": "2026",
