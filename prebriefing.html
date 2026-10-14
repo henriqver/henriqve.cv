@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pré-briefing | Henrique R</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #0a0a0a; --surface: #111111;
+    --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.14);
+    --accent: #c8a96e; --accent2: #e8d5b0;
+    --text: #f0ede8; --muted: #888880; --dim: #444440;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --mono: 'Space Mono', monospace;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: var(--mono); font-size: 13px; line-height: 1.6; overflow-x: hidden; }
+
+  /* Navbar */
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
+  }
+  .nav-logo { font-family: var(--serif); font-size: 1.4rem; font-style: italic; color: var(--text); text-decoration: none; }
+  .nav-links { display: flex; gap: 40px; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+  .nav-links a { color: var(--text); text-decoration: none; transition: color 0.3s; }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* Section de Contato */
+  .contact-section { padding: 150px 5% 100px; max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 50px; }
+  .contact-label { color: var(--accent); text-transform: uppercase; letter-spacing: 2px; font-size: 11px; margin-bottom: 15px; display: block;}
+  .contact-title { font-family: var(--serif); font-size: clamp(3rem, 6vw, 4.5rem); line-height: 1; font-weight: 300; }
+  .contact-title em { font-style: italic; color: var(--accent2); }
+
+  /* Formulário */
+  .contact-form { display: flex; flex-direction: column; gap: 40px; }
+  .form-group { display: flex; flex-direction: column; gap: 10px; }
+  .form-group label { color: var(--text); font-size: 13px; font-weight: bold; }
+  .form-hint { color: var(--muted); font-size: 11px; margin-top: -5px; margin-bottom: 5px; line-height: 1.4; }
+  
+  .form-control { 
+    width: 100%; 
+    background: transparent; 
+    border: none; 
+    border-bottom: 1px solid var(--border); 
+    color: var(--text); 
+    font-family: var(--mono); 
+    font-size: 14px; 
+    padding: 10px 0; 
+    transition: border-color 0.3s; 
+  }
+  .form-control:focus { outline: none; border-bottom-color: var(--accent); }
+  .form-control::placeholder { color: var(--dim); }
+  textarea.form-control { resize: vertical; min-height: 100px; }
+
+  /* Radios e Checkboxes */
+  .options-group { display: flex; flex-direction: column; gap: 12px; margin-top: 5px; }
+  .option-label { display: flex; align-items: flex-start; gap: 10px; color: var(--muted); font-size: 13px; cursor: pointer; transition: color 0.3s; }
+  .option-label:hover { color: var(--text); }
+  .option-label input { margin-top: 3px; accent-color: var(--accent); cursor: pointer; }
+
+  /* Box de Informação (Brandbook) */
+  .info-box { background: var(--surface); border: 1px solid var(--border2); padding: 30px; border-radius: 4px; }
+  .info-box h3 { font-family: var(--serif); color: var(--accent2); font-size: 2rem; font-weight: 300; margin-bottom: 15px; }
+  .info-box p { color: var(--muted); margin-bottom: 15px; }
+  .info-box ul { list-style-type: disc; padding-left: 20px; color: var(--muted); display: flex; flex-direction: column; gap: 15px; }
+  .info-box ul li strong { color: var(--text); }
+  .info-box ul ul { margin-top: 5px; list-style-type: circle; }
+
+  .btn-submit { 
+    display: inline-flex; 
+    align-items: center; 
+    justify-content: center;
+    gap: 0.8rem; 
+    padding: 1.2rem 2.5rem; 
+    background: transparent; 
+    border: 1px solid var(--accent); 
+    color: var(--accent); 
+    font-family: var(--mono); 
+    font-size: 11px; 
+    letter-spacing: 0.15em; 
+    text-transform: uppercase; 
+    cursor: pointer; 
+    transition: background 0.3s, color 0.3s; 
+    width: fit-content;
+  }
+  .btn-submit:hover { background: var(--accent); color: var(--bg); }
+  .btn-submit svg { width: 14px; height: 14px; }
+
+  /* Footer */
+  footer { padding: 60px 5%; border-top: 1px solid var(--border); display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 20px; }
+  .footer-brand { color: var(--accent); font-family: var(--serif); font-size: 1.5rem; font-style: italic; letter-spacing: 0; }
+  .footer-socials { display: flex; gap: 25px; }
+  .footer-socials a { color: var(--muted); transition: color 0.3s, transform 0.3s; display: flex; align-items: center; justify-content: center; }
+  .footer-socials a:hover { color: var(--accent); transform: translateY(-2px); }
+  .footer-socials svg { width: 18px; height: 18px; }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .contact-section { padding: 120px 5% 60px; }
+    .btn-submit { width: 100%; }
+    .info-box { padding: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Henrique R</a>
+  <div class="nav-links">
+    <a href="index.html#work">Projetos</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="contato.html">Contato</a>
+  </div>
+</nav>
+
+<section class="contact-section">
+  <div>
+    <span class="contact-label">Pré-briefing</span>
+    <h1 class="contact-title">Vamos criar algo<br><em>excepcional</em>.</h1>
+  </div>
+
+  <form class="contact-form" action="https://formspree.io/f/seu_endpoint_aqui" method="POST">
+    
+    <div class="form-group">
+      <label for="nome">Nome (obrigatório)</label>
+      <input type="text" id="nome" name="nome" class="form-control" placeholder="O seu nome completo" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="email">E-mail (obrigatório)</label>
+      <input type="email" id="email" name="email" class="form-control" placeholder="email@exemplo.com" required>
+    </div>
+
+    <div class="form-group">
+      <label>É um projeto novo ou redesign?</label>
+      <p class="form-hint">Por definição, redesign significa reformular, refazer, reaplicar ou redesenhar o design de algo. Neste caso, a marca da sua empresa.</p>
+      <div class="options-group">
+        <label class="option-label">
+          <input type="radio" name="tipo_projeto" value="Projeto novo" required>
+          Projeto novo
+        </label>
+        <label class="option-label">
+          <input type="radio" name="tipo_projeto" value="Redesign de um projeto existente" required>
+          Redesign de um projeto existente
+        </label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Quando precisa do projeto pronto?</label>
+      <div class="options-group">
+        <label class="option-label"><input type="radio" name="prazo" value="Urgente" required> Urgente</label>
+        <label class="option-label"><input type="radio" name="prazo" value="Em 1 mês" required> Em 1 mês</label>
+        <label class="option-label"><input type="radio" name="prazo" value="Em 2 meses" required> Em 2 meses</label>
+        <label class="option-label"><input type="radio" name="prazo" value="Indefinido" required> Indefinido</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="objetivos">Por que você precisa deste projeto? Quais são seus objetivos?</label>
+      <textarea id="objetivos" name="objetivos" class="form-control" placeholder="Descreva os seus objetivos..." required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="empresa_detalhes">Me fale sobre a sua empresa</label>
+      <p class="form-hint">Do que ela se trata? Quais são os produtos/serviços oferecidos? Há quanto tempo existe?</p>
+      <textarea id="empresa_detalhes" name="empresa_detalhes" class="form-control" placeholder="Detalhes sobre a empresa..." required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="duas_palavras">Descreva o seu negócio em 2 palavras</label>
+      <input type="text" id="duas_palavras" name="duas_palavras" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+      <label for="nome_marca">Qual será o nome da sua marca/produto/empresa?</label>
+      <input type="text" id="nome_marca" name="nome_marca" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+      <label for="slogan">Possui slogan? Qual?</label>
+      <input type="text" id="slogan" name="slogan" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="clientes">Descreva o máximo que puder sobre seus clientes (já existentes ou potenciais)</label>
+      <p class="form-hint">Gênero, idade, região, poder aquisitivo, etc.</p>
+      <textarea id="clientes" name="clientes" class="form-control" required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="mensagem_transmitir">Que mensagem sua marca deve transmitir para os clientes?</label>
+      <textarea id="mensagem_transmitir" name="mensagem_transmitir" class="form-control" required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="mensagem_nao_transmitir">Que mensagem sua marca NÃO deve transmitir para seus clientes?</label>
+      <textarea id="mensagem_nao_transmitir" name="mensagem_nao_transmitir" class="form-control" required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="informacoes_extras">Ainda tem algo a dizer?</label>
+      <p class="form-hint">Fique à vontade para contribuir com outras informações.</p>
+      <textarea id="informacoes_extras" name="informacoes_extras" class="form-control"></textarea>
+    </div>
+
+    <div class="info-box">
+      <h3>Entrega e Brandbook</h3>
+      <p>No brandbook está a descrição das diretrizes da empresa para que todas as áreas e pontos de contato possam manter a identidade da marca, tanto verbal quanto visual.</p>
+      <ul>
+        <li>
+          <strong>Assinaturas</strong>
+          <ul>
+            <li>Versões do logotipo e suas variantes, como versões verticais e horizontais, com decodificadores, slogan e símbolo.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Paleta de cores</strong>
+          <ul>
+            <li>Conjunto de cores pré-selecionadas utilizadas em harmonia para passar uma ideia, sentimento, sensação ou identidade.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Padrão tipográfico</strong>
+          <ul>
+            <li>Conjunto de fontes, cuja combinação deve oferecer boa leitura, se adaptar bem a todos os materiais e ajudar a reforçar a personalidade da marca.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Elementos Gráficos</strong>
+          <ul>
+            <li>Elementos visuais que vêm para agregar nas composições gráficas.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Aplicações</strong>
+          <ul>
+            <li>Exemplos de aplicações da identidade visual para demonstrar os materiais existentes.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="form-group">
+      <label>Selecione abaixo os itens que pretende realizar neste projeto</label>
+      <div class="options-group">
+        <label class="option-label"><input type="checkbox" name="itens[]" value="Registro de marca no INPI"> Registro de marca no INPI (Instituto Nacional da Propriedade Industrial)</label>
+        <label class="option-label"><input type="checkbox" name="itens[]" value="Website"> Website</label>
+        <label class="option-label"><input type="checkbox" name="itens[]" value="Aplicativo e/ou Cardápio Digital"> Aplicativo e/ou Cardápio Digital</label>
+        <label class="option-label"><input type="checkbox" name="itens[]" value="Cardápio, Catálogo e/ou Flyer"> Cardápio, Catálogo e/ou Flyer</label>
+        <label class="option-label"><input type="checkbox" name="itens[]" value="Embalagens e/ou Sacolas"> Embalagens e/ou Sacolas</label>
+        <label class="option-label"><input type="checkbox" name="itens[]" value="Cartão de Visita, Papel Timbrado etc"> Cartão de Visita, Papel Timbrado, Pasta, Envelope, Etiquetas e/ou Adesivos</label>
+        <label class="option-label"><input type="checkbox" name="itens[]" value="Artes para Redes Sociais"> Artes para Redes Sociais</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="itens_extras">Caso sinta falta de algum item, preencha no campo abaixo</label>
+      <textarea id="itens_extras" name="itens_extras" class="form-control"></textarea>
+    </div>
+    
+    <button type="submit" class="btn-submit">
+      Enviar
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+    </button>
+  </form>
+</section>
+
+<footer id="footer">
+  <div class="footer-brand">Henrique R</div>
+  <div class="footer-socials">
+    <a href="mailto:henriqver@gmail.com" aria-label="E-mail">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+    </a>
+    <a href="https://wa.me/5511983236151" target="_blank" aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+    </a>
+    <a href="https://instagram.com/henriqver" target="_blank" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+    </a>
+  </div>
+</footer>
+
+</body>
+</html>
