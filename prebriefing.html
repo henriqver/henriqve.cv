@@ -9,14 +9,16 @@
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
   :root {
     --bg: #0a0a0a; --surface: #111111;
-    --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.14);
+    --border: rgba(255,255,255,0.15); /* Borda um pouco mais visível para os inputs */
+    --border2: rgba(255,255,255,0.14);
     --accent: #c8a96e; --accent2: #e8d5b0;
-    --text: #f0ede8; --muted: #888880; --dim: #444440;
+    --text: #f0ede8; --muted: #999990; /* Muted levemente mais claro para melhorar leitura */
+    --dim: #555550;
     --serif: 'Cormorant Garamond', Georgia, serif;
     --mono: 'Space Mono', monospace;
   }
   html { scroll-behavior: smooth; }
-  body { background: var(--bg); color: var(--text); font-family: var(--mono); font-size: 13px; line-height: 1.6; overflow-x: hidden; }
+  body { background: var(--bg); color: var(--text); font-family: var(--mono); font-size: 14px; line-height: 1.6; overflow-x: hidden; }
 
   /* Navbar */
   nav {
@@ -28,7 +30,7 @@
     justify-content: space-between;
     align-items: center;
     background: var(--bg);
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
     z-index: 100;
   }
   .nav-logo { font-family: var(--serif); font-size: 1.4rem; font-style: italic; color: var(--text); text-decoration: none; }
@@ -42,11 +44,11 @@
   .contact-title { font-family: var(--serif); font-size: clamp(3rem, 6vw, 4.5rem); line-height: 1; font-weight: 300; }
   .contact-title em { font-style: italic; color: var(--accent2); }
 
-  /* Formulário */
-  .contact-form { display: flex; flex-direction: column; gap: 40px; }
-  .form-group { display: flex; flex-direction: column; gap: 10px; }
-  .form-group label { color: var(--text); font-size: 13px; font-weight: bold; }
-  .form-hint { color: var(--muted); font-size: 11px; margin-top: -5px; margin-bottom: 5px; line-height: 1.4; }
+  /* Formulário Melhorado para Legibilidade */
+  .contact-form { display: flex; flex-direction: column; gap: 50px; /* Mais espaço entre as perguntas */ }
+  .form-group { display: flex; flex-direction: column; gap: 12px; }
+  .form-group label { color: var(--accent2); font-size: 15px; font-weight: 700; letter-spacing: 0.5px; } /* Destaque maior nas perguntas */
+  .form-hint { color: var(--muted); font-size: 13px; margin-top: -6px; margin-bottom: 8px; line-height: 1.5; }
   
   .form-control { 
     width: 100%; 
@@ -55,50 +57,53 @@
     border-bottom: 1px solid var(--border); 
     color: var(--text); 
     font-family: var(--mono); 
-    font-size: 14px; 
-    padding: 10px 0; 
-    transition: border-color 0.3s; 
+    font-size: 16px; /* Tamanho maior para digitação confortável */
+    padding: 15px 0; /* Mais espaço interno */
+    line-height: 1.6;
+    transition: border-color 0.3s, background-color 0.3s; 
   }
-  .form-control:focus { outline: none; border-bottom-color: var(--accent); }
+  .form-control:focus { outline: none; border-bottom-color: var(--accent); background-color: rgba(255,255,255,0.02); } /* Feedback visual sutil ao clicar */
   .form-control::placeholder { color: var(--dim); }
-  textarea.form-control { resize: vertical; min-height: 100px; }
+  textarea.form-control { resize: vertical; min-height: 140px; }
 
-  /* Radios e Checkboxes */
-  .options-group { display: flex; flex-direction: column; gap: 12px; margin-top: 5px; }
-  .option-label { display: flex; align-items: flex-start; gap: 10px; color: var(--muted); font-size: 13px; cursor: pointer; transition: color 0.3s; }
-  .option-label:hover { color: var(--text); }
-  .option-label input { margin-top: 3px; accent-color: var(--accent); cursor: pointer; }
+  /* Radios (Maior área de clique) */
+  .options-group { display: flex; flex-direction: column; gap: 15px; margin-top: 5px; }
+  .option-label { display: flex; align-items: center; gap: 12px; color: var(--text); font-size: 15px; cursor: pointer; transition: color 0.3s; padding: 5px 0; }
+  .option-label:hover { color: var(--accent); }
+  .option-label input { width: 16px; height: 16px; accent-color: var(--accent); cursor: pointer; margin: 0; }
 
   /* Box de Informação (Brandbook) */
-  .info-box { background: var(--surface); border: 1px solid var(--border2); padding: 30px; border-radius: 4px; }
-  .info-box h3 { font-family: var(--serif); color: var(--accent2); font-size: 2rem; font-weight: 300; margin-bottom: 15px; }
-  .info-box p { color: var(--muted); margin-bottom: 15px; }
-  .info-box ul { list-style-type: disc; padding-left: 20px; color: var(--muted); display: flex; flex-direction: column; gap: 15px; }
-  .info-box ul li strong { color: var(--text); }
-  .info-box ul ul { margin-top: 5px; list-style-type: circle; }
-
+  .info-box { background: var(--surface); border: 1px solid var(--border2); padding: 40px; border-radius: 4px; margin: 20px 0; }
+  .info-box h3 { font-family: var(--serif); color: var(--accent2); font-size: 2.2rem; font-weight: 300; margin-bottom: 15px; }
+  .info-box p { color: var(--muted); font-size: 15px; line-height: 1.7; margin-bottom: 25px; }
+  .info-box ul { list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 20px; }
+  .info-box ul li { position: relative; padding-left: 20px; color: var(--muted); font-size: 14px; line-height: 1.6; }
+  .info-box ul li::before { content: '—'; position: absolute; left: 0; color: var(--accent); }
+  .info-box ul li strong { color: var(--text); font-size: 15px; display: block; margin-bottom: 4px; font-weight: 700; }
+  
   .btn-submit { 
     display: inline-flex; 
     align-items: center; 
     justify-content: center;
-    gap: 0.8rem; 
-    padding: 1.2rem 2.5rem; 
+    gap: 1rem; 
+    padding: 1.4rem 3rem; 
     background: transparent; 
     border: 1px solid var(--accent); 
     color: var(--accent); 
     font-family: var(--mono); 
-    font-size: 11px; 
+    font-size: 12px; 
     letter-spacing: 0.15em; 
     text-transform: uppercase; 
     cursor: pointer; 
     transition: background 0.3s, color 0.3s; 
     width: fit-content;
+    margin-top: 20px;
   }
   .btn-submit:hover { background: var(--accent); color: var(--bg); }
-  .btn-submit svg { width: 14px; height: 14px; }
+  .btn-submit svg { width: 16px; height: 16px; }
 
   /* Footer */
-  footer { padding: 60px 5%; border-top: 1px solid var(--border); display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 20px; }
+  footer { padding: 60px 5%; border-top: 1px solid rgba(255,255,255,0.07); display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 20px; }
   .footer-brand { color: var(--accent); font-family: var(--serif); font-size: 1.5rem; font-style: italic; letter-spacing: 0; }
   .footer-socials { display: flex; gap: 25px; }
   .footer-socials a { color: var(--muted); transition: color 0.3s, transform 0.3s; display: flex; align-items: center; justify-content: center; }
@@ -109,7 +114,7 @@
     .nav-links { display: none; }
     .contact-section { padding: 120px 5% 60px; }
     .btn-submit { width: 100%; }
-    .info-box { padding: 20px; }
+    .info-box { padding: 25px; }
   }
 </style>
 </head>
@@ -169,109 +174,88 @@
 
     <div class="form-group">
       <label for="objetivos">Por que você precisa deste projeto? Quais são seus objetivos?</label>
-      <textarea id="objetivos" name="objetivos" class="form-control" placeholder="Descreva os seus objetivos..." required></textarea>
+      <textarea id="objetivos" name="objetivos" class="form-control" placeholder="Descreva de forma detalhada o que espera alcançar..." required></textarea>
     </div>
 
     <div class="form-group">
       <label for="empresa_detalhes">Me fale sobre a sua empresa</label>
       <p class="form-hint">Do que ela se trata? Quais são os produtos/serviços oferecidos? Há quanto tempo existe?</p>
-      <textarea id="empresa_detalhes" name="empresa_detalhes" class="form-control" placeholder="Detalhes sobre a empresa..." required></textarea>
+      <textarea id="empresa_detalhes" name="empresa_detalhes" class="form-control" placeholder="Conte a história e os diferenciais do seu negócio..." required></textarea>
     </div>
 
     <div class="form-group">
       <label for="duas_palavras">Descreva o seu negócio em 2 palavras</label>
-      <input type="text" id="duas_palavras" name="duas_palavras" class="form-control" required>
+      <input type="text" id="duas_palavras" name="duas_palavras" class="form-control" placeholder="Ex: Inovador e Confiável" required>
     </div>
 
     <div class="form-group">
       <label for="nome_marca">Qual será o nome da sua marca/produto/empresa?</label>
-      <input type="text" id="nome_marca" name="nome_marca" class="form-control" required>
+      <input type="text" id="nome_marca" name="nome_marca" class="form-control" placeholder="O nome exato a ser trabalhado no design" required>
     </div>
 
     <div class="form-group">
       <label for="slogan">Possui slogan? Qual?</label>
-      <input type="text" id="slogan" name="slogan" class="form-control">
+      <input type="text" id="slogan" name="slogan" class="form-control" placeholder="Deixe em branco caso não possua">
     </div>
 
     <div class="form-group">
       <label for="clientes">Descreva o máximo que puder sobre seus clientes (já existentes ou potenciais)</label>
-      <p class="form-hint">Gênero, idade, região, poder aquisitivo, etc.</p>
-      <textarea id="clientes" name="clientes" class="form-control" required></textarea>
+      <p class="form-hint">Gênero, idade, região, poder aquisitivo, estilo de vida, etc.</p>
+      <textarea id="clientes" name="clientes" class="form-control" placeholder="Trace o perfil do seu público-alvo..." required></textarea>
     </div>
 
     <div class="form-group">
       <label for="mensagem_transmitir">Que mensagem sua marca deve transmitir para os clientes?</label>
-      <textarea id="mensagem_transmitir" name="mensagem_transmitir" class="form-control" required></textarea>
+      <textarea id="mensagem_transmitir" name="mensagem_transmitir" class="form-control" placeholder="Ex: Segurança, modernidade, sofisticação, agilidade..." required></textarea>
     </div>
 
     <div class="form-group">
       <label for="mensagem_nao_transmitir">Que mensagem sua marca NÃO deve transmitir para seus clientes?</label>
-      <textarea id="mensagem_nao_transmitir" name="mensagem_nao_transmitir" class="form-control" required></textarea>
+      <textarea id="mensagem_nao_transmitir" name="mensagem_nao_transmitir" class="form-control" placeholder="Ex: Algo barato, rústico, infantil..." required></textarea>
     </div>
 
     <div class="form-group">
       <label for="informacoes_extras">Ainda tem algo a dizer?</label>
-      <p class="form-hint">Fique à vontade para contribuir com outras informações.</p>
-      <textarea id="informacoes_extras" name="informacoes_extras" class="form-control"></textarea>
+      <p class="form-hint">Fique à vontade para contribuir com outras informações que julgue necessárias.</p>
+      <textarea id="informacoes_extras" name="informacoes_extras" class="form-control" placeholder="Observações adicionais..."></textarea>
     </div>
 
     <div class="info-box">
       <h3>Entrega e Brandbook</h3>
-      <p>No brandbook está a descrição das diretrizes da empresa para que todas as áreas e pontos de contato possam manter a identidade da marca, tanto verbal quanto visual.</p>
+      <p>No brandbook está a descrição das diretrizes da empresa para que todas as áreas e pontos de contato possam manter a identidade da marca alinhada, tanto de forma verbal quanto visual.</p>
       <ul>
         <li>
           <strong>Assinaturas</strong>
-          <ul>
-            <li>Versões do logotipo e suas variantes, como versões verticais e horizontais, com decodificadores, slogan e símbolo.</li>
-          </ul>
+          Versões do logotipo e suas variantes, como versões verticais e horizontais, com decodificadores, slogan e símbolo.
         </li>
         <li>
           <strong>Paleta de cores</strong>
-          <ul>
-            <li>Conjunto de cores pré-selecionadas utilizadas em harmonia para passar uma ideia, sentimento, sensação ou identidade.</li>
-          </ul>
+          Conjunto de cores pré-selecionadas utilizadas em harmonia para passar uma ideia, sentimento, sensação ou identidade.
         </li>
         <li>
           <strong>Padrão tipográfico</strong>
-          <ul>
-            <li>Conjunto de fontes, cuja combinação deve oferecer boa leitura, se adaptar bem a todos os materiais e ajudar a reforçar a personalidade da marca.</li>
-          </ul>
+          Conjunto de fontes, cuja combinação deve oferecer boa leitura, se adaptar bem a todos os materiais e ajudar a reforçar a personalidade da marca.
         </li>
         <li>
           <strong>Elementos Gráficos</strong>
-          <ul>
-            <li>Elementos visuais que vêm para agregar nas composições gráficas.</li>
-          </ul>
+          Elementos visuais de apoio que vêm para agregar e enriquecer as composições gráficas.
         </li>
         <li>
           <strong>Aplicações</strong>
-          <ul>
-            <li>Exemplos de aplicações da identidade visual para demonstrar os materiais existentes.</li>
-          </ul>
+          Exemplos de aplicações da identidade visual para demonstrar como ela funciona em materiais reais.
         </li>
       </ul>
     </div>
 
+    <!-- Campo adaptado após a remoção dos checkboxes -->
     <div class="form-group">
-      <label>Selecione abaixo os itens que pretende realizar neste projeto</label>
-      <div class="options-group">
-        <label class="option-label"><input type="checkbox" name="itens[]" value="Registro de marca no INPI"> Registro de marca no INPI (Instituto Nacional da Propriedade Industrial)</label>
-        <label class="option-label"><input type="checkbox" name="itens[]" value="Website"> Website</label>
-        <label class="option-label"><input type="checkbox" name="itens[]" value="Aplicativo e/ou Cardápio Digital"> Aplicativo e/ou Cardápio Digital</label>
-        <label class="option-label"><input type="checkbox" name="itens[]" value="Cardápio, Catálogo e/ou Flyer"> Cardápio, Catálogo e/ou Flyer</label>
-        <label class="option-label"><input type="checkbox" name="itens[]" value="Embalagens e/ou Sacolas"> Embalagens e/ou Sacolas</label>
-        <label class="option-label"><input type="checkbox" name="itens[]" value="Cartão de Visita, Papel Timbrado etc"> Cartão de Visita, Papel Timbrado, Pasta, Envelope, Etiquetas e/ou Adesivos</label>
-        <label class="option-label"><input type="checkbox" name="itens[]" value="Artes para Redes Sociais"> Artes para Redes Sociais</label>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label for="itens_extras">Caso sinta falta de algum item, preencha no campo abaixo</label>
-      <textarea id="itens_extras" name="itens_extras" class="form-control"></textarea>
+      <label for="itens_extras">Quais materiais ou itens você pretende realizar neste projeto?</label>
+      <p class="form-hint">Ex: Registro no INPI, Website, Embalagens, Cartões de Visita, Artes para Redes Sociais, etc.</p>
+      <textarea id="itens_extras" name="itens_extras" class="form-control" placeholder="Liste os entregáveis que você precisa..."></textarea>
     </div>
     
     <button type="submit" class="btn-submit">
-      Enviar
+      Enviar Briefing
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
     </button>
   </form>
