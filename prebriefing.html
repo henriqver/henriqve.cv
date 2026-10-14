@@ -136,7 +136,7 @@
   </div>
 
   <form class="contact-form" action="https://formspree.io/f/seu_endpoint_aqui" method="POST">
-    
+    <input type="hidden" name="_subject" id="assunto_email" value="Novo Pré-briefing">
     <div class="form-group">
       <label for="nome">Nome (obrigatório)</label>
       <input type="text" id="nome" name="nome" class="form-control" placeholder="O seu nome completo" required>
@@ -275,6 +275,15 @@
     </a>
   </div>
 </footer>
-
+<script>
+  document.querySelector('.contact-form').addEventListener('submit', function() {
+    const nomePessoa = document.getElementById('nome').value;
+    const nomeMarca = document.getElementById('nome_marca').value;
+    const campoAssunto = document.getElementById('assunto_email');
+    
+    // Monta o assunto dinâmico
+    campoAssunto.value = `Pré Briefing: ${nomeMarca} - ${nomePessoa}`;
+  });
+</script>
 </body>
 </html>
